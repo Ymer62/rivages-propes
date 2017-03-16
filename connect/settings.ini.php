@@ -2,5 +2,5 @@
 [SQL]
 host = localhost
 user = root
-password = Az3rty
+password = Az3rtyfgdfg
 dbname = rivages_propre
