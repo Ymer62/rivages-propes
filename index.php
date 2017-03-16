@@ -1,5 +1,9 @@
 <?php
 
+// Connexion
+require("connect/Db.class.php");
+$db = new Db();
+
 // GET page
 define('G_page', isset($_GET['page']) ? $_GET['page'] : '');
 
@@ -34,8 +38,8 @@ switch (G_page){
 
 <?php
 
-// Content
-include 'pages/' . $page . '.php';
+$query = $db->query("SELECT * FROM events WHERE id = :id", array("id"=>"1"));
+var_dump($query);
 
 ?>
 
