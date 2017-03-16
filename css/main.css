@@ -1,0 +1,35 @@
+/* Navbar */
+nav {
+    background-color: #FFF;
+    box-shadow: none;
+}
+
+@media all and (min-width: 993px) {
+    nav {
+        border-bottom: 1px solid #333;
+    }
+}
+
+/* Mobile menu */
+.side-nav .submenu {
+    margin-left: 40px;
+}
+
+nav a[data-activates="mobile_menu"] {
+    position: fixed;
+}
+nav div > a .fa {
+    font-size: 30px;
+}
+
+/* Liens */
+nav a,
+nav ul a {
+    color: #333;
+}
+
+/* Logo */
+nav > div > a.brand-logo > img {
+    height: 100%;
+    margin: 0 5px;
+}
