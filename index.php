@@ -1,3 +1,24 @@
+<?php
+
+// GET page
+define('G_page', isset($_GET['page']) ? $_GET['page'] : '');
+
+// Dispatcher
+switch (G_page){
+  case 'accompagnement': $page = 'accompaniment'; break;
+  case 'batiment': $page = 'asBuilding'; break;
+  case 'support-activites-mobilite-douce': $page = 'asSoftMobility'; break;
+  case 'environnement': $page = 'asEnvironment'; break;
+  case 'postuler': $page = 'candidate'; break;
+  case 'contact': $page = 'contact'; break;
+  case 'evenements': $page = 'events'; break;
+  case 'presentation-historique': $page = 'presentHistoric'; break;
+  case 'presentation-equipe': $page = 'presentTeam'; break;
+  default: $page = 'home'; break;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +32,12 @@
 </head>
 <body>
 
+<?php
 
+// Content
+include 'pages/' . $page . '.php';
+
+?>
 
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/materialize.min.js" type="text/javascript"></script>
