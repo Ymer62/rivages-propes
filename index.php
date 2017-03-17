@@ -6,22 +6,25 @@ require("connect/Db.class.php");
 // Users
 include 'includes/users.inc.php';
 
+// Forms
+include 'includes/forms.inc.php';
+
 // Dispatcher
 include 'includes/dispatcher.inc.php';
 
 // header
-include 'includes/header.inc.php';
+include 'templates/header.tpl.php';
 
 // Navbar
-include 'includes/navbar.inc.php';
+include 'templates/navbar.tpl.php';
 
 // Display message flash
 include 'includes/flash.inc.php';
 
 // Content
-include 'pages/' . $pageName . '.php';
+include 'templates/pages/' . $pageName . '.tpl.php';
 
 // Footer
-include 'includes/footer.inc.php';
+include 'templates/footer.tpl.php';
 
 ?>
