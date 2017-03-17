@@ -10,14 +10,14 @@ define('G_page', isset($_GET['page']) ? $_GET['page'] : 'home');
 // Dispatcher
 $dispatcher = array(
   'accompagnement' => 'accompaniment',
-  'batiment' => 'asBuilding',
-  'support-activites-mobilite-douce' => 'asSoftMobility',
-  'environnement' => 'asEnvironment',
+  'support-activites-batiment' => 'as_building',
+  'support-activites-mobilite-douce' => 'as_softmobility',
+  'support-activites-environnement' => 'as_environment',
   'postuler' => 'candidate',
   'contact' => 'contact',
   'evenements' => 'events',
-  'presentation-historique' => 'presentHistoric',
-  'presentation-equipe' => 'presentTeam',
+  'presentation-historique' => 'present_historic',
+  'presentation-equipe' => 'present_team',
   'home' => 'home'
 );
 
