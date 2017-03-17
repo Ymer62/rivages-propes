@@ -2,35 +2,29 @@
 
 // Connexion
 require("connect/Db.class.php");
-$db = new Db();
 
-// GET page
-define('G_page', isset($_GET['page']) ? $_GET['page'] : '');
+// Users
+include 'includes/users.inc.php';
+
+// Forms
+include 'includes/forms.inc.php';
 
 // Dispatcher
-switch (G_page){
-  case 'accompagnement': $page = 'accompaniment'; break;
-  case 'batiment': $page = 'asBuilding'; break;
-  case 'support-activites-mobilite-douce': $page = 'asSoftMobility'; break;
-  case 'environnement': $page = 'asEnvironment'; break;
-  case 'postuler': $page = 'candidate'; break;
-  case 'contact': $page = 'contact'; break;
-  case 'evenements': $page = 'events'; break;
-  case 'presentation-historique': $page = 'presentHistoric'; break;
-  case 'presentation-equipe': $page = 'presentTeam'; break;
-  default: $page = 'home'; break;
-}
+include 'includes/dispatcher.inc.php';
 
 // header
-include 'includes/header.inc.php';
+include 'templates/header.tpl.php';
 
 // Navbar
-include 'includes/navbar.inc.php';
+include 'templates/navbar.tpl.php';
+
+// Display message flash
+include 'includes/flash.inc.php';
 
 // Content
-include 'pages/' . $page . '.php';
+include 'templates/pages/' . $pageName . '.tpl.php';
 
 // Footer
-include 'includes/footer.inc.php';
+include 'templates/footer.tpl.php';
 
 ?>
