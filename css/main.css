@@ -1,3 +1,12 @@
+/* Color Palette */
+/*
+#07275C
+#FFD900
+#018EA0
+#333
+#FFF
+*/
+
 /* Navbar */
 nav {
     background-color: #FFF;
@@ -12,7 +21,7 @@ nav {
 
 /* Mobile menu */
 .side-nav .submenu {
-    margin-left: 40px;
+    padding-left: 40px;
 }
 
 nav a[data-activates="mobile_menu"] {
@@ -25,7 +34,25 @@ nav div > a .fa {
 /* Liens */
 nav a,
 nav ul a {
+    color: #07275C;
+}
+
+/* Dropdowns */
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #07275C;
+}
+
+/* Buttons */
+.btn,
+.side-nav a.btn {
+    background-color: #FFD900;
     color: #333;
+}
+
+.btn:hover,
+.side-nav a.btn:hover {
+    background-color: #FFD900;
 }
 
 /* Logo */
