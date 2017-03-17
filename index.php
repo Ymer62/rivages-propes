@@ -5,21 +5,26 @@ require("connect/Db.class.php");
 $db = new Db();
 
 // GET page
-define('G_page', isset($_GET['page']) ? $_GET['page'] : '');
+define('G_page', isset($_GET['page']) ? $_GET['page'] : 'home');
 
 // Dispatcher
-switch (G_page){
-  case 'accompagnement': $page = 'accompaniment'; break;
-  case 'batiment': $page = 'asBuilding'; break;
-  case 'support-activites-mobilite-douce': $page = 'asSoftMobility'; break;
-  case 'environnement': $page = 'asEnvironment'; break;
-  case 'postuler': $page = 'candidate'; break;
-  case 'contact': $page = 'contact'; break;
-  case 'evenements': $page = 'events'; break;
-  case 'presentation-historique': $page = 'presentHistoric'; break;
-  case 'presentation-equipe': $page = 'presentTeam'; break;
-  default: $page = 'home'; break;
-}
+$dispatcher = array(
+  'accompagnement' => 'accompaniment',
+  'batiment' => 'asBuilding',
+  'support-activites-mobilite-douce' => 'asSoftMobility',
+  'environnement' => 'asEnvironment',
+  'postuler' => 'candidate',
+  'contact' => 'contact',
+  'evenements' => 'events',
+  'presentation-historique' => 'presentHistoric',
+  'presentation-equipe' => 'presentTeam',
+  'home' => 'home'
+);
+
+$pageName = isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home';
+
+// Page data
+$pageData =  current($db->query("SELECT * FROM page_$pageName LIMIT 1"));
 
 // header
 include 'includes/header.inc.php';
@@ -28,7 +33,7 @@ include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
 
 // Content
-include 'pages/' . $page . '.php';
+include 'pages/' . $pageName . '.php';
 
 // Footer
 include 'includes/footer.inc.php';
