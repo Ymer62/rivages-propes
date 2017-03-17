@@ -18,6 +18,7 @@ $dispatcher = array(
   'evenements' => 'events',
   'presentation-historique' => 'present_historic',
   'presentation-equipe' => 'present_team',
+  'admin' => 'admin',
   'home' => 'home'
 );
 
