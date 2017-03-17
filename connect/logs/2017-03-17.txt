@@ -1,0 +1,3 @@
+Time : 13:54:20
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'rivages_propre.users' doesn't exist
+Raw SQL : SELECT password FROM users WHERE login=:login LIMIT 1
