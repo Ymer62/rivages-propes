@@ -13,11 +13,11 @@ nav {
     box-shadow: none;
 }
 
-@media all and (min-width: 993px) {
+/*@media all and (min-width: 993px) {
     nav {
         border-bottom: 1px solid #333;
     }
-}
+}*/
 
 /* Mobile menu */
 .side-nav .submenu {
@@ -59,4 +59,16 @@ nav ul a {
 nav > div > a.brand-logo > img {
     height: 100%;
     margin: 0 5px;
+}
+
+/* Full width container */
+.container.full {
+    width: 100%;
+    max-width: initial;
+}
+
+/* Carousel */
+.carousel-item {
+    background-position: center center;
+    background-size: cover;
 }

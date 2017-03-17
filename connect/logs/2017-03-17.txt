@@ -1,3 +1,6 @@
+Time : 18:13:38
+SQLSTATE[HY000] [2002] No such file or directory
+
 Time : 17:53:53
 SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
 
