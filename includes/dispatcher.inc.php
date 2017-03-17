@@ -2,6 +2,7 @@
 
 // GET page
 define('G_page', isset($_GET['page']) ? $_GET['page'] : 'home');
+define('G_noData', isset($_GET['noData']) ? $_GET['noData'] : '');
 
 // Dispatcher
 $dispatcher = array(
@@ -14,7 +15,8 @@ $dispatcher = array(
   'evenements' => 'events',
   'presentation-historique' => 'present_historic',
   'presentation-equipe' => 'present_team',
-  'admin' => 'admin',
+  'login' => 'login',
+  'logout' => 'logout',
   'home' => 'home'
 );
 
@@ -22,6 +24,7 @@ $dispatcher = array(
 $pageName = isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home';
 
 // Page data
-$pageData =  current($db->query("SELECT * FROM page_$pageName LIMIT 1"));
+if(!G_noData)
+$pageData = current($db->query("SELECT * FROM page_$pageName LIMIT 1"));
 
 ?>

@@ -29,7 +29,7 @@ else:
 
 ?>
   <div class="row">
-    <form action="?page=admin" method="post" class="col s12">
+    <form action="?page=login&noData=true" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <input name="login" id="login" type="text" class="validate">
