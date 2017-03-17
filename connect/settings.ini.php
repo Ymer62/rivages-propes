@@ -2,5 +2,5 @@
 [SQL]
 host = localhost
 user = root
-password = 
+password =
 dbname = rivages_propre
