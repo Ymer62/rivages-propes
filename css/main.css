@@ -73,3 +73,25 @@ nav > div > a.brand-logo > img {
     background-position: center center;
     background-size: cover;
 }
+
+/* Footer */
+footer.page-footer {
+    background-color: #07275C;
+    text-align: center;
+}
+
+footer.page-footer .fa {
+    font-size: 50px;
+}
+
+footer.page-footer .footer-copyright {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: auto;
+    padding-top: 30px;
+}
+
+@media all and (min-width: 600px) {
+    footer.page-footer .footer-copyright {
+        height: 30px;
+    }
+}
