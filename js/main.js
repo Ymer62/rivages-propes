@@ -1,2 +1,6 @@
-// Mobile menu
-$(".button-collapse").sideNav();
+$(document).ready(function(){
+
+    // Mobile menu
+    $(".button-collapse").sideNav();
+
+});
