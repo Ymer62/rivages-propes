@@ -13,15 +13,15 @@ nav {
     box-shadow: none;
 }
 
-/*@media all and (min-width: 993px) {
-    nav {
-        border-bottom: 1px solid #333;
-    }
-}*/
-
 /* Mobile menu */
 .side-nav .submenu {
     padding-left: 40px;
+}
+
+/* Mobile menu button */
+a[data-activates="mobile_menu"] {
+    position: fixed;
+    right: 0;
 }
 
 nav a[data-activates="mobile_menu"] {
@@ -33,7 +33,8 @@ nav div > a .fa {
 
 /* Liens */
 nav a,
-nav ul a {
+nav ul a,
+.side-nav a {
     color: #07275C;
 }
 
