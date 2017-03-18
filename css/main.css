@@ -7,21 +7,27 @@
 #FFF
 */
 
+/* Center block class */
+.center-block {
+    display: block;
+    margin: auto;
+}
+
 /* Navbar */
 nav {
     background-color: #FFF;
     box-shadow: none;
 }
 
-/*@media all and (min-width: 993px) {
-    nav {
-        border-bottom: 1px solid #333;
-    }
-}*/
-
 /* Mobile menu */
 .side-nav .submenu {
     padding-left: 40px;
+}
+
+/* Mobile menu button */
+a[data-activates="mobile_menu"] {
+    position: fixed;
+    right: 0;
 }
 
 nav a[data-activates="mobile_menu"] {
@@ -33,7 +39,8 @@ nav div > a .fa {
 
 /* Liens */
 nav a,
-nav ul a {
+nav ul a,
+.side-nav a {
     color: #07275C;
 }
 
@@ -71,4 +78,26 @@ nav > div > a.brand-logo > img {
 .carousel-item {
     background-position: center center;
     background-size: cover;
+}
+
+/* Footer */
+footer.page-footer {
+    background-color: #07275C;
+    text-align: center;
+}
+
+footer.page-footer .fa {
+    font-size: 50px;
+}
+
+footer.page-footer .footer-copyright {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: auto;
+    padding-top: 30px;
+}
+
+@media all and (min-width: 600px) {
+    footer.page-footer .footer-copyright {
+        height: 30px;
+    }
 }

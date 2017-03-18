@@ -12,7 +12,7 @@ else:
 
 ?>
   <div class="row">
-    <form action="?page=login&noData=true" method="post" class="col s12">
+    <form action="?page=login&noData=true" method="post" class="col s6 offset-s3 m4 offset-m4 l2 offset-l5">
       <div class="row">
         <div class="input-field col s12">
           <input name="login" id="login" type="text" class="validate">
@@ -25,9 +25,14 @@ else:
           <label for="password">Mot de passe</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Connexion
-      </button>
+      <div class="row">
+          <div class="col s12">
+              <button class="btn waves-effect waves-light center-block" type="submit" name="action">
+                Connexion
+              </button>
+          </div>
+      </div>
+
     </form>
   </div>
 <?php
