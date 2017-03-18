@@ -7,6 +7,12 @@
 #FFF
 */
 
+/* Center block class */
+.center-block {
+    display: block;
+    margin: auto;
+}
+
 /* Navbar */
 nav {
     background-color: #FFF;
