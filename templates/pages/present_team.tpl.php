@@ -14,13 +14,13 @@ $team[$value['category']][$key] = $value;
   </div>
 
   <?php
-    foreach($team AS $cat => $member):
+    foreach($team AS $cat => $members):
   ?>
   <div class="row">
     <div class="col s12">
       <h4><?= ucfirst($cat) ?></h4>
       <?php
-        foreach($member AS $data):
+        foreach($members AS $data):
       ?>
         <div class="col s6 m3">
           <h6 class="<?= $data['category'] ?>"><?= $data['job'] ?></h6>
