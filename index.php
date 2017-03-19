@@ -6,6 +6,9 @@ require("connect/Db.class.php");
 // Users
 include 'includes/users.inc.php';
 
+// Debug
+include 'includes/debug.inc.php';
+
 // Forms
 include 'includes/forms.inc.php';
 

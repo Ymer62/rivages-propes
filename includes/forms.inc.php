@@ -4,10 +4,10 @@
 class form{
   public function login($db){
     if(isset($_POST['login']) && isset($_POST['password'])){
-      $user =  current($db->query(
-        "SELECT password FROM users WHERE login=:login LIMIT 1",
+      $user =  $db->row(
+        "SELECT password FROM users WHERE login=:login",
         array('login' => $_POST['login']
-      )));
+      ));
 
       // Succes
       if($user['password'] && password_verify($_POST['password'], $user['password'])){
