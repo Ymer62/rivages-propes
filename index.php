@@ -1,5 +1,10 @@
 <?php
 
+
+// ------------------------------------
+// BACK-END ---------------------------
+// ------------------------------------
+
 // Connexion
 require("connect/Db.class.php");
 
@@ -15,6 +20,10 @@ include 'includes/forms.inc.php';
 // Dispatcher
 include 'includes/dispatcher.inc.php';
 
+// ------------------------------------
+// FRONT-END --------------------------
+// ------------------------------------
+
 // header
 include 'templates/header.tpl.php';
 
@@ -22,7 +31,7 @@ include 'templates/header.tpl.php';
 include 'templates/navbar.tpl.php';
 
 // Display message flash
-include 'includes/flash.inc.php';
+include 'templates/flash.tpl.php';
 
 // Content
 include 'templates/pages/' . $pageName . '.tpl.php';
