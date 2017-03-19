@@ -82,8 +82,12 @@ nav > div > a.brand-logo > img {
 
 /* Footer */
 footer.page-footer {
-    background-color: #07275C;
+    background-color: #DDD;
     text-align: center;
+}
+
+footer.page-footer img {
+    height: 75px;
 }
 
 footer.page-footer .fa {
@@ -94,6 +98,11 @@ footer.page-footer .footer-copyright {
     background-color: rgba(0, 0, 0, 0.1);
     height: auto;
     padding-top: 30px;
+}
+
+footer.page-footer .footer-copyright,
+footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"]) {
+    color: #000;
 }
 
 @media all and (min-width: 600px) {
