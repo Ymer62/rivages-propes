@@ -8,6 +8,12 @@
 // Connexion
 require("connect/Db.class.php");
 
+// Config
+include 'includes/config.inc.php';
+
+// Path
+include 'includes/path.inc.php';
+
 // Users
 include 'includes/users.inc.php';
 
@@ -34,7 +40,7 @@ include 'templates/navbar.tpl.php';
 include 'templates/flash.tpl.php';
 
 // Content
-include 'templates/pages/' . $pageName . '.tpl.php';
+include 'templates/pages/' . PAGE . '.tpl.php';
 
 // Footer
 include 'templates/footer.tpl.php';

@@ -1,8 +1,6 @@
 <?php
 
-// Debug mode
-define('DEBUG', true);
-
+// Debug
 class debug{
   public function arr($var){
     if (DEBUG){

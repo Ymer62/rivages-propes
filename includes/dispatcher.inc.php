@@ -21,10 +21,10 @@ $dispatcher = array(
 );
 
 // Page name
-$pageName = isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home';
+define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home');
 
 // Page data
 if(!G_noData)
-$pageData = current($db->query("SELECT * FROM page_$pageName LIMIT 1"));
+$pageData = $db->row('SELECT * FROM page_' . PAGE);
 
 ?>
