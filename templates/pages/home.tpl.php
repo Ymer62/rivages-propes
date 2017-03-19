@@ -33,11 +33,8 @@
     }, 3500)
 </script>
 
-
-<pre>
 <?php
 
-var_dump($pageData);
+$debug->arr(array('$pageData' => $pageData));
 
 ?>
-</pre>

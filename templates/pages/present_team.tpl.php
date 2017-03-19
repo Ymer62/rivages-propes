@@ -38,14 +38,11 @@ $team[$value['category']][$key] = $value;
 </div>
 
 
-<pre>
 <?php
 
-echo '<br />$pageData<br />';
-var_dump($pageData);
-
-echo '<br />$direction<br />';
-print_r($team);
+$debug->arr(array(
+  '$pageData' => $pageData,
+  '$team' => $team
+));
 
 ?>
-</pre>
