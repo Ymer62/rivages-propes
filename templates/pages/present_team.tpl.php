@@ -18,11 +18,11 @@ $team[$value['category']][$key] = $value;
   ?>
   <div class="row">
     <div class="col s12">
-      <h4><?= $cat ?></h4>
+      <h4><?= ucfirst($cat) ?></h4>
       <?php
         foreach($member AS $data):
       ?>
-        <div class="col s12 m3">
+        <div class="col s6 m3">
           <h6 class="<?= $data['category'] ?>"><?= $data['job'] ?></h6>
           <img src="img/<?= $data['avatar'] ?>" alt="Photo de <?= $data['name'] ?>">
           <p><?= $data['name'] ?></p>
