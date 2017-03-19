@@ -80,6 +80,59 @@ nav > div > a.brand-logo > img {
     background-size: cover;
 }
 
+
+/**********/
+/* Equipe */
+/**********/
+#equipe h1,
+#equipe h2,
+#equipe h3,
+#equipe h4,
+#equipe h5,
+#equipe h6,
+#equipe p {
+    text-align: center;
+}
+
+#equipe h6 {
+    margin: 0;
+    padding: 10px 5px;
+}
+
+#equipe img {
+    width: 100%;
+    height: auto;
+}
+
+#equipe p {
+    margin: 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: relative;
+    bottom: 38px;
+}
+
+.direction {
+    background-color: #333;
+    color: #FFF;
+}
+
+.administration {
+    background-color: #07275C;
+    color: #FFF;
+}
+
+.insertion {
+    background-color: #018EA0;
+    color: #FFF;
+}
+
+.technique {
+    background-color: #FFD900;
+    color: #000;
+}
+
 /* Footer */
 footer.page-footer {
     background-color: #DDD;
@@ -87,6 +140,7 @@ footer.page-footer {
 }
 
 footer.page-footer img {
+    margin: 5px;
     height: 75px;
 }
 
