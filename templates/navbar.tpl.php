@@ -28,7 +28,7 @@
 <!-- Navbar -->
 <nav>
   <div class="nav-wrapper">
-      <a href="<?= $path->link('') ?>" class="brand-logo">
+      <a class="hide-on-med-and-down brand-logo" href="<?= $path->link('') ?>">
           <img src="img/logo_small.png" alt="logo_small">
       </a>
       <a href="#" data-activates="mobile_menu" class="button-collapse"><i class="fa fa-bars"></i></a>

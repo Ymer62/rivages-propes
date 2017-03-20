@@ -72,12 +72,36 @@ nav > div > a.brand-logo > img {
 .container.full {
     width: 100%;
     max-width: initial;
+    overflow-x: hidden;
+}
+
+/********/
+/* Home */
+/********/
+#home h1,
+#home h2,
+#home h3,
+#home h4,
+#home h5,
+#home h6,
+#home p {
+    text-align: center;
 }
 
 /* Carousel */
 .carousel-item {
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel .carousel-item img {
+    width: 50%;
+    height: auto;
+}
+
+.carousel .indicators {
+    display: none;
 }
 
 
