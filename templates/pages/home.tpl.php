@@ -23,10 +23,10 @@
             <h1><?php echo $pageData['title'] ?></h1>
             <p class="flow-text"><?php echo $pageData['text'] ?></p>
         </div>
-        <div class="col s3 offset-s3 m2 offset-m4">
+        <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
         </div>
-        <div class="col s3 m2">
+        <div class="col s5 m2">
             <a href="<?= $path->link('presentation-equipe') ?>"><button type="button" class="btn waves-effect center-block">Equipe</button></a>
         </div>
     </div>
