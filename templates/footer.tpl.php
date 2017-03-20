@@ -3,12 +3,9 @@
     <div class="row">
       <div class="col s12">
         <img src="img/sponsors/haut_de_france.png" alt="L'Europe s'engage en hauts-de-france">
+        <img src="img/sponsors/repuFR.png" alt="République française">
+        <img src="img/sponsors/logo_hdf.png" alt="Logo région haut-de-france">
         <img src="img/sponsors/ue.png" alt="Drapeau de l'union européene">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
       </div>
     </div>
   </div>

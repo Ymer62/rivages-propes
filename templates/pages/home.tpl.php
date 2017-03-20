@@ -1,18 +1,18 @@
 <div class="container full">
     <div class="row">
         <div class="carousel carousel-slider center" data-indicators="false">
-          <div class="carousel-fixed-item center">
-              <!-- Fixed content, visible sur toutes les slides -->
-          </div>
-          <div class="carousel-item" href="#one!">
-              <img src="img/logo.png" alt="logo">
-          </div>
-          <div class="carousel-item" href="#two!" style="background-image: url('img/placeholder.jpg');">
-          </div>
-          <div class="carousel-item" href="#three!" style="background-image: url('img/placeholder.jpg');">
-          </div>
-          <div class="carousel-item" href="#four!" style="background-image: url('img/placeholder.jpg');">
-          </div>
+            <div class="carousel-fixed-item center">
+                <!-- Fixed content, visible sur toutes les slides -->
+            </div>
+            <div class="carousel-item" href="#one!">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="carousel-item" href="#two!" style="background-image: url('img/placeholder.jpg');">
+            </div>
+            <div class="carousel-item" href="#three!" style="background-image: url('img/placeholder.jpg');">
+            </div>
+            <div class="carousel-item" href="#four!" style="background-image: url('img/placeholder.jpg');">
+            </div>
         </div>
     </div>
 </div>
