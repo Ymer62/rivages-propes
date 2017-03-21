@@ -157,6 +157,15 @@ nav > div > a.brand-logo > img {
     color: #000;
 }
 
+/**********/
+/*Contact*/
+/**********/
+
+#contact form{
+  border:2px dotted blue;
+}
+
+
 /* Footer */
 footer.page-footer {
     background-color: #DDD;
