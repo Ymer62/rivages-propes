@@ -188,3 +188,17 @@ footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"])
         height: 30px;
     }
 }
+
+.editDispRight{
+  position:relative;
+}
+.editRight{
+  position:absolute;
+  z-index:1;
+  top:0;
+  right:20px;
+}
+
+.editRight i{
+  cursor:pointer;
+}
