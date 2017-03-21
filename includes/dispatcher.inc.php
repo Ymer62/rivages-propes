@@ -24,7 +24,9 @@ $dispatcher = array(
 define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home');
 
 // Page data
-if(!G_noData)
-$pageData = $db->row('SELECT * FROM page_' . PAGE);
+if(!G_noData){
+  $pageData = $db->query('SELECT * FROM page_' . PAGE);
+  if (count($pageData) == 1) $pageData = current($pageData);
+}
 
 ?>
