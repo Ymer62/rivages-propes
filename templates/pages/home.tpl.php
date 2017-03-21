@@ -84,11 +84,20 @@
 <script type="text/javascript">
 
   // Carousel
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
   var timerCarousel;
+
   function carouselPlay(){
+    clearInterval(timerCarousel);
     timerCarousel = setInterval(function() { $('.carousel').carousel('next'); }, 3500);
   }
+
+  function carouselInit(){
+    try{
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+    } catch(e) {}
+  }
+
+  carouselInit();
   carouselPlay();
 
   <?php
@@ -107,18 +116,24 @@
 
     // Delete slide
     $('#deleteSlide').click(function(){
+      var slide = $('.carousel .active');
+      var id = slide.data('id');
       var dialog =  confirm('Voulez-vous vraiment supprimer cette élément du carousel ?');
 
       if(dialog) {
-        var id = $('.carousel .active').data('id');
-
         $.ajax({
           type: "POST",
           url: 'ajax.php?ajax=deleteHomeSlide',
           data: {id:id},
           success: function(data,textStatus,jqXHR){
-            if(data == 'OK')
-            location.reload();
+            if(data == 'OK'){
+              slide.remove();
+
+              if($('.carousel.carousel-slider').hasClass('initialized'))
+              $('.carousel.carousel-slider').removeClass('initialized');
+
+              carouselInit();
+            }
           }
         });
       }
@@ -126,6 +141,7 @@
 
     // Edit slide
     $('#editSlide').click(function(){
+      $('form')[0].reset();
       $('#sliders input[type="file"]').attr('placeholder', 'Laissez vide pour ne pas modifier l\'image');
       $('#sliders label').addClass('active');
       $('#sliders input[type="hidden"]').val($('.carousel .active').data('id'));
@@ -139,6 +155,7 @@
 
     // Add slide
     $('#addSlide').click(function(){
+      $('form')[0].reset();
       $('#sliders input[type="file"]').attr('placeholder', '');
       $('#sliders textarea').val('');
       $('#sliders input[type="hidden"]').val('');
@@ -148,7 +165,8 @@
 
     // Submit slide
     $('#btnSubmitSlide').click(function(){
-      var id = $(this).data('id');
+      var slide = $('.carousel .active');
+      var id = $('#sliders input[type="hidden"]').val();
       var formSlideContent = $('#formSlideContent').val();
       formSlide = $('#formSlide').val();
 
@@ -165,7 +183,24 @@
         },
 
         beforeSend:function(){ $('#progress').modal('open'); },
-        success:function(){ $('#progress').modal('close') },
+        success:function(data,textStatus,jqXHR){
+          if(id){
+            slide.css({'background-image':'url("img/homeSliders/'+(data == 'OK' ? '' : data)+'")'});
+            slide.html($('#formSlideContent').val());
+          }
+          else{
+            var newSlide = $(".carousel-item").first().clone().appendTo(".carousel");
+            newSlide.css({'background-image':'url("img/homeSliders/'+(data == 'OK' ? '' : data)+'")'});
+            newSlide.html($('#formSlideContent').val());
+
+            if($('.carousel.carousel-slider').hasClass('initialized'))
+            $('.carousel.carousel-slider').removeClass('initialized');
+
+            carouselInit();
+          }
+
+          $('#progress').modal('close');
+        },
         error:{},
         data:formData,
         cache:false,

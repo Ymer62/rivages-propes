@@ -31,7 +31,8 @@ if(ADMIN){
       $newName = md5(rand()) . $ext;
       if(move_uploaded_file($fileTmpName, $path . $newName)){
         $lastSlide = $db->row('SELECT slide FROM home_sliders WHERE id=:id', array('id' => $_POST['id']));
-        @unlink($path . $lastSlide['slide']);
+        if(isset($lastSlide['slide']))
+        unlink($path . $lastSlide['slide']);
 
         $db->query('UPDATE home_sliders set content=:content, slide=:slide WHERE id=:id',
         array(
@@ -40,11 +41,10 @@ if(ADMIN){
           'content' => $content
         ));
 
-        echo 'OK';
+        echo $newName;
       }
     }
     else{
-      echo 'test';
       $db->query('UPDATE home_sliders set content=:content WHERE id=:id',
       array(
         'id' => $_POST['id'],
@@ -69,7 +69,7 @@ if(ADMIN){
           'content' => $content
         ));
 
-        echo 'OK';
+        echo $newName;
       }
     }
     else{
