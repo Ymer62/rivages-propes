@@ -137,22 +137,22 @@ nav > div > a.brand-logo > img {
     bottom: 38px;
 }
 
-.direction {
+#equipe .direction {
     background-color: #333;
     color: #FFF;
 }
 
-.administration {
+#equipe .administration {
     background-color: #07275C;
     color: #FFF;
 }
 
-.insertion {
+#equipe .insertion {
     background-color: #018EA0;
     color: #FFF;
 }
 
-.technique {
+#equipe .technique {
     background-color: #FFD900;
     color: #000;
 }
