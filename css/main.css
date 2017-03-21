@@ -104,6 +104,59 @@ nav > div > a.brand-logo > img {
     display: none;
 }
 
+/**************/
+/* Historique */
+/**************/
+#historique h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#historique ul {
+    margin-left: 25px;
+    margin-bottom: 50px;
+}
+
+#historique ul li {
+    list-style: circle;
+}
+
+#historique .row {
+    margin: 0 auto;
+}
+
+#historique .line div {
+    margin: auto;
+}
+
+#historique .line div:nth-of-type(2) {
+    width: 2px;
+    height: 100%;
+    background-color: #018EA0;
+}
+
+#historique .line div:nth-of-type(1) {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #FFD900;
+}
+
+#historique .year {
+    position: relative;
+    top: 0;
+}
+
+#historique .year p {
+    position: absolute;
+    right: 0px;
+    top: -17px;
+    font-style: italic;
+}
+
+#historique .content {
+    padding: 20px;
+}
 
 /**********/
 /* Equipe */
