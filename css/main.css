@@ -202,3 +202,8 @@ footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"])
 .editRight i{
   cursor:pointer;
 }
+
+.progr{
+  width:100%;
+  height:30px;
+}

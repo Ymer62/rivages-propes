@@ -17,7 +17,7 @@
           <?php
             foreach ($slides as $slide):
           ?>
-          <div data-id="<?= $slide['id'] ?>" class="carousel-item" <?= ($slide['slide'] ? 'style="background-image:url(\'img/\''. $slide['slide'] .');"' : '') ?>>
+          <div data-id="<?= $slide['id'] ?>" class="carousel-item" <?= ($slide['slide'] ? 'style="background-image:url(\'img/homeSliders/'. $slide['slide'] .'\');"' : '') ?>>
               <?= $slide['content'] ?>
           </div>
           <?php
@@ -48,22 +48,23 @@
   <div class="modal-content">
     <h4>Modifier</h4>
     <div class="row">
-      <form class="col s12">
+      <form enctype="multipart/form-data" class="col s12">
         <div class="row">
           <div class="file-field input-field">
             <div class="btn">
               <span>Image</span>
-              <input type="file">
+              <input name="formSlide" type="file">
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" placeholder="">
             </div>
           </div>
           <div class="input-field col s12">
-            <textarea id="upSlideContent" class="materialize-textarea"></textarea>
-            <label class="active" for="upSlideContent">Contenu</label>
+            <textarea name="formSlideContent" id="formSlideContent" class="materialize-textarea"></textarea>
+            <label class="active" for="formSlideContent">Contenu</label>
           </div>
         </div>
+        <input type="hidden" name="id">
       </form>
     </div>
   </div>
@@ -71,9 +72,17 @@
     <a id="btnSubmitSlide" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Appliquer</a>
   </div>
 </div>
+
+<!-- Progress Bar -->
+<div id="progress" class="modal">
+  <div class="modal-content">
+    <progress class="progr"></progress>
+  </div>
+</div>
 <?php endif; ?>
 
 <script type="text/javascript">
+
   // Carousel
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   var timerCarousel;
@@ -86,6 +95,12 @@
   if(ADMIN):
   ?>
   $(document).ready(function(){
+
+    // Progress bar
+    function progressBar(e){
+      if(e.lengthComputable)
+      $('progress').attr({value:e.loaded,max:e.total});
+    }
 
     // Modal carousel
     $('.modal').modal();
@@ -113,7 +128,7 @@
     $('#editSlide').click(function(){
       $('#sliders input[type="file"]').attr('placeholder', 'Laissez vide pour ne pas modifier l\'image');
       $('#sliders label').addClass('active');
-      $('#btnSubmitSlide').data({'id' : $('.carousel .active').data('id')});
+      $('#sliders input[type="hidden"]').val($('.carousel .active').data('id'));
 
       clearInterval(timerCarousel);
       var content = $('.carousel .active').html().trim();
@@ -126,7 +141,7 @@
     $('#addSlide').click(function(){
       $('#sliders input[type="file"]').attr('placeholder', '');
       $('#sliders textarea').val('');
-      $('#btnSubmitSlide').data({'id' : ''});
+      $('#sliders input[type="hidden"]').val('');
       $('#sliders label').removeClass('active');
       $('#sliders').modal('open');
     });
@@ -134,16 +149,28 @@
     // Submit slide
     $('#btnSubmitSlide').click(function(){
       var id = $(this).data('id');
-      var upSlideContent = $('#upSlideContent').val();
+      var formSlideContent = $('#formSlideContent').val();
+      formSlide = $('#formSlide').val();
 
+      var formData = new FormData($('form')[0]);
       $.ajax({
-        type: "POST",
-        url: 'ajax.php?ajax=homeSlide',
-        data: {id:id, content:upSlideContent},
-        success: function(data,textStatus,jqXHR){
-          if(data == 'OK')
-          location.reload();
-        }
+        url:'ajax.php?ajax=homeSlide',
+        type:'POST',
+        xhr: function() {
+          myXhr = $.ajaxSettings.xhr();
+          if(myXhr.upload)
+          myXhr.upload.addEventListener('progress',progressBar, false);
+
+          return myXhr;
+        },
+
+        beforeSend:function(){ $('#progress').modal('open'); },
+        success:function(){ $('#progress').modal('close') },
+        error:{},
+        data:formData,
+        cache:false,
+        contentType:false,
+        processData:false
       });
     });
 
