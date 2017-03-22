@@ -1,6 +1,6 @@
 <?php
 
 define('REWRITING', false);
-define('DEBUG', true);
+define('DEBUG', false);
 
 ?>
