@@ -8,6 +8,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/main.min.css" rel="stylesheet">
+    <link href="css/thomas.css" rel="stylesheet">
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/materialize.min.js" type="text/javascript"></script>
     <script src="js/main.min.js" type="text/javascript"></script>
