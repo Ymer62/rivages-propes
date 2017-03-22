@@ -103,6 +103,13 @@ nav > div > a.brand-logo > img {
 .carousel .indicators {
     display: none;
 }
+.carousel .slideContainer{
+  height:100%;
+}
+.carousel .slideContainerCenter{
+  display:inline-block;
+  margin:auto;
+}
 
 /**************/
 /* Historique */
@@ -251,21 +258,31 @@ footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"])
     }
 }
 
-.editDispRight{
-  position:relative;
-}
+/* Edit carousel */
 .editRight{
   position:absolute;
   z-index:1;
   top:0;
   right:20px;
 }
-
 .editRight i{
   cursor:pointer;
 }
-
 .progr{
   width:100%;
   height:30px;
+}
+
+/* Nav carousel */
+.carousel .navCar{
+  position:absolute;
+  top:calc(50% - 30px);
+  cursor:pointer;
+  z-index:1;
+}
+#slideNext{
+  right:30px;
+}
+#slidePreview{
+  left:30px;
 }

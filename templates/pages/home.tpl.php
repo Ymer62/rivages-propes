@@ -1,15 +1,20 @@
+<?php
+// Home sliders
+$slides = $db->query("SELECT * FROM home_sliders");
+?>
 <div class="container full">
-    <div class="row<?= (ADMIN ? ' editDispRight' : '') ?>">
-        <?php if(ADMIN): ?>
-        <div class="editRight">
-          <i id="addSlide" class="small material-icons">add_circle</i>
-          <i id="editSlide" class="small material-icons">mode_edit</i>
-          <i id="deleteSlide" class="small material-icons">delete</i>
-        </div>
-        <?php endif; ?>
+    <div class="row">
         <div class="carousel carousel-slider center" data-indicators="false">
+          <?php if(ADMIN): ?>
+          <div class="editRight">
+            <i id="addSlide" class="small material-icons">add_circle</i>
+            <i id="editSlide" class="small material-icons">mode_edit</i>
+            <i id="deleteSlide" class="small material-icons">delete</i>
+          </div>
+          <i id="slideNext" class="medium material-icons navCar">keyboard_arrow_right</i>
+          <i id="slidePreview" class="medium material-icons navCar">keyboard_arrow_left</i>
           <?php
-            $slides = $db->query("SELECT * FROM home_sliders");
+            endif;
           ?>
           <div class="carousel-fixed-item center">
               <!-- Fixed content, visible sur toutes les slides -->
@@ -18,7 +23,11 @@
             foreach ($slides as $slide):
           ?>
           <div data-id="<?= $slide['id'] ?>" class="carousel-item" <?= ($slide['slide'] ? 'style="background-image:url(\'img/homeSliders/'. $slide['slide'] .'\');"' : '') ?>>
-              <?= $slide['content'] ?>
+            <div class="valign-wrapper slideContainer">
+              <div class="slideContainerCenter">
+                <?= $slide['content'] ?>
+              </div>
+            </div>
           </div>
           <?php
             endforeach;
@@ -83,27 +92,36 @@
 
 <script type="text/javascript">
 
-  // Carousel
-  var timerCarousel;
-
-  function carouselPlay(){
-    clearInterval(timerCarousel);
-    timerCarousel = setInterval(function() { $('.carousel').carousel('next'); }, 3500);
-  }
-
-  function carouselInit(){
-    try{
-      $('.carousel.carousel-slider').carousel({fullWidth: true});
-    } catch(e) {}
-  }
-
-  carouselInit();
-  carouselPlay();
-
-  <?php
-  if(ADMIN):
-  ?>
   $(document).ready(function(){
+
+    // Carousel
+    var timerCarousel;
+
+    function carouselSize(){
+      $('.carousel').height($(window).height() - $('.nav-wrapper').height());
+    }
+
+    $(window).resize(function(){
+      carouselSize();
+    });
+    carouselSize();
+
+    function carouselInit(){
+      try{
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+      } catch(e) {}
+    }
+
+    function carouselPlay(){
+      clearInterval(timerCarousel);
+      timerCarousel = setInterval(function() { $('.carousel').carousel('next'); }, 3500);
+    }
+
+    carouselInit();
+
+    <?php
+    if(ADMIN):
+    ?>
 
     // Progress bar
     function progressBar(e){
@@ -111,12 +129,20 @@
       $('progress').attr({value:e.loaded,max:e.total});
     }
 
+    // Nav carousel
+    $('#slideNext').click(function(){
+      $('.carousel').carousel('next');
+    });
+    $('#slidePreview').click(function(){
+      $('.carousel').carousel('prev');
+    });
+
     // Modal carousel
     $('.modal').modal();
 
     // Delete slide
     $('#deleteSlide').click(function(){
-      var slide = $('.carousel .active');
+      var slide = $('.carousel-item.active');
       var id = slide.data('id');
       var dialog =  confirm('Voulez-vous vraiment supprimer cette élément du carousel ?');
 
@@ -144,10 +170,9 @@
       $('form')[0].reset();
       $('#sliders input[type="file"]').attr('placeholder', 'Laissez vide pour ne pas modifier l\'image');
       $('#sliders label').addClass('active');
-      $('#sliders input[type="hidden"]').val($('.carousel .active').data('id'));
+      $('#sliders input[type="hidden"]').val($('.carousel-item.active').data('id'));
 
-      clearInterval(timerCarousel);
-      var content = $('.carousel .active').html().trim();
+      var content = $('.carousel-item.active .slideContainerCenter').html().trim();
 
       $('#sliders textarea').val(content);
       $('#sliders').modal('open');
@@ -184,19 +209,33 @@
 
         beforeSend:function(){ $('#progress').modal('open'); },
         success:function(data,textStatus,jqXHR){
+          // Edit
           if(id){
-            slide.css({'background-image':'url("img/homeSliders/'+(data == 'OK' ? '' : data)+'")'});
-            slide.html($('#formSlideContent').val());
+            if(data != 'OK')
+            slide.css({'background-image':'url("img/homeSliders/'+data+'")'});
+            slide.children('.slideContainer').children('.slideContainerCenter').html($('#formSlideContent').val());
           }
+          // Add
           else{
-            var newSlide = $(".carousel-item").first().clone().appendTo(".carousel");
-            newSlide.css({'background-image':'url("img/homeSliders/'+(data == 'OK' ? '' : data)+'")'});
-            newSlide.html($('#formSlideContent').val());
+            var Data = jQuery.parseJSON(data);
+            $(".carousel-item.active").removeClass('active');
+
+            var bg = Data[1] ? ' style="background-image:url(img/homeSliders/'+Data[1]+')"' : '';
+            var newSlide = '<div data-id="'+(Data[0] ? Data[0] : Data)+'" class="carousel-item active"'+bg+'>\
+                        <div class="valign-wrapper slideContainer">\
+                          <div class="slideContainerCenter">\
+                          '+$('#formSlideContent').val()+'\
+                          </div>\
+                        </div>\
+                      </div>';
+
+            $('.carousel').append(newSlide);
 
             if($('.carousel.carousel-slider').hasClass('initialized'))
             $('.carousel.carousel-slider').removeClass('initialized');
 
             carouselInit();
+            $('.carousel').carousel('next', $(".carousel-item").length - 1);
           }
 
           $('#progress').modal('close');
@@ -209,17 +248,21 @@
       });
     });
 
-    // Close modal
-    $('#sliders').modal({complete: function() { carouselPlay(); }});
+    <?php
+    else:
+    ?>
+    carouselInit();
+    carouselPlay();
+    <?php
+    endif;
+    ?>
 
   });
-  <?php
-  endif;
-  ?>
+
 </script>
 
 <?php
 
-// $debug->arr(array('$pageData' => $pageData));
+$debug->arr(array('$pageData' => $pageData));
 
 ?>

@@ -69,12 +69,14 @@ if(ADMIN){
           'content' => $content
         ));
 
-        echo $newName;
+        $arr = array($db->lastInsertId(), $newName);
+        echo json_encode($arr);
       }
     }
     else{
       $db->query('INSERT INTO home_sliders(content) value(:content)', array('content' => $content));
-      echo 'OK';
+
+      echo $db->lastInsertId();
     }
   }
 
