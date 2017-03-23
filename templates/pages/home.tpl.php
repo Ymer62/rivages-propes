@@ -238,7 +238,6 @@ $slides = $db->query("SELECT * FROM home_sliders");
     <?php
     else:
     ?>
-    carouselInit();
     carouselPlay();
     <?php
     endif;
