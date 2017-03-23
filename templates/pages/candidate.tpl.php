@@ -1,7 +1,5 @@
-<pre>
 <?php
 
-var_dump($pageData);
+$debug->arr(array('$pageData' => $pageData));
 
 ?>
-</pre>

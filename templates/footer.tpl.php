@@ -3,12 +3,9 @@
     <div class="row">
       <div class="col s12">
         <img src="img/sponsors/haut_de_france.png" alt="L'Europe s'engage en hauts-de-france">
+        <img src="img/sponsors/repuFR.png" alt="République française">
+        <img src="img/sponsors/logo_hdf.png" alt="Logo région haut-de-france">
         <img src="img/sponsors/ue.png" alt="Drapeau de l'union européene">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
-        <img src="img/placeholder.jpg" alt="placeholder">
       </div>
     </div>
   </div>
@@ -21,9 +18,9 @@
             </div>
             <div class="col s12 m4">
                 <?php if (ADMIN): ?>
-                    <a href="?page=logout&noData=true">Déconnexion</a>
+                    <a href="<?= $path->link('logout', false) ?>">Déconnexion</a>
                 <?php else: ?>
-                    <a href="?page=login&noData=true">Administration</a>
+                    <a href="<?= $path->link('login', false) ?>">Administration</a>
                 <?php endif; ?>
             </div>
         </div>

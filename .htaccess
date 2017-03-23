@@ -1,0 +1,4 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^form-([a-zA-Z\-]+)$ index.php?page=$1&noData=true
+RewriteRule ^([a-zA-Z\-]+)$ index.php?page=$1
