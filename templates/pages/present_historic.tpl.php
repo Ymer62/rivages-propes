@@ -27,7 +27,7 @@
       endforeach;
     ?>
     <div class="row">
-        <div class="col s1 year">Aujourd'hui</div>
+        <div class="col s1 year"><p style="right: -8px; top: -18px">Aujourd'hui</p></div>
         <div class="col s1 line">
             <div></div>
         </div>
