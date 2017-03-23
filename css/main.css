@@ -52,14 +52,13 @@ nav ul a,
 
 /* Buttons */
 .btn,
-.side-nav a.btn {
+.side-nav a.btn,
+.btn:hover,
+.side-nav a.btn:hover,
+.btn:active,
+.side-nav a.btn:active {
     background-color: #FFD900;
     color: #333;
-}
-
-.btn:hover,
-.side-nav a.btn:hover {
-    background-color: #FFD900;
 }
 
 /* Logo */
