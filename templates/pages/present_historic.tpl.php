@@ -1,35 +1,30 @@
-<?php
-
-$histoQuery = $db->query("SELECT * FROM page_present_historic WHERE id>1 ORDER BY year");
-
-?>
-
 <div class="container" id="historique">
 
     <div class="row">
-        <h1><?php echo $pageData['title'] ?></h1>
+        <h1><?= $pageData[0]['title'] ?></h1>
         <p>
-            <?php echo $pageData['text'] ?>
+            <?= $pageData[0]['text'] ?>
         </p>
     </div>
 
     <?php
-
-    for ($i=0; $i < count($histoQuery); $i++) {
-        echo '<div class="row">';
-            echo '<div class="col s1 year">';
-                echo '<p>'.$histoQuery[$i]['year'].'</p>';
-            echo '</div>';
-            echo '<div class="col s1 line">';
-                echo '<div></div><div></div>';
-            echo '</div>';
-            echo '<div class="col s10 content">';
-                echo '<h3>'.$histoQuery[$i]['title'].'</h3>';
-                echo '<p>'.$histoQuery[$i]['text'].'</p>';
-            echo '</div>';
-        echo '</div>';
-    }
-
+      unset($pageData[0]);
+      foreach ($pageData as $data):
+    ?>
+        <div class="row">
+            <div class="col s1 year">
+                <p><?= $data['year'] ?></p>
+            </div>
+            <div class="col s1 line">
+                <div></div><div></div>
+            </div>
+            <div class="col s10 content">
+                <h3><?= $data['title'] ?></h3>
+                <p><?= $data['text'] ?></p>
+            </div>
+        </div>
+    <?php
+      endforeach;
     ?>
     <div class="row">
         <div class="col s1 year"><p style="right: -8px; top: -18px">Aujourd'hui</p></div>
@@ -60,9 +55,6 @@ $histoQuery = $db->query("SELECT * FROM page_present_historic WHERE id>1 ORDER B
 
 <?php
 
-$debug->arr(array(
-    '$pageData' => $pageData,
-    '$histoQuery' => $histoQuery
-));
+$debug->arr(array('$pageData' => $pageData));
 
 ?>

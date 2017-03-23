@@ -2,6 +2,7 @@
 
 // Forms
 class form{
+  // Login
   public function login($db){
     if(isset($_POST['login']) && isset($_POST['password'])){
       $user =  $db->row(
