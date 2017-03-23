@@ -108,7 +108,7 @@ nav > div > a.brand-logo > img {
 .carousel .slideContainerCenter{
   display:inline-block;
   margin:auto;
-  text-shadow:0 0 4px black;
+  text-shadow:0 0 2px black;
   color:white;
   font-size:2.5em;
 }
@@ -393,6 +393,7 @@ footer.page-footer .sponsor{
   left:30px;
 }
 
+/* MSG FLASH */
 #msgFlash{
   position:fixed;
   top:150px;
