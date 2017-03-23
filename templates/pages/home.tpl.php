@@ -61,7 +61,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
         <div class="row">
           <div class="file-field input-field">
             <div class="btn">
-              <span>Image</span>
+              <span>Fond</span>
               <input name="formSlide" type="file">
             </div>
             <div class="file-path-wrapper">
