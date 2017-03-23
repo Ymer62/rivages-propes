@@ -230,9 +230,19 @@ nav > div > a.brand-logo > img {
 
 
 /* Footer */
+footer.page-footer i{
+  cursor:pointer;
+}
+
 footer.page-footer {
     background-color: #DDD;
     text-align: center;
+}
+
+footer.page-footer .delSponsor {
+  position:absolute;
+  top:5px;
+  right:5px;
 }
 
 footer.page-footer img {
@@ -253,6 +263,11 @@ footer.page-footer .footer-copyright {
 footer.page-footer .footer-copyright,
 footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"]) {
     color: #000;
+}
+
+footer.page-footer .sponsor{
+  position:relative;
+  display:inline-block;
 }
 
 @media all and (min-width: 600px) {

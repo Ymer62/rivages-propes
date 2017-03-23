@@ -1,12 +1,34 @@
 <footer class="page-footer">
   <div class="container">
     <div class="row">
-      <div class="col s12">
-        <img src="img/sponsors/haut_de_france.png" alt="L'Europe s'engage en hauts-de-france">
-        <img src="img/sponsors/repuFR.png" alt="République française">
-        <img src="img/sponsors/logo_hdf.png" alt="Logo région haut-de-france">
-        <img src="img/sponsors/ue.png" alt="Drapeau de l'union européene">
+      <div id="sponsorsContainer" class="col s12">
+        <?php
+        $sponsors = $db->query("SELECT * FROM sponsors");
+        foreach ($sponsors as $sponsor):
+          if(ADMIN):
+        ?>
+          <div class="sponsor">
+            <i data-id="<?= $sponsor['id'] ?>" class="small material-icons delSponsor">delete</i>
+            <img src="img/sponsors/<?= $sponsor['img'] ?>" alt="<?= $sponsor['alt'] ?>">
+          </div>
+          <?php
+          else:
+          ?>
+          <img src="img/sponsors/<?= $sponsor['img'] ?>" alt="<?= $sponsor['alt'] ?>">
+          <?php
+          endif;
+          ?>
+        <?php
+        endforeach;
+        ?>
       </div>
+      <?php
+      if(ADMIN):
+      ?>
+      <i id="addSponsor" class="small material-icons">add_circle</i>
+      <?php
+      endif;
+      ?>
     </div>
   </div>
   <div class="footer-copyright">
@@ -30,8 +52,130 @@
   </div>
 </footer>
 
+<?php if(ADMIN): ?>
+<!-- Progress Bar -->
+<div id="progress" class="modal">
+  <div class="modal-content">
+    <progress class="progr"></progress>
+  </div>
+</div>
 
+<!-- Modal sponsors -->
+<div id="sponsors" class="modal">
+  <div class="modal-content">
+    <h4>Ajouter un sponsor</h4>
+    <div class="row">
+      <form id="formSponsors" enctype="multipart/form-data" class="col s12">
+        <div class="row">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Image</span>
+              <input name="formSponsor" type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="">
+            </div>
+          </div>
+          <div class="input-field col s12">
+            <textarea name="formSponsorAlt" id="formSponsorAlt" class="materialize-textarea"></textarea>
+            <label class="active" for="formSponsorAlt">Alt</label>
+          </div>
+        </div>
+        <input type="hidden" name="id">
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a id="btnSubmitSponsor" href="#!" class="waves-effect waves-green btn-flat">Appliquer</a>
+  </div>
+</div>
 
+<script type="text/javascript">
+  // Progress bar
+  function progressBar(e){
+    if(e.lengthComputable)
+    $('progress').attr({value:e.loaded,max:e.total});
+  }
+
+  // Sponsors
+  $(document).ready(function(){
+
+    // Add
+    $('#addSponsor').click(function(){
+      $('#formSponsors')[0].reset();
+      $('#sponsors').modal('open');
+    });
+
+    // Submit
+    $('#btnSubmitSponsor').click(function(){
+      if($('input[name="formSponsor"]').val() == ''){
+        alert('Vous n\'avez pas sélectionné d\'image !');
+        return;
+      }
+
+      var id = $('#sponsors input[type="hidden"]').val();
+      var formSponsorAlt = $('#formSponsorAlt').val();
+      var formData = new FormData($('#formSponsors')[0]);
+
+      $.ajax({
+        url:'ajax.php?ajax=addSponsor',
+        type:'POST',
+        xhr: function() {
+          myXhr = $.ajaxSettings.xhr();
+          if(myXhr.upload)
+          myXhr.upload.addEventListener('progress',progressBar, false);
+
+          return myXhr;
+        },
+
+        beforeSend:function(){ $('#progress').modal('open'); },
+        success:function(data,textStatus,jqXHR){
+          var Data = jQuery.parseJSON(data);
+
+          var newSponsor = '<div class="sponsor">\
+                      <i data-id="'+Data[0]+'" class="small material-icons delSponsor">delete</i>\
+                      <img src="img/sponsors/'+Data[1]+'" alt="'+Data[2]+'">\
+                    </div>';
+
+          $('#sponsorsContainer').append(newSponsor);
+
+          $('#progress').modal('close');
+          $('#sponsors').modal('close');
+        },
+        error:{},
+        data:formData,
+        cache:false,
+        contentType:false,
+        processData:false
+      });
+    });
+
+    // Delete
+    $(document).on('click', '.delSponsor', function(){
+      var sponsor = $(this).parent();
+      var id = $(this).data('id');
+      var dialog = confirm('Voulez-vous vraiment supprimer ce sponsor ?');
+
+      if(dialog) {
+        $.ajax({
+          type: "POST",
+          url: 'ajax.php?ajax=deleteSponsor',
+          data: {id:id},
+          success: function(data,textStatus,jqXHR){
+            if(data == 'OK')
+            sponsor.remove();
+          }
+        });
+      }
+    });
+
+    // Modal carousel
+    $('.modal').modal();
+
+  });
+</script>
+
+<?php endif; ?>
 
 </body>
 </html>

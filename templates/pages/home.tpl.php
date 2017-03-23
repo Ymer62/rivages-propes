@@ -55,9 +55,9 @@ $slides = $db->query("SELECT * FROM home_sliders");
 <!-- Modal sliders -->
 <div id="sliders" class="modal">
   <div class="modal-content">
-    <h4>Modifier</h4>
+    <h4></h4>
     <div class="row">
-      <form enctype="multipart/form-data" class="col s12">
+      <form id="formSliders" enctype="multipart/form-data" class="col s12">
         <div class="row">
           <div class="file-field input-field">
             <div class="btn">
@@ -82,12 +82,6 @@ $slides = $db->query("SELECT * FROM home_sliders");
   </div>
 </div>
 
-<!-- Progress Bar -->
-<div id="progress" class="modal">
-  <div class="modal-content">
-    <progress class="progr"></progress>
-  </div>
-</div>
 <?php endif; ?>
 
 <script type="text/javascript">
@@ -123,12 +117,6 @@ $slides = $db->query("SELECT * FROM home_sliders");
     if(ADMIN):
     ?>
 
-    // Progress bar
-    function progressBar(e){
-      if(e.lengthComputable)
-      $('progress').attr({value:e.loaded,max:e.total});
-    }
-
     // Nav carousel
     $('#slideNext').click(function(){
       $('.carousel').carousel('next');
@@ -137,14 +125,11 @@ $slides = $db->query("SELECT * FROM home_sliders");
       $('.carousel').carousel('prev');
     });
 
-    // Modal carousel
-    $('.modal').modal();
-
     // Delete slide
     $('#deleteSlide').click(function(){
       var slide = $('.carousel-item.active');
       var id = slide.data('id');
-      var dialog =  confirm('Voulez-vous vraiment supprimer cette élément du carousel ?');
+      var dialog =  confirm('Voulez-vous vraiment supprimer ce slide du carousel ?');
 
       if(dialog) {
         $.ajax({
@@ -167,7 +152,8 @@ $slides = $db->query("SELECT * FROM home_sliders");
 
     // Edit slide
     $('#editSlide').click(function(){
-      $('form')[0].reset();
+      $('#formSliders')[0].reset();
+      $('#sliders h4').html('Modifier le slide');
       $('#sliders input[type="file"]').attr('placeholder', 'Laissez vide pour ne pas modifier l\'image');
       $('#sliders label').addClass('active');
       $('#sliders input[type="hidden"]').val($('.carousel-item.active').data('id'));
@@ -180,7 +166,8 @@ $slides = $db->query("SELECT * FROM home_sliders");
 
     // Add slide
     $('#addSlide').click(function(){
-      $('form')[0].reset();
+      $('#formSliders')[0].reset();
+      $('#sliders h4').html('Ajouter un slide');
       $('#sliders input[type="file"]').attr('placeholder', '');
       $('#sliders textarea').val('');
       $('#sliders input[type="hidden"]').val('');
@@ -195,7 +182,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
       var formSlideContent = $('#formSlideContent').val();
       formSlide = $('#formSlide').val();
 
-      var formData = new FormData($('form')[0]);
+      var formData = new FormData($('#formSliders')[0]);
       $.ajax({
         url:'ajax.php?ajax=homeSlide',
         type:'POST',
