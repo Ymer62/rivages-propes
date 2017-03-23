@@ -39,8 +39,23 @@ $slides = $db->query("SELECT * FROM home_sliders");
 <div class="container" id="home">
     <div class="row">
         <div class="col s12">
-            <h1><?php echo $pageData['title'] ?></h1>
+          <?php
+          if(ADMIN):
+          ?>
+            <h1 data-page="<?= PAGE ?>">
+              <span contenteditable="true">
+                <?php echo $pageData['title'] ?>
+              </span>
+              <i class="small material-icons editTitle">mode_edit</i>
+            </h1>
             <p class="flow-text"><?php echo $pageData['text'] ?></p>
+          <?php
+          else:
+          ?>
+            <h1><?= $pageData['title'] ?></h1>
+          <?php
+          endif;
+          ?>
         </div>
         <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
