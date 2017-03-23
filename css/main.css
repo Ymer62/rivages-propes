@@ -392,3 +392,20 @@ footer.page-footer .sponsor{
 #slidePreview{
   left:30px;
 }
+
+#msgFlash{
+  position:fixed;
+  top:150px;
+  width:100%;
+  text-align:center;
+  z-index:10;
+  display:none;
+}
+#msgFlash div{
+  padding:15px 60px 15px 60px;
+  display:inline-block;
+  background-color:#018EA0;
+  color:white;
+  border-radius:8px;
+  font-size:1.5em;
+}
