@@ -162,7 +162,7 @@
           url: 'ajax.php?ajax=deleteSponsor',
           data: {id:id},
           success: function(data,textStatus,jqXHR){
-            if(data == 'OK')
+            if(data.trim() == 'OK')
             sponsor.remove();
           }
         });

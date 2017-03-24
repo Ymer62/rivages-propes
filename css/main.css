@@ -87,6 +87,25 @@ nav > div > a.brand-logo > img {
     text-align: center;
 }
 
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span{
+  outline:none;
+}
+
+h1 i,
+h2 i,
+h3 i,
+h4 i,
+h5 i,
+h6 i{
+  visibility:hidden;
+  cursor:pointer;
+}
+
 /* Carousel */
 .carousel-item {
     background-position: center center;
@@ -108,7 +127,7 @@ nav > div > a.brand-logo > img {
 .carousel .slideContainerCenter{
   display:inline-block;
   margin:auto;
-  text-shadow:0 0 4px black;
+  text-shadow:0 0 2px black;
   color:white;
   font-size:2.5em;
 }
@@ -367,4 +386,22 @@ footer.page-footer .sponsor{
 }
 #slidePreview{
   left:30px;
+}
+
+/* MSG FLASH */
+#msgFlash{
+  position:fixed;
+  top:150px;
+  width:100%;
+  text-align:center;
+  z-index:10;
+  display:none;
+}
+#msgFlash div{
+  padding:15px 60px 15px 60px;
+  display:inline-block;
+  background-color:#018EA0;
+  color:white;
+  border-radius:8px;
+  font-size:1.5em;
 }

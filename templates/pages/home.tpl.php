@@ -39,8 +39,23 @@ $slides = $db->query("SELECT * FROM home_sliders");
 <div class="container" id="home">
     <div class="row">
         <div class="col s12">
-            <h1><?php echo $pageData['title'] ?></h1>
-            <p class="flow-text"><?php echo $pageData['text'] ?></p>
+          <?php
+          if(ADMIN):
+          ?>
+            <h1 data-page="<?= PAGE ?>">
+              <span contenteditable="true">
+                <?php echo $pageData['title'] ?>
+              </span>
+              <i class="small material-icons editTitle">mode_edit</i>
+            </h1>
+          <?php
+          else:
+          ?>
+            <h1><?= $pageData['title'] ?></h1>
+          <?php
+          endif;
+          ?>
+          <p class="flow-text"><?php echo $pageData['text'] ?></p>
         </div>
         <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
@@ -137,7 +152,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
           url: 'ajax.php?ajax=deleteHomeSlide',
           data: {id:id},
           success: function(data,textStatus,jqXHR){
-            if(data == 'OK'){
+            if(data.trim() == 'OK'){
               slide.remove();
 
               if($('.carousel.carousel-slider').hasClass('initialized'))
@@ -198,7 +213,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
         success:function(data,textStatus,jqXHR){
           // Edit
           if(id){
-            if(data != 'OK')
+            if(data.trim() != 'OK')
             slide.css({'background-image':'url("img/homeSliders/'+data+'")'});
             slide.children('.slideContainer').children('.slideContainerCenter').html($('#formSlideContent').val());
           }
@@ -238,7 +253,6 @@ $slides = $db->query("SELECT * FROM home_sliders");
     <?php
     else:
     ?>
-    carouselInit();
     carouselPlay();
     <?php
     endif;
