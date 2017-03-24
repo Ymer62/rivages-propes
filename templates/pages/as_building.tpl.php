@@ -11,16 +11,16 @@
 <div class="row">
 
       <div class="col l3 m4 s12">
-        <img class="materialboxed" width="650" id="" src="img/Bâtiment/_DSC0858.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Bâtiment/placeholder.jpg" alt="">
       </div>
       <div class="col l3 m4 s12">
-        <img class="materialboxed" width="650" id="" src="img/Bâtiment/_DSC0885.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Bâtiment/placeholder.jpg" alt="">
       </div>
       <div class="col l3 m4 s12">
-        <img class="materialboxed" width="650" id="" src="img/Bâtiment/_DSC0974.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Bâtiment/placeholder.jpg" alt="">
       </div>
       <div class="col l3 m4 s12">
-        <img class="materialboxed" width="650" id="" src="img/Bâtiment/_DSC1049r.jpg" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Bâtiment/placeholder.jpg" alt="">
       </div>
     </div>
   </div>

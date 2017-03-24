@@ -10,17 +10,17 @@
 
   <div class="row">
       <div class="col l3 m4 s12 ">
-        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/_DSC0990.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/placeholder.jpg" alt="">
       </div>
 
       <div class="col l3 m4 s12 ">
-        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/_DSC0994r.jpg" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/placeholder.jpg" alt="">
       </div>
       <div class="col l3 m4 s12 ">
-        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/_DSC0999.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/placeholder.jpg" alt="">
       </div>
       <div class="col l3 m4 s12">
-        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/IMG_2703.JPG" alt="">
+        <img class="materialboxed" width="650" id="" src="img/Mobilité-douce/placeholder.jpg" alt="">
       </div>
   </div>
 

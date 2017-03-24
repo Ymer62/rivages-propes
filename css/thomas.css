@@ -92,3 +92,15 @@ width: 100%;
   border: solid #018EA0 5px;
   background-color: #018EA0;
   color: white;
+}
+/*--------------------Évènements-----------------------*/
+
+#evenements div h3{
+  margin-top: 10%;
+  margin-bottom: 15%;
+  text-align: center;
+  font-weight: bold;
+  border: solid #018EA0 5px;
+  background-color: #018EA0;
+  color: white;
+}
