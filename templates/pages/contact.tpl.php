@@ -4,7 +4,22 @@ $debug->arr(array('$pageData' => $pageData));
 
 ?>
 <div id="content">
-       <h1> Contactez nous </h1>
+  <?php
+  if(ADMIN):
+  ?>
+    <h1 data-page="<?= PAGE ?>">
+      <span contenteditable="true">
+        <?php echo $pageData['title'] ?>
+      </span>
+      <i class="small material-icons editTitle">mode_edit</i>
+    </h1>
+  <?php
+  else:
+  ?>
+    <h1><?= $pageData['title'] ?></h1>
+  <?php
+  endif;
+  ?>
 
 <div id="contact" class="row col s10">
 

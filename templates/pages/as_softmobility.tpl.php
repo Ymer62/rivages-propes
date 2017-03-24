@@ -3,7 +3,22 @@
   <div class="row">
     <div class="col s12 ">
       <div class="  col l6 offset-l3 title">
-        <h3>Mobilité douce</h3>
+        <?php
+        if(ADMIN):
+        ?>
+          <h3 data-page="<?= PAGE ?>">
+            <span contenteditable="true">
+              <?php echo $pageData['title'] ?>
+            </span>
+            <i class="small material-icons editTitle">mode_edit</i>
+          </h3>
+        <?php
+        else:
+        ?>
+          <h3><?= $pageData['title'] ?></h3>
+        <?php
+        endif;
+        ?>
       </div>
     </div>
   </div>
