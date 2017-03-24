@@ -229,14 +229,6 @@ nav > div > a.brand-logo > img {
     font-style: normal;
 }
 
-html {
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    -ms-user-select: none;
-        user-select: none;
-}
-
 h1 {
     font-family: 'Questrial', Verdana, sans-serif;
     text-align: center;
