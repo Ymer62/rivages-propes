@@ -1,21 +1,10 @@
 /*-------------Accompagnement------------------*/
 
-<<<<<<< HEAD
-#accompagnement div h1{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-=======
 #imgRdv {
     float: left;
     height: auto;
     width: 40%;
     margin: 0 10px;
->>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
 }
 
 #accompagnement div p {
@@ -36,27 +25,9 @@
 
 
 /*-----------------environnement--------------*/
-
-<<<<<<< HEAD
-#environnement div img{
-height: auto;
-width: 100%;
-margin: 4%;
-}
-
-#environnement div h1{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-=======
 #environnement div img {
     height: auto;
     width: 100%;
->>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
 }
 
 
@@ -67,46 +38,9 @@ margin: 4%;
     width: 100%;
 }
 
-<<<<<<< HEAD
-#batiment div h1{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-}
-=======
->>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
-
 /*------------------Mobilité-douce---------------------*/
 
 #mobilite-douce div img {
     height: auto;
     width: 100%;
 }
-<<<<<<< HEAD
-
-#mobilite-douce div h1{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-}
-/*--------------------Évènements-----------------------*/
-
-#evenements div h1{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-}
-=======
->>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
