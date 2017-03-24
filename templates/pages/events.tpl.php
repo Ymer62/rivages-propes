@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col s12 ">
       <div class="col l6 offset-l3 title">
-        <h3>Événements</h3>
+        <h1>Événements</h1>
       </div>
 </div>
 </div>
