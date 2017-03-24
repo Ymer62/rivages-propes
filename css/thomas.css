@@ -1,94 +1,48 @@
-
 /*-------------Accompagnement------------------*/
 
-#accompagnement div h3{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
+#imgRdv {
+    float: left;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
 }
 
-#imgRdv{
-  float: left;
-  height: auto;
-  width: 40%;
-  margin: 0 10px;
+#accompagnement div p {
+    text-align: justify;
 }
 
-#accompagnement div p{
-  text-align: justify;
+#imgchantier {
+    display: block;
+    float: right;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
 }
 
-.one{
-  margin: 5%;
-  text-align: justify;
-  text-align-last: center;
+.one p, .one h4 {
+    text-align: right !important;
 }
 
-#imgchantier{
-  display: block;
-  float: right!important;
-  height: auto;
-  width: 40%;
-  margin: 0 10px;
-}
-
-.one p{
-  padding-top: 10%;
-}
 
 /*-----------------environnement--------------*/
 
-#environnement div img{
-height: auto;
-width: 100%;
-margin: 4%;
-}
-
-#environnement div h3{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
+#environnement div img {
+    height: auto;
+    width: 100%;
 }
 
 
 /*-------------------Bâtiment-------------------*/
 
-
-#batiment div img{
-height: auto;
-width: 100%;
+#batiment div img {
+    height: auto;
+    width: 100%;
 }
 
-#batiment div h3{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
-}
 
 /*------------------Mobilité-douce---------------------*/
 
-#mobilite-douce div img{
-height: auto;
-width: 100%;
+#mobilite-douce div img {
+    height: auto;
+    width: 100%;
 }
-
-#mobilite-douce div h3{
-  margin-top: 10%;
-  margin-bottom: 15%;
-  text-align: center;
-  font-weight: bold;
-  border: solid #018EA0 5px;
-  background-color: #018EA0;
-  color: white;
