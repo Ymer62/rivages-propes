@@ -1,6 +1,6 @@
-
 /*-------------Accompagnement------------------*/
 
+<<<<<<< HEAD
 #accompagnement div h1{
   margin-top: 10%;
   margin-bottom: 15%;
@@ -9,39 +9,35 @@
   border: solid #018EA0 5px;
   background-color: #018EA0;
   color: white;
+=======
+#imgRdv {
+    float: left;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
+>>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
 }
 
-#imgRdv{
-  float: left;
-  height: auto;
-  width: 40%;
-  margin: 0 10px;
+#accompagnement div p {
+    text-align: justify;
 }
 
-#accompagnement div p{
-  text-align: justify;
+#imgchantier {
+    display: block;
+    float: right;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
 }
 
-.one{
-  margin: 5%;
-  text-align: justify;
-  text-align-last: center;
+.one p, .one h4 {
+    text-align: right !important;
 }
 
-#imgchantier{
-  display: block;
-  float: right!important;
-  height: auto;
-  width: 40%;
-  margin: 0 10px;
-}
-
-.one p{
-  padding-top: 10%;
-}
 
 /*-----------------environnement--------------*/
 
+<<<<<<< HEAD
 #environnement div img{
 height: auto;
 width: 100%;
@@ -56,17 +52,22 @@ margin: 4%;
   border: solid #018EA0 5px;
   background-color: #018EA0;
   color: white;
+=======
+#environnement div img {
+    height: auto;
+    width: 100%;
+>>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
 }
 
 
 /*-------------------Bâtiment-------------------*/
 
-
-#batiment div img{
-height: auto;
-width: 100%;
+#batiment div img {
+    height: auto;
+    width: 100%;
 }
 
+<<<<<<< HEAD
 #batiment div h1{
   margin-top: 10%;
   margin-bottom: 15%;
@@ -76,13 +77,16 @@ width: 100%;
   background-color: #018EA0;
   color: white;
 }
+=======
+>>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
 
 /*------------------Mobilité-douce---------------------*/
 
-#mobilite-douce div img{
-height: auto;
-width: 100%;
+#mobilite-douce div img {
+    height: auto;
+    width: 100%;
 }
+<<<<<<< HEAD
 
 #mobilite-douce div h1{
   margin-top: 10%;
@@ -104,3 +108,5 @@ width: 100%;
   background-color: #018EA0;
   color: white;
 }
+=======
+>>>>>>> e2bda7a306da5e7c94329b073749f392d2cfe8ff
