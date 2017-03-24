@@ -48,7 +48,6 @@ $slides = $db->query("SELECT * FROM home_sliders");
               </span>
               <i class="small material-icons editTitle">mode_edit</i>
             </h1>
-            <p class="flow-text"><?php echo $pageData['text'] ?></p>
           <?php
           else:
           ?>
@@ -56,6 +55,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
           <?php
           endif;
           ?>
+          <p class="flow-text"><?php echo $pageData['text'] ?></p>
         </div>
         <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
@@ -152,7 +152,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
           url: 'ajax.php?ajax=deleteHomeSlide',
           data: {id:id},
           success: function(data,textStatus,jqXHR){
-            if(data == 'OK'){
+            if(data.trim() == 'OK'){
               slide.remove();
 
               if($('.carousel.carousel-slider').hasClass('initialized'))
@@ -213,7 +213,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
         success:function(data,textStatus,jqXHR){
           // Edit
           if(id){
-            if(data != 'OK')
+            if(data.trim() != 'OK')
             slide.css({'background-image':'url("img/homeSliders/'+data+'")'});
             slide.children('.slideContainer').children('.slideContainerCenter').html($('#formSlideContent').val());
           }
