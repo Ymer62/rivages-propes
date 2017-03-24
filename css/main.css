@@ -305,6 +305,54 @@ h1:before {
   margin-top:50px;
   text-align: center;
 }
+      /***************/
+      /** CANDIDATE **/
+      /***************/
+
+      .candidate{
+        margin: 60px;
+        margin-left: 280px;
+      	width: 750px;
+      }
+      /*h1{
+      	color:black;
+      	font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
+      	font-weight:bold;
+      	text-align: center;
+      }*/
+      .candidate h2{
+      	color:orange;
+      	font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
+      	font-weight:bold;
+      	text-align: center;
+      }
+      .candidate form{
+      	border: 1px solid orange;
+      	padding:30px;
+      	background-color:orange;
+      }
+
+      .candidate *::before, *::after{
+        box-sizing: content-box;
+      }
+
+      .candidate p{
+        color: black;
+        padding: 15px;
+      	width:400px;
+      	padding-left: 305px;
+      	text-align: left;
+      	vertical-align: top;
+      }
+      .candidate label.left{
+        color: black;
+      	float: left;
+      	margin-left: -305px;
+      	font-weight:bold;
+      }
+      #commentaires{
+        box-sizing: 250px !important;
+      }
 
 
 /* Footer */
