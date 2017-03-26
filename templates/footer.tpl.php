@@ -40,7 +40,7 @@
             </div>
             <div class="col s12 m4">
                 <?php if (ADMIN): ?>
-                    <a href="<?= $path->link('logout', false) ?>">Déconnexion</a>
+                    <a href="<?= $path->link('panel', false) ?>">Panneau d'administration</a>
                 <?php else: ?>
                     <a href="<?= $path->link('login', false) ?>">Administration</a>
                 <?php endif; ?>

@@ -17,14 +17,15 @@ $dispatcher = array(
   'presentation-equipe' => 'present_team',
   'login' => 'login',
   'logout' => 'logout',
+  'panel' => 'panel',
   'home' => 'home'
 );
 
 // Page name
-define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : 'home');
+define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : '404');
 
 // Page data
-if(!G_noData){
+if(!G_noData && PAGE != '404'){
   $pageData = $db->query('SELECT * FROM page_' . PAGE);
   if (count($pageData) == 1) $pageData = current($pageData);
 }
