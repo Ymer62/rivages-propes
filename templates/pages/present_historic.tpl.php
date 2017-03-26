@@ -1,10 +1,13 @@
 <div class="container" id="historique">
 
     <div class="row">
-        <h1><?= $pageData[0]['title'] ?></h1>
-        <p>
-            <?= $pageData[0]['text'] ?>
-        </p>
+        <div class="col s12">
+            <h1><?= $pageData[0]['title'] ?></h1>
+            <p>
+                <?= $pageData[0]['text'] ?>
+            </p>
+        </div>
+
     </div>
 
     <?php
