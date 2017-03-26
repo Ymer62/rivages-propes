@@ -172,6 +172,89 @@
     // Modal carousel
     $('.modal').modal();
 
+    // Edit title
+    $('h1, h2, h3, h4, h5').keydown(function(){
+      $(this).children('i').css({'display':'inline'});
+      $(this).children('i').html('mode_edit');
+    });
+    $('.editTitle').click(function(){
+      var elm = $(this);
+      var title = elm.parent().children('span').html();
+      var page = elm.parent().data('page');
+
+      title = title ? title : 'Titre de page';
+      elm.parent().children('span').html(title);
+
+      $.ajax({
+        type: "POST",
+        url: 'ajax.php?ajax=editTitle',
+        data: {page:page, title:title},
+        success: function(data,textStatus,jqXHR){
+          if(data.trim() == 'OK'){
+            elm.parent().children('i').html('check');
+            setTimeout(function(){elm.parent().children('i').fadeOut();}, 2000);
+          }
+        }
+      });
+    });
+
+    // Edit text
+    $('.note-editor').click(function(){
+      var divEdit = $(this).parent().children('div').first();
+      var btn = divEdit.data('btn');
+
+      $('#'+btn+' i').css({'display':'block'});
+      $('#'+btn+' i').html('mode_edit');
+    });
+    $('.btnTextAdmin').click(function(){
+      var elm = $(this);
+      var boxEditor = elm.data('box');
+      var page = $('#' + boxEditor).data('page');
+      var text = $('#' + boxEditor).children('div').last().children('.note-editable').html();
+
+      $.ajax({
+        type: "POST",
+        url: 'ajax.php?ajax=editText',
+        data: {page:page, text:text},
+        success: function(data,textStatus,jqXHR){
+          if(data.trim() == 'OK'){
+            elm.children('i').html('check');
+            setTimeout(function(){elm.children('i').fadeOut();}, 2000);
+          }
+        }
+      });
+    });
+
+  });
+
+  // Editor WYSIWYG
+  var toolbar = [
+      ['style', ['style', 'bold', 'italic', 'underline', 'strikethrough', 'clear']],
+      ['fonts', ['fontsize', 'fontname']],
+      ['color', ['color']],
+      ['undo', ['undo', 'redo', 'help']],
+      ['ckMedia', ['ckImageUploader', 'ckVideoEmbeeder']],
+      ['misc', ['link', 'picture', 'table', 'hr', 'codeview', 'fullscreen']],
+      ['para', ['ul', 'ol', 'paragraph', 'leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton']],
+      ['height', ['lineheight']],
+  ];
+
+  $('.editor').materialnote({
+      toolbar: toolbar,
+      height: 550,
+      minHeight: 100,
+      defaultBackColor: '#fff'
+  });
+
+  $('.editorAir').materialnote({
+      airMode: true,
+      airPopover: [
+          ['color', ['color']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['para', ['ul', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture']]
+      ]
   });
 </script>
 

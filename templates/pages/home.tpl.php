@@ -46,16 +46,30 @@ $slides = $db->query("SELECT * FROM home_sliders");
               <span contenteditable="true">
                 <?php echo $pageData['title'] ?>
               </span>
-              <i class="small material-icons editTitle">mode_edit</i>
+              <i class="small material-icons editTitle" style="display:none">mode_edit</i>
             </h1>
+            <div class="row">
+                <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+                    <div data-btn="btnSubmitText" class="editor" id="first">
+                        <p class="flow-text"><?php echo $pageData['text'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+              <i class="small material-icons right">mode_edit</i>
+              Appliquer
+            </button>
+            <!-- <div class="editorAir" id="airFirst">
+               <h2 id="title">Air Mode</h2>
+            </div> -->
           <?php
           else:
           ?>
             <h1><?= $pageData['title'] ?></h1>
+            <p class="flow-text"><?php echo $pageData['text'] ?></p>
           <?php
           endif;
           ?>
-          <p class="flow-text"><?php echo $pageData['text'] ?></p>
         </div>
         <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
