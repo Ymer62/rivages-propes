@@ -7,16 +7,16 @@
         <?php
         if(ADMIN):
         ?>
-          <h3 data-page="<?= PAGE ?>">
+          <h1 data-page="<?= PAGE ?>">
             <span contenteditable="true">
               <?php echo $pageData['title'] ?>
             </span>
-            <i class="small material-icons editTitle">mode_edit</i>
-          </h3>
+            <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+          </h1>
         <?php
         else:
         ?>
-          <h3><?= $pageData['title'] ?></h3>
+          <h1><?= $pageData['title'] ?></h1>
         <?php
         endif;
         ?>

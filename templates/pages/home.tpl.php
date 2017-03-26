@@ -51,7 +51,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
             <div class="row">
                 <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
                     <div data-btn="btnSubmitText" class="editor" id="first">
-                        <p class="flow-text"><?php echo $pageData['text'] ?></p>
+                        <?php echo $pageData['text'] ?>
                     </div>
                 </div>
             </div>

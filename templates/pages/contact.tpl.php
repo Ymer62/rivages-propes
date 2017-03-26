@@ -11,7 +11,7 @@ $debug->arr(array('$pageData' => $pageData));
       <span contenteditable="true">
         <?php echo $pageData['title'] ?>
       </span>
-      <i class="small material-icons editTitle">mode_edit</i>
+      <i class="small material-icons editTitle" style="display:none">mode_edit</i>
     </h1>
   <?php
   else:
