@@ -7,9 +7,11 @@ if(ADMIN):
       <i id="adminConig" class="medium material-icons">settings</i>
     </span>
   </a>
-  <span title="Gestion d'utilisateurs">
-    <i id="adminConig" class="medium material-icons">supervisor_account</i>
-  </span>
+  <a title="Gestion d'utilisateurs" href="#user">
+    <span>
+      <i id="adminConig" class="medium material-icons">supervisor_account</i>
+    </span>
+  </a>
   <a title="Aperçu" target="_blank" href="index.php?page=<?= PAGE ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
     <span>
       <i id="adminUser" class="medium material-icons">visibility</i>

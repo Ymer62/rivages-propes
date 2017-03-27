@@ -91,18 +91,17 @@
 <!-- Modal config -->
 <div id="config" class="modal">
   <div class="modal-content">
-    <h5></h5>
     <div class="row">
-      <form id="formSlConfig" class="col s12">
+      <form id="formConfig" class="col s12">
         <div class="row">
-          <h4>Balise head</h4>
+          <h5>Balise head</h5>
           <div class="input-field col s12">
-            <input name="formConfigTitle" id="formConfigTitle" type="text" class="validate">
-            <label for="formConfigTitle">Title</label>
+            <input name="formConfigTitle" id="formConfigTitle" type="text" value="<?= $pageData['head_title'] ?>" class="validate">
+            <label <?= (($pageData['head_title'] != '') ? 'class="active"' : '') ?> for="formConfigTitle">Title</label>
           </div>
           <div class="input-field col s12">
-            <textarea name="formConfigMetaDesc" id="formConfigMetaDesc" class="materialize-textarea"></textarea>
-            <label class="active" for="formConfigMetaDesc">Meta description</label>
+            <textarea name="formConfigMetaDesc" id="formConfigMetaDesc" class="materialize-textarea"><?= $pageData['head_meta_desc'] ?></textarea>
+            <label <?= (($pageData['head_title'] != '') ? 'class="active"' : '') ?> for="formConfigMetaDesc">Meta description</label>
           </div>
           <h5>Personalisation générale</h5>
           <div class="col s12">
@@ -154,6 +153,19 @@
   </div>
   <div class="modal-footer">
     <a id="btnSubmitConfig" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Appliquer</a>
+  </div>
+</div>
+
+<!-- Modal user -->
+<div id="user" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <form id="formUser" class="col s12">
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a id="btnSubmitUser" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Appliquer</a>
   </div>
 </div>
 
@@ -246,7 +258,7 @@
     });
     $('.editTitle').click(function(){
       var elm = $(this);
-      var title = elm.parent().children('span').html();
+      var title = elm.parent().children('span').html().trim();
       var page = elm.parent().data('page');
 
       title = title ? title : 'Titre de page';
@@ -277,7 +289,7 @@
       var elm = $(this);
       var boxEditor = elm.data('box');
       var page = $('#' + boxEditor).data('page');
-      var text = $('#' + boxEditor).children('div').last().children('.note-editable').html();
+      var text = $('#' + boxEditor).children('div').last().children('.note-editable').html().trim();
 
       $.ajax({
         type: "POST",
