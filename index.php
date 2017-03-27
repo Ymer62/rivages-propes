@@ -30,7 +30,7 @@ include 'includes/dispatcher.inc.php';
 // FRONT-END --------------------------
 // ------------------------------------
 
-// header
+// Header
 include 'templates/header.tpl.php';
 
 // Navbar
@@ -41,6 +41,9 @@ include 'templates/flash.tpl.php';
 
 // Content
 include 'templates/pages/' . PAGE . '.tpl.php';
+
+// Admin bar
+include 'templates/adminBar.tpl.php';
 
 // Footer
 include 'templates/footer.tpl.php';

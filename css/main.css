@@ -381,10 +381,10 @@ footer.page-footer .sponsor{
   z-index:1;
 }
 #slideNext{
-  right:30px;
+  right:70px;
 }
 #slidePreview{
-  left:30px;
+  left:70px;
 }
 
 /* MSG FLASH */
@@ -408,4 +408,28 @@ footer.page-footer .sponsor{
 /* Editor */
 .btnTextAdmin i{
   display:none;
+}
+
+/* Admin Bar */
+#adminBar{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  z-index:10;
+}
+#adminBar a{
+  outline:none;
+}
+#adminBar span{
+  color:black;
+  display:block;
+  transition:opacity 0.3s;
+  cursor:pointer;
+  opacity:0.5;
+}
+#adminBar span:hover{
+  opacity:1;
+}
+#adminBar svg{
+  padding:3px 9px 0 0;
 }
