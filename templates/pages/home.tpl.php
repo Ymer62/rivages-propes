@@ -44,14 +44,14 @@ $slides = $db->query("SELECT * FROM home_sliders");
           ?>
             <h1 data-page="<?= PAGE ?>">
               <span contenteditable="true">
-                <?php echo $pageData['title'] ?>
+                <?= $pageData['title'] ?>
               </span>
               <i class="small material-icons editTitle" style="display:none">mode_edit</i>
             </h1>
             <div class="row">
                 <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
                     <div data-btn="btnSubmitText" class="editor" id="first">
-                        <?php echo $pageData['text'] ?>
+                        <?= $pageData['text'] ?>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ $slides = $db->query("SELECT * FROM home_sliders");
           else:
           ?>
             <h1><?= $pageData['title'] ?></h1>
-            <p class="flow-text"><?php echo $pageData['text'] ?></p>
+            <p class="flow-text"><?= $pageData['text'] ?></p>
           <?php
           endif;
           ?>

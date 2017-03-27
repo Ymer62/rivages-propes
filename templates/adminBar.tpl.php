@@ -2,18 +2,18 @@
 if(ADMIN):
 ?>
 <div id="adminBar">
-  <span>
+  <span title="Configuration avancée">
     <i id="adminConig" class="medium material-icons">settings</i>
   </span>
-  <span>
+  <span title="Gestion d'utilisateurs">
     <i id="adminConig" class="medium material-icons">supervisor_account</i>
   </span>
-  <a target="_blank" href="index.php?page=<?= PAGE ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
+  <a title="Aperçu" target="_blank" href="index.php?page=<?= PAGE ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
     <span>
       <i id="adminUser" class="medium material-icons">visibility</i>
     </span>
   </a>
-  <a href="<?= $path->link('logout', false); ?>">
+  <a title="Déconnexion" href="<?= $path->link('logout', false); ?>">
     <span>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     	  width="64px" height="64px" viewBox="0 0 520.349 520.349" style="enable-background:new 0 0 64 64;"

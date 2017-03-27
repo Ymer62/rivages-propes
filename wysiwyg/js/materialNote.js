@@ -6832,7 +6832,7 @@ var dom = (function() {
 
       //03. create Editable
       var isContentEditable = !$holder.is(':disabled');
-      var $editable = $('<div class="note-editable" contentEditable="' + isContentEditable + '"></div>')
+      var $editable = $('<div class="note-editable flow-text center-align" contentEditable="' + isContentEditable + '"></div>')
           .prependTo($editor);
       if (options.height) {
         $editable.height(options.height);
