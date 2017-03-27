@@ -88,6 +88,75 @@
   </div>
 </div>
 
+<!-- Modal config -->
+<div id="config" class="modal">
+  <div class="modal-content">
+    <h5></h5>
+    <div class="row">
+      <form id="formSlConfig" class="col s12">
+        <div class="row">
+          <h4>Balise head</h4>
+          <div class="input-field col s12">
+            <input name="formConfigTitle" id="formConfigTitle" type="text" class="validate">
+            <label for="formConfigTitle">Title</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea name="formConfigMetaDesc" id="formConfigMetaDesc" class="materialize-textarea"></textarea>
+            <label class="active" for="formConfigMetaDesc">Meta description</label>
+          </div>
+          <h5>Personalisation générale</h5>
+          <div class="col s12">
+            <h6>Couleur des liens</h6>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorLink" id="formConfigColorLink" type="text" class="validate">
+              <label for="formConfigColorLink">Normal</label>
+              <span></span>
+            </div>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorLinkHover" id="formConfigColorLinkHover" type="text" class="validate">
+              <label for="formConfigColorLinkHover">Hover</label>
+              <span></span>
+            </div>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorLinkVisited" id="formConfigColorLinkVisited" type="text" class="validate">
+              <label for="formConfigColorLinkVisited">Visited</label>
+              <span></span>
+            </div>
+          </div>
+          <div class="col s12">
+            <h6>Couleur des boutons</h6>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorButton" id="formConfigColorButton" type="text" class="validate">
+              <label for="formConfigColorButton">Normal</label>
+              <span></span>
+            </div>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorButtonHover" id="formConfigColorButtonHover" type="text" class="validate">
+              <label for="formConfigColorButtonHover">Hover</label>
+              <span></span>
+            </div>
+            <div class="input-field col s4 configColor">
+              <input name="formConfigColorButtonVisited" id="formConfigColorButtonVisited" type="text" class="validate">
+              <label for="formConfigColorButtonVisited">Visited</label>
+              <span></span>
+            </div>
+          </div>
+          <div class="col s12">
+            <h6>Couleur des titres</h6>
+            <div class="input-field col s12 configColor">
+              <input name="formConfigColorTitle" id="formConfigColorTitle" type="text" class="validate">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a id="btnSubmitConfig" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Appliquer</a>
+  </div>
+</div>
+
 <script type="text/javascript">
   // Progress bar
   function progressBar(e){

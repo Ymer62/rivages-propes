@@ -2,9 +2,11 @@
 if(ADMIN):
 ?>
 <div id="adminBar">
-  <span title="Configuration avancée">
-    <i id="adminConig" class="medium material-icons">settings</i>
-  </span>
+  <a title="Configuration avancée" href="#config">
+    <span>
+      <i id="adminConig" class="medium material-icons">settings</i>
+    </span>
+  </a>
   <span title="Gestion d'utilisateurs">
     <i id="adminConig" class="medium material-icons">supervisor_account</i>
   </span>

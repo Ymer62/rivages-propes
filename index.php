@@ -11,6 +11,9 @@ require("connect/Db.class.php");
 // Config
 include 'includes/config.inc.php';
 
+// Get
+include 'includes/get.inc.php';
+
 // Path
 include 'includes/path.inc.php';
 
