@@ -9,8 +9,8 @@
 
 /* Center block class */
 .center-block {
-    display: block;
-    margin: auto;
+    display: block !important;
+    margin: auto !important;
 }
 
 /* Navbar */
@@ -102,15 +102,20 @@ nav > div > a.brand-logo > img {
 .carousel .indicators {
     display: none;
 }
+.carousel .slideContainer{
+  height:100%;
+}
+.carousel .slideContainerCenter{
+  display:inline-block;
+  margin:auto;
+  text-shadow:0 0 4px black;
+  color:white;
+  font-size:2.5em;
+}
 
 /**************/
 /* Historique */
 /**************/
-#historique h1 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
 #historique ul {
     margin-left: 25px;
     margin-bottom: 50px;
@@ -224,22 +229,14 @@ nav > div > a.brand-logo > img {
     font-style: normal;
 }
 
-html {
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
-
 h1 {
     font-family: 'Questrial', Verdana, sans-serif;
     text-align: center;
     font-size: 40px;
     padding: 0;
-    margin: 0 0 20px 0;
-    margin-bottom: 60px;
+    margin: 20px 0 60px 0;
     position: relative;
+    top: 0;
     color: #8C8C8C;
 }
 
@@ -250,13 +247,9 @@ h1:before {
     text-align: center;
     display: block;
     height: 2px;
-    width: 100%;
-    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(182,180,180,0.7) 42%, rgba(180,178,178,0) 43%, rgba(168,166,166,0) 50%, rgba(180,178,178,0) 57%, rgba(182,180,180,0.7) 58%, rgba(238,237,237,0.3) 90%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(42%,rgba(182,180,180,0.7)), color-stop(43%,rgba(180,178,178,0)), color-stop(50%,rgba(168,166,166,0)), color-stop(57%,rgba(180,178,178,0)), color-stop(58%,rgba(182,180,180,0.7)), color-stop(90%,rgba(238,237,237,0.3)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%); /* IE10+ */
-    background: linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%); /* W3C */
+    width: 100%; /* FF3.6+ */
+    background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
 }
 
 
@@ -269,18 +262,13 @@ h1:before {
     padding: 40px;
     border: 1px solid #383838;
     /* My stipped background */
-    background: #D1D1D1; /* Old browsers */
-    background: -moz-repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px, #58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */
-    background: -webkit-repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px,#58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */
-    background: -o-repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px, #58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */
-    background: repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px, #58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */
+    background: #D1D1D1; /* Old browsers */ /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */ /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(135deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px);
+    background: repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */
     /*border-radius*/
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
     border-radius: 8px;
     /*box-shadow*/
-    -webkit-box-shadow: 0px 1px 6px #3F3F3F;
-    -moz-box-shadow: 0px 1px 6px #3F3F3F;
     box-shadow: 0px 1px 6px #3F3F3F;
 }
 
@@ -296,12 +284,10 @@ h1:before {
     z-index: -1;
     border: 1px #E5E5E5 solid;
     /*border-radius*/
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
     border-radius: 8px;
 }
 
-#envoie{
+#envoie {
   margin-top:50px;
   text-align: center;
 }
@@ -356,9 +342,19 @@ h1:before {
 
 
 /* Footer */
+footer.page-footer i{
+  cursor:pointer;
+}
+
 footer.page-footer {
     background-color: #DDD;
     text-align: center;
+}
+
+footer.page-footer .delSponsor {
+  position:absolute;
+  top:5px;
+  right:5px;
 }
 
 footer.page-footer img {
@@ -381,8 +377,42 @@ footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"])
     color: #000;
 }
 
+footer.page-footer .sponsor{
+  position:relative;
+  display:inline-block;
+}
+
 @media all and (min-width: 600px) {
     footer.page-footer .footer-copyright {
         height: 30px;
     }
+}
+
+/* Edit carousel */
+.editRight{
+  position:absolute;
+  z-index:1;
+  top:0;
+  right:20px;
+}
+.editRight i{
+  cursor:pointer;
+}
+.progr{
+  width:100%;
+  height:30px;
+}
+
+/* Nav carousel */
+.carousel .navCar{
+  position:absolute;
+  top:calc(50% - 30px);
+  cursor:pointer;
+  z-index:1;
+}
+#slideNext{
+  right:30px;
+}
+#slidePreview{
+  left:30px;
 }
