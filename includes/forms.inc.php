@@ -61,10 +61,7 @@ class form{
       ob_clean();
 
       // Envoi du mail
-      $response = mail($to && $sujet && $msg && $header);
-
-      echo $msg;
-      echo $reponse;
+      $response = mail($to, $sujet, $msg, $header);
 
       if($response){
         $_SESSION['flash'] = 'Envoi mail OK';
