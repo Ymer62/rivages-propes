@@ -35,8 +35,25 @@
     endif;
     ?>
 
-    <script src="js/main.min.js" type="text/javascript"></script>
+    <title><?= (!G_noData ? $pageData['head_title'] : '') ?></title>
+    <meta name="description" content="<?= (!G_noData ? $pageData['head_meta_desc'] : '') ?>">
+    <meta name="author" content="Simplon BSM - [Frédéric, Quentin, Thomas, Rémy]">
+    <?php if(!G_noData): ?>
+    <meta name="robots" content="all">
+    <?php else: ?>
+    <meta name="robots" content="none">
+    <?php endif; ?>
 
-    <title>Rivages Propres</title>
+    <style>
+      a{ color: <?= $pageData['c_links'] ?>; }
+      a:hover{ color: <?= $pageData['c_links_hover'] ?>; }
+      a:active{ color: <?= $pageData['c_links_active'] ?>; }
+
+      .btn,.side-nav a.btn{ background-color: <?= $pageData['c_buttons'] ?>; color: <?= $pageData['c_buttons_text'] ?>; }
+      .btn:hover,.side-nav a.btn:hover{ background-color: <?= $pageData['c_buttons_hover'] ?>; }
+      .btn:active,.side-nav a.btn:active{ background-color: <?= $pageData['c_buttons_active'] ?>; }
+
+      h1,h2,h3{ color: <?= $pageData['c_titles'] ?>; }
+    </style>
 </head>
 <body>

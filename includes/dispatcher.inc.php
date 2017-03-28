@@ -22,7 +22,7 @@ define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : '404');
 
 // Page data
 if(!G_noData && PAGE != '404'){
-  $pageData = $db->query('SELECT * FROM page_' . PAGE);
+  $pageData = $db->query('SELECT * FROM page_' . PAGE .' NATURAL JOIN custom');
   if (count($pageData) == 1) $pageData = current($pageData);
 }
 

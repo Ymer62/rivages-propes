@@ -11,6 +11,10 @@
 .modal{
   z-index:10000!important;
 }
+.modal-action:hover,
+.modal-action:active{
+  color:#343434;
+}
 
 /* Center block class */
 .center-block {
@@ -44,6 +48,8 @@ nav div > a .fa {
 
 /* Liens */
 nav a,
+nav a:hover,
+nav a:active,
 nav ul a,
 .side-nav a {
     color: #07275C;
@@ -429,7 +435,6 @@ footer.page-footer .sponsor{
   color:black;
   display:block;
   transition:opacity 0.3s;
-  cursor:pointer;
   opacity:0.5;
 }
 #adminBar span:hover{
@@ -441,15 +446,6 @@ footer.page-footer .sponsor{
 
 /* Admin config */
 .configColor{
-  position:relative;
-}
-.configColor span{
-  position:absolute;
-  top:10px;
-  right:12px;
-  width:20px;
-  height:20px;
-  border:1px solid lightgrey;
-  border-radius:100%;
-  cursor:pointer;
+  color:#555;
+  padding-bottom:20px!important;
 }
