@@ -34,17 +34,15 @@
   <div class="footer-copyright">
     <div class="container">
         <div class="row">
-            <div class="col s12 m4">© 1991-<?php echo date("Y") ?> Rivages Propres</div>
-            <div class="col s12 m4">
+            <div class="col s12 <?= (ADMIN ? 'm6' : 'm4') ?>">© 1991-<?php echo date("Y") ?> Rivages Propres</div>
+            <div class="col s12 <?= (ADMIN ? 'm6' : 'm4') ?>">
                 Site crée par <a href="http://boulogne.simplon.co/" target="_blank">Simplon BSM</a>
             </div>
+            <?php if (!ADMIN): ?>
             <div class="col s12 m4">
-                <?php if (ADMIN): ?>
-                    <a href="<?= $path->link('logout', false) ?>">Déconnexion</a>
-                <?php else: ?>
-                    <a href="<?= $path->link('login', false) ?>">Administration</a>
-                <?php endif; ?>
+                <a href="<?= $path->link('login', false) ?>">Administration</a>
             </div>
+            <?php endif; ?>
         </div>
 
 
@@ -52,130 +50,21 @@
   </div>
 </footer>
 
-<?php if(ADMIN): ?>
-<!-- Progress Bar -->
-<div id="progress" class="modal">
-  <div class="modal-content">
-    <progress class="progr"></progress>
-  </div>
-</div>
+<?php
+if(ADMIN):
 
-<!-- Modal sponsors -->
-<div id="sponsors" class="modal">
-  <div class="modal-content">
-    <h4>Ajouter un sponsor</h4>
-    <div class="row">
-      <form id="formSponsors" enctype="multipart/form-data" class="col s12">
-        <div class="row">
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>Image</span>
-              <input name="formSponsor" type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="">
-            </div>
-          </div>
-          <div class="input-field col s12">
-            <textarea name="formSponsorAlt" id="formSponsorAlt" class="materialize-textarea"></textarea>
-            <label class="active" for="formSponsorAlt">Alt</label>
-          </div>
-        </div>
-        <input type="hidden" name="id">
-      </form>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <a id="btnSubmitSponsor" href="#!" class="waves-effect waves-green btn-flat">Appliquer</a>
-  </div>
-</div>
+// Modal
+include 'templates/modal/progressBar.tpl.php';
+include 'templates/modal/sponsors.tpl.php';
+include 'templates/modal/config.tpl.php';
+include 'templates/modal/user.tpl.php';
 
-<script type="text/javascript">
-  // Progress bar
-  function progressBar(e){
-    if(e.lengthComputable)
-    $('progress').attr({value:e.loaded,max:e.total});
-  }
-
-  // Sponsors
-  $(document).ready(function(){
-
-    // Add
-    $('#addSponsor').click(function(){
-      $('#formSponsors')[0].reset();
-      $('#sponsors').modal('open');
-    });
-
-    // Submit
-    $('#btnSubmitSponsor').click(function(){
-      if($('input[name="formSponsor"]').val() == ''){
-        alert('Vous n\'avez pas sélectionné d\'image !');
-        return;
-      }
-
-      var id = $('#sponsors input[type="hidden"]').val();
-      var formSponsorAlt = $('#formSponsorAlt').val();
-      var formData = new FormData($('#formSponsors')[0]);
-
-      $.ajax({
-        url:'ajax.php?ajax=addSponsor',
-        type:'POST',
-        xhr: function() {
-          myXhr = $.ajaxSettings.xhr();
-          if(myXhr.upload)
-          myXhr.upload.addEventListener('progress',progressBar, false);
-
-          return myXhr;
-        },
-
-        beforeSend:function(){ $('#progress').modal('open'); },
-        success:function(data,textStatus,jqXHR){
-          var Data = jQuery.parseJSON(data);
-
-          var newSponsor = '<div class="sponsor">\
-                      <i data-id="'+Data[0]+'" class="small material-icons delSponsor">delete</i>\
-                      <img src="img/sponsors/'+Data[1]+'" alt="'+Data[2]+'">\
-                    </div>';
-
-          $('#sponsorsContainer').append(newSponsor);
-
-          $('#progress').modal('close');
-          $('#sponsors').modal('close');
-        },
-        error:{},
-        data:formData,
-        cache:false,
-        contentType:false,
-        processData:false
-      });
-    });
-
-    // Delete
-    $(document).on('click', '.delSponsor', function(){
-      var sponsor = $(this).parent();
-      var id = $(this).data('id');
-      var dialog = confirm('Voulez-vous vraiment supprimer ce sponsor ?');
-
-      if(dialog) {
-        $.ajax({
-          type: "POST",
-          url: 'ajax.php?ajax=deleteSponsor',
-          data: {id:id},
-          success: function(data,textStatus,jqXHR){
-            if(data == 'OK')
-            sponsor.remove();
-          }
-        });
-      }
-    });
-
-    // Modal carousel
-    $('.modal').modal();
-
-  });
-</script>
-
-<?php endif; ?>
-
+// JS
+?>
+<script src="js/adminGeneral.min.js" type="text/javascript"></script>
+<?php
+endif;
+?>
+<script src="js/main.min.js" type="text/javascript"></script>
 </body>
 </html>

@@ -4,14 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/materialize.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/materialize.css" rel="stylesheet">
+
+    <?php
+    if(ADMIN):
+    ?>
+    <link href="wysiwyg/css/materialNote.min.css" rel="stylesheet">
+    <link href="wysiwyg/css/codeMirror/codemirror.min.css" rel="stylesheet">
+    <link href="wysiwyg/css/codeMirror/monokai.min.css" rel="stylesheet">
+    <?php
+    endif;
+    ?>
+
     <link href="css/main.min.css" rel="stylesheet">
     <link href="css/thomas.css" rel="stylesheet">
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/materialize.min.js" type="text/javascript"></script>
-    <script src="js/main.min.js" type="text/javascript"></script>
-    <title>Rivages Propres</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <?php
+    if(ADMIN):
+    ?>
+    <script type="text/javascript" src="wysiwyg/js/ckMaterializeOverrides.min.js"></script>
+    <script type="text/javascript" src="wysiwyg/lib/codeMirror/codemirror.min.js"></script>
+    <script type="text/javascript" src="wysiwyg/lib/codeMirror/xml.min.js"></script>
+    <script type="text/javascript" src="wysiwyg/js/materialNote.min.js"></script>
+    <?php
+    endif;
+    ?>
+
+    <title><?= (!G_noData ? $pageData['head_title'] : '') ?></title>
+    <meta name="description" content="<?= (!G_noData ? $pageData['head_meta_desc'] : '') ?>">
+    <meta name="author" content="Simplon BSM - [Frédéric, Quentin, Thomas, Rémy]">
+    <?php if(!G_noData): ?>
+    <meta name="robots" content="all">
+    <?php else: ?>
+    <meta name="robots" content="none">
+    <?php endif; ?>
+
+    <style>
+      a{ color: <?= $pageData['c_links'] ?>; }
+      a:hover{ color: <?= $pageData['c_links_hover'] ?>; }
+      a:active{ color: <?= $pageData['c_links_active'] ?>; }
+
+      .btn,.side-nav a.btn{ background-color: <?= $pageData['c_buttons'] ?>; color: <?= $pageData['c_buttons_text'] ?>; }
+      .btn:hover,.side-nav a.btn:hover{ background-color: <?= $pageData['c_buttons_hover'] ?>; }
+      .btn:active,.side-nav a.btn:active{ background-color: <?= $pageData['c_buttons_active'] ?>; }
+
+      h1,h2,h3{ color: <?= $pageData['c_titles'] ?>; }
+    </style>
 </head>
 <body>

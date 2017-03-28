@@ -39,8 +39,37 @@ $slides = $db->query("SELECT * FROM home_sliders");
 <div class="container" id="home">
     <div class="row">
         <div class="col s12">
-            <h1><?php echo $pageData['title'] ?></h1>
-            <p class="flow-text"><?php echo $pageData['text'] ?></p>
+          <?php
+          if(ADMIN):
+          ?>
+            <h1 data-page="<?= PAGE ?>">
+              <span contenteditable="true">
+                <?= $pageData['title'] ?>
+              </span>
+              <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+            </h1>
+            <div class="row">
+                <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+                    <div data-btn="btnSubmitText" class="editor" id="first">
+                        <?= $pageData['text'] ?>
+                    </div>
+                </div>
+            </div>
+            <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+              <i class="small material-icons right">mode_edit</i>
+              Appliquer
+            </button>
+            <!-- <div class="editorAir" id="airFirst">
+               <h2 id="title">Air Mode</h2>
+            </div> -->
+          <?php
+          else:
+          ?>
+            <h1><?= $pageData['title'] ?></h1>
+            <p class="flow-text"><?= $pageData['text'] ?></p>
+          <?php
+          endif;
+          ?>
         </div>
         <div class="col s5 offset-s1 m2 offset-m4">
             <a href="<?= $path->link('presentation-historique') ?>"><button type="button" class="btn waves-effect center-block">Historique</button></a>
@@ -84,169 +113,12 @@ $slides = $db->query("SELECT * FROM home_sliders");
 
 <?php endif; ?>
 
-<script type="text/javascript">
-
-  $(document).ready(function(){
-
-    // Carousel
-    var timerCarousel;
-
-    function carouselSize(){
-      $('.carousel').height($(window).height() - $('.nav-wrapper').height());
-    }
-
-    $(window).resize(function(){
-      carouselSize();
-    });
-    carouselSize();
-
-    function carouselInit(){
-      try{
-        $('.carousel.carousel-slider').carousel({fullWidth: true});
-      } catch(e) {}
-    }
-
-    function carouselPlay(){
-      clearInterval(timerCarousel);
-      timerCarousel = setInterval(function() { $('.carousel').carousel('next'); }, 3500);
-    }
-
-    carouselInit();
-
-    <?php
-    if(ADMIN):
-    ?>
-
-    // Nav carousel
-    $('#slideNext').click(function(){
-      $('.carousel').carousel('next');
-    });
-    $('#slidePreview').click(function(){
-      $('.carousel').carousel('prev');
-    });
-
-    // Delete slide
-    $('#deleteSlide').click(function(){
-      var slide = $('.carousel-item.active');
-      var id = slide.data('id');
-      var dialog =  confirm('Voulez-vous vraiment supprimer ce slide du carousel ?');
-
-      if(dialog) {
-        $.ajax({
-          type: "POST",
-          url: 'ajax.php?ajax=deleteHomeSlide',
-          data: {id:id},
-          success: function(data,textStatus,jqXHR){
-            if(data == 'OK'){
-              slide.remove();
-
-              if($('.carousel.carousel-slider').hasClass('initialized'))
-              $('.carousel.carousel-slider').removeClass('initialized');
-
-              carouselInit();
-            }
-          }
-        });
-      }
-    });
-
-    // Edit slide
-    $('#editSlide').click(function(){
-      $('#formSliders')[0].reset();
-      $('#sliders h4').html('Modifier le slide');
-      $('#sliders input[type="file"]').attr('placeholder', 'Laissez vide pour ne pas modifier l\'image');
-      $('#sliders label').addClass('active');
-      $('#sliders input[type="hidden"]').val($('.carousel-item.active').data('id'));
-
-      var content = $('.carousel-item.active .slideContainerCenter').html().trim();
-
-      $('#sliders textarea').val(content);
-      $('#sliders').modal('open');
-    });
-
-    // Add slide
-    $('#addSlide').click(function(){
-      $('#formSliders')[0].reset();
-      $('#sliders h4').html('Ajouter un slide');
-      $('#sliders input[type="file"]').attr('placeholder', '');
-      $('#sliders textarea').val('');
-      $('#sliders input[type="hidden"]').val('');
-      $('#sliders label').removeClass('active');
-      $('#sliders').modal('open');
-    });
-
-    // Submit slide
-    $('#btnSubmitSlide').click(function(){
-      var slide = $('.carousel .active');
-      var id = $('#sliders input[type="hidden"]').val();
-      var formSlideContent = $('#formSlideContent').val();
-      formSlide = $('#formSlide').val();
-
-      var formData = new FormData($('#formSliders')[0]);
-      $.ajax({
-        url:'ajax.php?ajax=homeSlide',
-        type:'POST',
-        xhr: function() {
-          myXhr = $.ajaxSettings.xhr();
-          if(myXhr.upload)
-          myXhr.upload.addEventListener('progress',progressBar, false);
-
-          return myXhr;
-        },
-
-        beforeSend:function(){ $('#progress').modal('open'); },
-        success:function(data,textStatus,jqXHR){
-          // Edit
-          if(id){
-            if(data != 'OK')
-            slide.css({'background-image':'url("img/homeSliders/'+data+'")'});
-            slide.children('.slideContainer').children('.slideContainerCenter').html($('#formSlideContent').val());
-          }
-          // Add
-          else{
-            var Data = jQuery.parseJSON(data);
-            $(".carousel-item.active").removeClass('active');
-
-            var bg = Data[1] ? ' style="background-image:url(img/homeSliders/'+Data[1]+')"' : '';
-            var newSlide = '<div data-id="'+(Data[0] ? Data[0] : Data)+'" class="carousel-item active"'+bg+'>\
-                        <div class="valign-wrapper slideContainer">\
-                          <div class="slideContainerCenter">\
-                          '+$('#formSlideContent').val()+'\
-                          </div>\
-                        </div>\
-                      </div>';
-
-            $('.carousel').append(newSlide);
-
-            if($('.carousel.carousel-slider').hasClass('initialized'))
-            $('.carousel.carousel-slider').removeClass('initialized');
-
-            carouselInit();
-            $('.carousel').carousel('next', $(".carousel-item").length - 1);
-          }
-
-          $('#progress').modal('close');
-        },
-        error:{},
-        data:formData,
-        cache:false,
-        contentType:false,
-        processData:false
-      });
-    });
-
-    <?php
-    else:
-    ?>
-    carouselInit();
-    carouselPlay();
-    <?php
-    endif;
-    ?>
-
-  });
-
-</script>
+<script src="js/home.min.js" type="text/javascript"></script>
+<?php if(ADMIN): ?>
+<script src="js/homeAdmin.min.js" type="text/javascript"></script>
+<?php else: ?>
+<script type="text/javascript">carouselPlay();</script>
+<?php endif; ?>
 
 <?php
 

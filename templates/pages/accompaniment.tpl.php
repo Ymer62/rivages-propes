@@ -4,7 +4,22 @@
   <div class="row">
     <div class="col s12">
       <div class="title">
-        <h1>Accompagnement socio-professionnel</h1>
+        <?php
+        if(ADMIN):
+        ?>
+          <h1 data-page="<?= PAGE ?>">
+            <span contenteditable="true">
+              <?php echo $pageData['title'] ?>
+            </span>
+            <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+          </h1>
+        <?php
+        else:
+        ?>
+          <h1><?= $pageData['title'] ?></h1>
+        <?php
+        endif;
+        ?>
       </div>
         <img class="materialboxed" id="imgRdv" src="img/placeholder.jpg" alt="Rendez-vous avec un conseiller">
         <h4>Titre</h4>

@@ -3,12 +3,15 @@
 // Path
 class path{
   public function link($page, $data = true){
+    $previewHome = G_preview ? '?preview=true' : '';
+    $preview = G_preview ? '&preview=true' : '';
+
     if(!$page)
-    return './';
-    else if(REWRITING)
+    return './' . $previewHome;
+    else if(REWRITING && !$preview)
     return (!$data ? 'form-' : '') . $page;
     else
-    return 'index.php?page=' . $page . (!$data ? '&noData=true' : '');
+    return 'index.php?page=' . $page . (!$data ? '&noData=true' : '') . $preview;
   }
 }
 
