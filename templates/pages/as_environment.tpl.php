@@ -23,7 +23,10 @@
 
     <div class="row">
         <div class="col s12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Le travail de l'association dans la préservation du littoral est reconnu. Elle a pu mettre a profit ses 25 années d'expériences sur les plages lors de formations dispensées en outre-mer, notamment en Guadeloupe, en s'associant avec l'association Rivages de France. Rivages Propres, de par son expérience dans le ramassage manuel et selectif des macrodéchets, a permis la professionnalisation ainsi que la formation de prés de 60 agents sur le tri des déchets. <p>
+            <p>A l'échelle locale, l'association poursuit son travail de sensibilisation : </p>
+            <p>Elle opère sur les plages, milieux dunaires, coteaux calcaires, milieux humides, cours d'eau, milieux forestiers, sentiers de randonnée, espaces verts. Elle permet le nettoyage des côtes, mais contribue également à l'aménager, par exemple la construction de 60 cabines de plages. Elle illustre la richesse de notre savoir-faire et une envie de développer d'autres supports d'activités.</p>
+            <p> En ce sens, Rivages-Propres peut vous aider à concrétiser vos projets. Avec le soutien de plusieurs partenaires financiers investis dans des démarches d'insertion, l'association se rend disponible pour vous accompagner dans la mise en place des chantiers. L'objectif pour notre structure est de maintenir une palette d'activités importante favorisant le retour à l'emploi de nos salariés. </p>
         </div>
         <div class="col l3 m4 s12">
             <img class="materialboxed" src="img/placeholder.jpg" alt="">

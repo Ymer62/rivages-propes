@@ -23,7 +23,11 @@
   </div>
   <div class="row">
       <div class="col s12">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Rivages Propres est également investi dans le secteur du bâtiment avec des formations aux travaux de piquetage, remaillage, terrassement, maçonnerie, jointoiement, menuiserie, ...</p>
+          <p>Depuis 2007 l'association a permis à la fois la construction de 60 cabines de plages à l'aide de matériaux de qualité leurs garantissants une bonne durabilité, ainsi que l'accompagnement et la formation d'une trentaine de salariés liés à l'activité menuiserie.</p>
+            <p>Rivages Propres s'implique dans la préservation du patrimoine. Depuis 10 ans maintenant, les équipes de l'association interviennent sur le chantier-école, lié à la restauration des remparts de Boulogne Sur Mer. Cela souligne l'investissement des salariés en insertion sur les travaux ainsi que la constance des partenaires du chantier qu'ils soient techniques, sociaux ou financiers</p>
+            <p> Ces chantiers-écoles peuvent être assimilés à une formation en temps réel sur le terrain ( la meilleur école ), elles sont importantes et apportent de nombreuses compétences. Elles permettent pour la plupart de  mieux appréhender la sécurité sur les chantiers. En 2016 Rivages Propres accompagnent 9 jeunes demandeurs d'emploi à Marquise en rénovant entièrement une maison de quartier</p>
+            <p></p>
       </div>
       <div class="col l3 m4 s12">
           <img class="materialboxed" src="img/placeholder.jpg" alt="">
