@@ -82,7 +82,8 @@ $(document).ready(function(){
         // Edit
         if(id){
           if(data.trim() != 'OK')
-          slide.css({'background-image':'url("img/homeSliders/'+data+'")'});
+          slide.css({'background-image':'url("img/homeSliders/'+data.trim()+'")'});
+
           slide.children('.slideContainer').children('.slideContainerCenter').html($('#formSlideContent').val());
         }
         // Add

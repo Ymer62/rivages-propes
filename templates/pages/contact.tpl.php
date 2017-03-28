@@ -1,10 +1,3 @@
-<?php
-
-// Submit contact
-$form->contact();
-
-?>
-
 <div id="content">
   <?php
   if(ADMIN):

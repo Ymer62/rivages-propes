@@ -159,6 +159,7 @@ $(document).ready(function(){
       success: function(data,textStatus,jqXHR){
         if(data.trim() == 'OK')
           document.title = head_title;
+          
       }
     });
   });

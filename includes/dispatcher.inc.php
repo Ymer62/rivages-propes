@@ -25,5 +25,13 @@ if(!G_noData && PAGE != '404'){
   $pageData = $db->query('SELECT * FROM page_' . PAGE .' NATURAL JOIN custom');
   if (count($pageData) == 1) $pageData = current($pageData);
 }
+if(empty($pageData))
+$pageData = $db->row('SELECT * FROM custom');
+
+// Page form
+if(method_exists($form, PAGE)){
+  $action = PAGE;
+  $form->$action();
+}
 
 ?>
