@@ -35,10 +35,10 @@
     endif;
     ?>
 
-    <title><?= (!G_noData ? $pageData['head_title'] : '') ?></title>
-    <meta name="description" content="<?= (!G_noData ? $pageData['head_meta_desc'] : '') ?>">
+    <title><?= (!G_noData && PAGE != '404' ? $pageData['head_title'] : 'Rivages Propres') ?></title>
+    <meta name="description" content="<?= (!G_noData && PAGE != '404' ? $pageData['head_meta_desc'] : '') ?>">
     <meta name="author" content="Simplon BSM - [Frédéric, Quentin, Thomas, Rémy]">
-    <?php if(!G_noData): ?>
+    <?php if(!G_noData && PAGE != '404'): ?>
     <meta name="robots" content="all">
     <?php else: ?>
     <meta name="robots" content="none">
