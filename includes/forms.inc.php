@@ -2,15 +2,22 @@
 
 // Forms
 class form{
+  // MSG Flash
+  private function msgFlash($msg, $redirect = false){
+    $_SESSION['post'] = serialize($_POST);
+    $_SESSION['flash'] = $msg;
+    header($redirect ? 'Location:' . $redirect : 'Refresh:0');
+    exit;
+  }
+
   // Login
   public function login(){
     global $db;
 
-    if(ADMIN){
-      header('Location:./');
-      exit;
-    }
+    // Already admin
+    if(ADMIN) $this->msgFlash('', './');
 
+    // Test post
     if(isset($_POST['login']) && isset($_POST['password'])){
       $user =  $db->row(
         "SELECT password FROM users WHERE login=:login",
@@ -18,74 +25,68 @@ class form{
       ));
 
       // Succes
-      if($user['password'] && password_verify($_POST['password'], $user['password'])){
+      if($user['password'] && password_verify(SALT . $_POST['password'], $user['password'])){
         $_SESSION['admin'] = 'connected';
-        $_SESSION['flash'] = 'Connexion réussie !';
-        header('Location:./');
-        exit;
+        $this->msgFlash('Connexion réussie !', './');
       }
       // Echec
-      else{
-        $_SESSION['flash'] = 'La connexion a échoué !';
-        header('Refresh:0');
-        exit;
-      }
+      else
+      $this->msgFlash('La connexion a échoué !');
     }
   }
 
   // Logout
   public function logout(){
     unset($_SESSION['admin']);
-    $_SESSION['flash'] = 'Vous avez bien été déconnecté !';
-    header('Location:./');
-    exit;
+    $this->msgFlash('Vous avez bien été déconnecté !', './');
   }
 
   // Contact
   public function contact(){
-    global $path;
+    if (isset($_POST['submit'])){
+      // POST
+      $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : '';
+      $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
+      $email = isset($_POST['email']) ? $_POST['email'] : "";
+      $to = isset($_POST['to']) ? $_POST['to'] : "";
+      $subject = isset($_POST['subject']) ? $_POST['subject'] : "";
+      $msg = isset($_POST['msg']) ? $_POST['msg'] : "";
 
-    // Récupération du POST
-    $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : '';
-    $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
-    $email = isset($_POST['email']) ? $_POST['email'] : "";
-    $to = isset($_POST['to']) ? $_POST['to'] : "";
-    $sujet = isset($_POST['sujet']) ? $_POST['sujet'] : "";
-    $msg = isset($_POST['msg']) ? $_POST['msg'] : "";
+      // Check post
+      if (!$first_name || !$last_name || !$email || !$to || !$subject || !$msg)
+      $this->msgFlash('Tous les champs sont obligatoires');
 
-    // Vérification du formulaire
-    if ($first_name && $email && $sujet){
-      $header = "From: boillot.frederic.62@gmail.com\r\n";
-      $header .= "Reply-to: boillot.frederic.62@gmail.com";
-      // $header .= "MIME-Version: 1.0\n";
-      // $header .= "Content-Type: multipart/alternative;\n"." boundary=\"$boundary\"\n";
+      // Check email
+      else if (!preg_match('#^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$#', $email))
+      $this->msgFlash('Le format de l\'email est incorrect');
 
-      // Tamporisation
-      ob_start();
-      ?>
-        <a href="google.fr">Test de lien</a>
-        <br />
-        <?= $msg ?>
-      <?php
-
-      // Récupération du tampon
-      $msg = ob_get_contents();
-
-      // Néttoyage du tampon
-      ob_clean();
-
-      // Envoi du mail
-      $response = mail($to, $sujet, $msg, $header);
-
-      if($response){
-        $_SESSION['flash'] = 'Envoi mail OK';
-        header('Location:./');
-        exit;
-      }
+      // Prepar and send mail
       else{
-        $_SESSION['flash'] = 'Envoi mail PAS OK';
-        header('Refresh:0');
-        exit;
+        // Headers
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'To: Fred <boillot.frederic.62@gmail.com>' . "\r\n";
+        $headers .= 'From: Fredo <boillot.frederic.62@gmail.com>' . "\r\n";
+
+        // Message
+        ob_start();
+        ?>
+          <a href="google.fr">Test de lien</a>
+          <br />
+          <?= $msg ?>
+        <?php
+
+        $msg = ob_get_contents();
+        ob_clean();
+
+        // Send
+        $response = mail($to, $subject, $msg, $headers);
+
+        // Stat
+        if($response)
+        $this->msgFlash('Le message a bien été transmis', './');
+        else
+        $this->msgFlash('Envoi mail PAS OK');
       }
     }
   }

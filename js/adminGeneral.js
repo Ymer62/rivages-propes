@@ -159,9 +159,88 @@ $(document).ready(function(){
       success: function(data,textStatus,jqXHR){
         if(data.trim() == 'OK')
           document.title = head_title;
-          
+
       }
     });
+  });
+
+  // Add user
+  $('#btnSubmitUserAdd').click(function(){
+    var login = $('#formAddUserLogin').val();
+    var password = $('#formAddUserPassword').val();
+    var passwordCheck = $('#formAddUserPasswordCheck').val();
+
+    if(!login || !password || !passwordCheck)
+    alert('Tous les champs sont obligatoires');
+
+    else if(password != passwordCheck)
+    alert('Les mots de passe ne sont pas identiques');
+
+    else{
+      $.ajax({
+        type: "POST",
+        url: 'ajax.php?ajax=addUser',
+        data: { login:login, password:password},
+        success: function(data,textStatus,jqXHR){
+          var data = data.trim();
+          if(data != '' && data != 'KO'){
+            $('#users ul').append('<li class="col s4">\
+              '+login+'\
+              <i data-id="'+data+'" class="editUser small material-icons">edit</i>\
+              <i data-id="'+data+'" class="delUser small material-icons">delete</i>\
+            </li>');
+
+            $('#userAdd').modal('close');
+          }
+          else
+          alert('Le login que vous avez entré existe déjà');
+        }
+      });
+    }
+  });
+
+  // Edit user
+  $('#users').on('click', '.editUser', function(){
+    var id = $(this).data('id');
+    $('#userEdit').modal('open');
+    $('#btnSubmitUserEdit').data({'id':id});
+  });
+  $('#btnSubmitUserEdit').click(function(){
+    var id = $(this).data('id');
+    var password = $('#formEditUserPassword').val();
+    var passwordCheck = $('#formEditUserPasswordCheck').val();
+
+    if(password == passwordCheck)
+    $.ajax({
+      type: "POST",
+      url: 'ajax.php?ajax=editUser',
+      data: { id:id, password:password },
+      success: function(data,textStatus,jqXHR){
+        if (data.trim() == 'OK')
+        alert('L\'utilisateur a bien été modifié');
+        $('#userEdit').modal('close');
+      }
+    });
+  });
+
+  // Delete user
+  $('#users').on('click', '.delUser', function(){
+    var conf = confirm('Voulez-vous vraiment supprimer cette utilisateur ?');
+
+    if (conf){
+      var elm = $(this);
+      var id = $(this).data('id');
+
+      $.ajax({
+        type: "POST",
+        url: 'ajax.php?ajax=deleteUser',
+        data: { id:id },
+        success: function(data,textStatus,jqXHR){
+          if (data.trim() == 'OK')
+          elm.parent().remove();
+        }
+      });
+    }
   });
 
 });

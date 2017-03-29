@@ -497,3 +497,9 @@ footer.page-footer .sponsor{
   color:#555;
   padding-bottom:20px!important;
 }
+
+/* Admin users */
+#users li i{
+  vertical-align:-8px;
+  cursor:pointer;
+}

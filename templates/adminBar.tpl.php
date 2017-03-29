@@ -4,17 +4,17 @@ if(ADMIN):
 <div id="adminBar">
   <a title="Configuration avancée" href="#config">
     <span>
-      <i id="adminConig" class="medium material-icons">settings</i>
+      <i class="medium material-icons">settings</i>
     </span>
   </a>
-  <a title="Gestion d'utilisateurs" href="#user">
+  <a title="Gestion d'utilisateurs" href="#users">
     <span>
-      <i id="adminConig" class="medium material-icons">supervisor_account</i>
+      <i class="medium material-icons">supervisor_account</i>
     </span>
   </a>
   <a title="Aperçu" target="_blank" href="index.php?page=<?= PAGE ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
     <span>
-      <i id="adminUser" class="medium material-icons">visibility</i>
+      <i class="medium material-icons">visibility</i>
     </span>
   </a>
   <a title="Déconnexion" href="<?= $path->link('logout', false); ?>">

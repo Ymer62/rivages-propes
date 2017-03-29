@@ -3,6 +3,7 @@
     <div class="row">
       <form id="formConfig" class="col s12">
         <div class="row">
+          <?php if(!G_noData && PAGE != '404'): ?>
           <h5>Balise head de la page</h5>
           <div class="input-field col s12">
             <input name="formConfigTitle" id="formConfigTitle" type="text" value="<?= $pageData['head_title'] ?>" class="validate">
@@ -12,6 +13,7 @@
             <textarea name="formConfigMetaDesc" id="formConfigMetaDesc" class="materialize-textarea"><?= $pageData['head_meta_desc'] ?></textarea>
             <label <?= (($pageData['head_title'] != '') ? 'class="active"' : '') ?> for="formConfigMetaDesc">Meta description</label>
           </div>
+          <?php endif; ?>
           <h5>Personalisation générale</h5>
           <div class="col s12">
             <h6>Couleur des liens</h6>

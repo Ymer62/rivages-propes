@@ -1,3 +1,11 @@
+<?php
+
+// Last post
+if (isset($_SESSION['post']))
+$post = unserialize($_SESSION['post']);
+
+?>
+
 <div id="content">
   <?php
   if(ADMIN):
@@ -22,19 +30,19 @@
    <form action="<?= $path->link('contact') ?>" method="post" class="col s12">
      <div class="row">
        <div class="input-field col s6">
-         <input name="first_name" id="first_name" type="text" class="validate">
+         <input name="first_name" id="first_name" type="text" class="validate" value="<?= (isset($post['first_name']) ? $post['first_name'] : '') ?>">
          <label for="first_name">Nom :</label>
        </div>
 
        <div class="input-field col s6">
-         <input name="last_name" id="last_name" type="text" class="validate">
+         <input name="last_name" id="last_name" type="text" class="validate" value="<?= (isset($post['last_name']) ? $post['last_name'] : '') ?>">
          <label for="last_name">Prenom :</label>
        </div>
      </div>
 
      <div class="row">
        <div class="input-field col s12">
-         <input name="email" id="email" type="email" class="validate">
+         <input name="email" id="email" type="email" class="validate" value="<?= (isset($post['email']) ? $post['email'] : '') ?>">
          <label for="email">Email :</label>
        </div>
      </div>
@@ -55,20 +63,20 @@
 
     <div class="row">
       <div class="input-field col s12">
-        <input name="sujet" id="sujet" type="text" data-length="50">
-        <label for="sujet">Sujet :</label>
+        <input name="subject" id="subject" type="text" data-length="50" value="<?= (isset($post['subject']) ? $post['subject'] : '') ?>">
+        <label for="subject">Sujet :</label>
       </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
-          <textarea name="msg" id="msg" class="materialize-textarea"></textarea>
-          <label for="msg"><i class="fa fa-pencil" aria-hidden="true">Message</i></label>
+          <textarea name="msg" id="msg" class="materialize-textarea"><?= (isset($post['msg']) ? $post['msg'] : '') ?></textarea>
+          <label for="msg"><i class="fa fa-pencil" aria-hidden="true">Message :</i></label>
         </div>
       </div>
 
       <div class="row">
         <div class="col s4 offset-s8">
-        <input action="<?= $path->link('contact') ?>" type="submit" id="submit" name="submit" value="Envoyer">
+        <input type="submit" id="submit" name="submit" value="Envoyer">
         </div>
     </div>
 
@@ -91,8 +99,12 @@
   $('#textarea1').trigger('autoresize');
   </script>
 
-  <?php
+<?php
 
+  // Delete post
+  unset($_SESSION['post']);
+
+  // Debug
   $debug->arr(array('$pageData' => $pageData));
 
   ?>

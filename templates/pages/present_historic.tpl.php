@@ -2,17 +2,32 @@
 
     <div class="row">
         <div class="col s12">
-            <h1><?= $pageData[0]['title'] ?></h1>
+            <?php
+            if(ADMIN):
+            ?>
+              <h1 data-page="<?= PAGE ?>">
+                <span contenteditable="true">
+                  <?php echo $pageData['title'] ?>
+                </span>
+                <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+              </h1>
+            <?php
+            else:
+            ?>
+              <h1><?= $pageData['title'] ?></h1>
+            <?php
+            endif;
+            ?>
             <p>
-                <?= $pageData[0]['text'] ?>
+                <?= $pageData['text'] ?>
             </p>
         </div>
 
     </div>
 
     <?php
-      unset($pageData[0]);
-      foreach ($pageData as $data):
+      $historic = $db->query('SELECT * FROM historic ORDER BY year');
+      foreach ($historic as $data):
     ?>
         <div class="row">
             <div class="col s1 year">
