@@ -1,9 +1,5 @@
 <?php
 
-// GET page
-define('G_page', isset($_GET['page']) ? $_GET['page'] : 'home');
-define('G_noData', isset($_GET['noData']) ? $_GET['noData'] : '');
-
 // Dispatcher
 $dispatcher = array(
   'accompagnement' => 'accompaniment',
@@ -26,8 +22,16 @@ define('PAGE', isset($dispatcher[G_page]) ? $dispatcher[G_page] : '404');
 
 // Page data
 if(!G_noData && PAGE != '404'){
-  $pageData = $db->query('SELECT * FROM page_' . PAGE);
+  $pageData = $db->query('SELECT * FROM page_' . PAGE .' NATURAL JOIN custom');
   if (count($pageData) == 1) $pageData = current($pageData);
+}
+if(empty($pageData))
+$pageData = $db->row('SELECT * FROM custom');
+
+// Page form
+if(method_exists($form, PAGE)){
+  $action = PAGE;
+  $form->$action();
 }
 
 ?>

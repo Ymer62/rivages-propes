@@ -7,6 +7,15 @@
 #FFF
 */
 
+/* Modals */
+.modal{
+  z-index:10000!important;
+}
+.modal-action:hover,
+.modal-action:active{
+  color:#343434;
+}
+
 /* Center block class */
 .center-block {
     display: block !important;
@@ -39,6 +48,8 @@ nav div > a .fa {
 
 /* Liens */
 nav a,
+nav a:hover,
+nav a:active,
 nav ul a,
 .side-nav a {
     color: #07275C;
@@ -281,9 +292,9 @@ h1:before {
     border: 1px solid #383838;
     /* My stipped background */
     background: #D1D1D1; /* Old browsers */ /* FF3.6+ */
-    background: -webkit-repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px,#58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */ /* FF3.6+ */
-    background: -webkit-repeating-linear-gradient(135deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px, #58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px);
-    background: repeating-linear-gradient(-45deg, #5858FA , #5858FA 30px, #F7FE2E 30px, #F7FE2E 40px, #58FA58 40px, #58FA58 70px,#F7FE2E 70px, #F7FE2E 80px); /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */ /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(135deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px);
+    background: repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */
     /*border-radius*/
     border-radius: 8px;
     /*box-shadow*/
@@ -309,6 +320,54 @@ h1:before {
   margin-top:50px;
   text-align: center;
 }
+      /***************/
+      /** CANDIDATE **/
+      /***************/
+
+      .candidate{
+        margin: 60px;
+        margin-left: 280px;
+      	width: 750px;
+      }
+      /*h1{
+      	color:black;
+      	font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
+      	font-weight:bold;
+      	text-align: center;
+      }*/
+      .candidate h2{
+      	color:orange;
+      	font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
+      	font-weight:bold;
+      	text-align: center;
+      }
+      .candidate form{
+      	border: 1px solid orange;
+      	padding:30px;
+      	background-color:orange;
+      }
+
+      .candidate *::before, *::after{
+        box-sizing: content-box;
+      }
+
+      .candidate p{
+        color: black;
+        padding: 15px;
+      	width:400px;
+      	padding-left: 305px;
+      	text-align: left;
+      	vertical-align: top;
+      }
+      .candidate label.left{
+        color: black;
+      	float: left;
+      	margin-left: -305px;
+      	font-weight:bold;
+      }
+      #commentaires{
+        box-sizing: 250px !important;
+      }
 
 
 /* Footer */
@@ -381,10 +440,10 @@ footer.page-footer .sponsor{
   z-index:1;
 }
 #slideNext{
-  right:30px;
+  right:70px;
 }
 #slidePreview{
-  left:30px;
+  left:70px;
 }
 
 /* MSG FLASH */
@@ -393,7 +452,7 @@ footer.page-footer .sponsor{
   top:150px;
   width:100%;
   text-align:center;
-  z-index:10;
+  z-index:1000000000;
   display:none;
 }
 #msgFlash div{
@@ -408,4 +467,33 @@ footer.page-footer .sponsor{
 /* Editor */
 .btnTextAdmin i{
   display:none;
+}
+
+/* Admin Bar */
+#adminBar{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  z-index:10;
+}
+#adminBar a{
+  outline:none;
+}
+#adminBar span{
+  color:black;
+  display:block;
+  transition:opacity 0.3s;
+  opacity:0.5;
+}
+#adminBar span:hover{
+  opacity:1;
+}
+#adminBar svg{
+  padding:3px 9px 0 0;
+}
+
+/* Admin config */
+.configColor{
+  color:#555;
+  padding-bottom:20px!important;
 }
