@@ -2,17 +2,17 @@
 
     <div class="row">
         <div class="col s12">
-            <h1><?= $pageData[0]['title'] ?></h1>
+            <h1><?= $pageData['title'] ?></h1>
             <p>
-                <?= $pageData[0]['text'] ?>
+                <?= $pageData['text'] ?>
             </p>
         </div>
 
     </div>
 
     <?php
-      unset($pageData[0]);
-      foreach ($pageData as $data):
+      $historic = $db->query('SELECT * FROM historic ORDER BY year');
+      foreach ($historic as $data):
     ?>
         <div class="row">
             <div class="col s1 year">

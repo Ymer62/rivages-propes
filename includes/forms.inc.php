@@ -50,7 +50,7 @@ class form{
     $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     $to = isset($_POST['to']) ? $_POST['to'] : "";
-    $sujet = isset($_POST['sujet']) ? $_POST['sujet'] : "";
+    $subject = isset($_POST['subject']) ? $_POST['subject'] : "";
     $msg = isset($_POST['msg']) ? $_POST['msg'] : "";
 
     // Vérification du formulaire
@@ -78,7 +78,7 @@ class form{
       $response = mail($to, $sujet, $msg, $header);
 
       if($response){
-        $_SESSION['flash'] = 'Envoi mail OK';
+        $_SESSION['flash'] = 'Le message a bien été transmis';
         header('Location:./');
         exit;
       }
