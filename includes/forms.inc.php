@@ -25,7 +25,7 @@ class form{
       ));
 
       // Succes
-      if($user['password'] && password_verify($_POST['password'], $user['password'])){
+      if($user['password'] && password_verify(SALT . $_POST['password'], $user['password'])){
         $_SESSION['admin'] = 'connected';
         $this->msgFlash('Connexion réussie !', './');
       }

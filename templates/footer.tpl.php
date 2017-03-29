@@ -57,7 +57,9 @@ if(ADMIN):
 include 'templates/modal/progressBar.tpl.php';
 include 'templates/modal/sponsors.tpl.php';
 include 'templates/modal/config.tpl.php';
-include 'templates/modal/user.tpl.php';
+include 'templates/modal/users.tpl.php';
+include 'templates/modal/userAdd.tpl.php';
+include 'templates/modal/userEdit.tpl.php';
 
 // JS
 ?>
