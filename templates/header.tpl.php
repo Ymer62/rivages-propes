@@ -21,6 +21,9 @@
 
     <link href="css/main.min.css" rel="stylesheet">
     <link href="css/thomas.css" rel="stylesheet">
+    <?php if (PAGE === 'as_softmobility'): ?>
+    <link href="css/cycleco.min.css" rel="stylesheet">
+    <?php endif; ?>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
