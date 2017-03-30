@@ -7,6 +7,16 @@
 #FFF
 */
 
+/* Font Face */
+
+@font-face {
+    font-family: 'IconicStroke';
+    src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot');
+    src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.woff') format('woff'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.ttf') format('truetype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.svg#IconicStrokeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Modals */
 .modal{
   z-index:10000!important;
@@ -115,6 +125,31 @@ h5 i,
 h6 i{
   cursor:pointer;
 }
+
+
+h1 {
+    font-family: 'Questrial', Verdana, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    padding: 0;
+    margin: 20px 0 60px 0;
+    position: relative;
+    top: 0;
+    color: #8C8C8C;
+}
+
+h1:before {
+    position: absolute;
+    top: 60px;
+    content: ' ';
+    text-align: center;
+    display: block;
+    height: 2px;
+    width: 100%; /* FF3.6+ */
+    background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
+}
+
 
 /* Carousel */
 .carousel-item {
@@ -250,37 +285,6 @@ h6 i{
 /* Contact */
 /***********/
 
-@font-face {
-    font-family: 'IconicStroke';
-    src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot');
-    src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.woff') format('woff'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.ttf') format('truetype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.svg#IconicStrokeRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'Questrial', Verdana, sans-serif;
-    text-align: center;
-    font-size: 40px;
-    padding: 0;
-    margin: 20px 0 60px 0;
-    position: relative;
-    top: 0;
-    color: #8C8C8C;
-}
-
-h1:before {
-    position: absolute;
-    top: 60px;
-    content: ' ';
-    text-align: center;
-    display: block;
-    height: 2px;
-    width: 100%; /* FF3.6+ */
-    background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
-}
-
 
 #content {
     position: relative;
@@ -320,53 +324,50 @@ h1:before {
   margin-top:50px;
   text-align: center;
 }
+
+
 /***************/
 /** CANDIDATE **/
 /***************/
 
 .candidate{
-  margin: 60px;
-  margin-left: 280px;
-  width: 750px;
+  margin: 40px;
+  margin-left: 50px;
 }
-/*h1{
-  color:black;
-  font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
-  font-weight:bold;
-  text-align: center;
-}*/
+
 .candidate h2{
   color:black;
   font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
 }
 .candidate form{
+  margin-left: 18%;
+  width: 65%;
   border: 1px solid black;
   border-radius: 5%;
-  padding:40px;
+  padding:20px;
   background-color:#FFD900;
 }
 
 .candidate *::before, *::after{
   box-sizing: border-box;
 }
+
 .candidate input{
   border-color: black;
-  width:300px;
+  width:200px;
 }
 
 .candidate p{
   color: black;
-  padding: 15px;
+  padding: 10px;
   width:400px;
-  padding-left: 305px;
-  text-align: left;
-  /*vertical-align: top;*/
 }
-.candidate label.left{
+
+.candidate label{
+  padding-right: 30%;
   color: white;
   font-size: 120%;
   text-shadow: 3px 3px 3px black;
-  margin-left: -305px;
   font-weight: normal;
 }
 
@@ -376,7 +377,7 @@ h1:before {
 
 #commentaires{
   height: 150px;
-  width: 350px;
+  width:250px;
 }
 
 /* Footer */

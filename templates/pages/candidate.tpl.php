@@ -17,18 +17,15 @@ else:
 endif;
 ?>
 
+<div class="candidate">
 
-
-<div class="candidate col s8 offset-s2">
-
-<h1>Candidature</h1>
-<form class="col s12" action="" method="get">
+<form class="col s6" action="" method="get">
   <p>
-    <label for="prenom" class="left">Prénom :</label>
+    <label for="prenom" >Prénom :</label>
     <input name="prenom" id="prenom" type="text"/>
   </p>
     <p>
-    <label for="nom" class="left">Nom : </label>
+    <label for="nom" >Nom : </label>
     <input name="nom" id="nom" type="text"/>
   </p>
   <p>
