@@ -257,9 +257,9 @@ var toolbar = [
     ['height', ['lineheight']],
 ];
 
-$('.editor').materialnote({
+$('#first.editor').materialnote({
     toolbar: toolbar,
-    height: 550,
+    height: 500,
     minHeight: 100,
     defaultBackColor: '#fff'
 });
@@ -267,6 +267,7 @@ $('.editor').materialnote({
 $('.editorAir').materialnote({
     airMode: true,
     airPopover: [
+        ['style', ['style']],
         ['color', ['color']],
         ['font', ['bold', 'underline', 'clear']],
         ['para', ['ul', 'paragraph']],

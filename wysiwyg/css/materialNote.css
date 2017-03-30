@@ -520,3 +520,6 @@
 .note-editor .btn:not(.note-recent-color) {
   color:#FFF!important;
 }
+.note-popover .btn:not(.note-recent-color) {
+  color:#FFF!important;
+}

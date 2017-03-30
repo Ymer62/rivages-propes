@@ -26,9 +26,6 @@
               </button>
             </div>
           </div>
-          <!-- <div class="editorAir" id="airFirst">
-             <h2 id="title">Air Mode</h2>
-          </div> -->
         <?php
         else:
         ?>
@@ -41,35 +38,10 @@
 
     </div>
 
-    <div id="historicContainer">
-    <?php
-      $historic = $db->query('SELECT * FROM historic ORDER BY year');
-      foreach ($historic as $data):
-    ?>
-        <div class="row">
-            <div class="col s2 year">
-                <p><?= $data['year'] ?></p>
-            </div>
-            <div class="col s10 content">
-              <div></div>
-              <div></div>
-              <h3><?= $data['title'] ?></h3>
-              <p><?= $data['text'] ?></p>
-            </div>
-        </div>
-    <?php
-      endforeach;
-    ?>
-    <div class="row">
-        <div class="col s2 year">
-          <p>Aujourd'hui</p>
-        </div>
-        <div class="col s10 content">
-          <div></div>
-        </div>
-    </div>
-  </div>
-</div>
+<?php include 'templates/historic.tpl.php'; ?>
+<?php include 'templates/modal/historicAdd.tpl.php'; ?>
+
+<script src="js/adminHistoric.min.js" type="text/javascript"></script>
 
 <?php
 
