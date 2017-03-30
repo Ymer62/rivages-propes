@@ -17,26 +17,31 @@ else:
 endif;
 ?>
 
-<form action="" method="get">
+
+
+<div class="candidate col s8 offset-s2">
+
+<h1>Candidature</h1>
+<form class="col s12" action="" method="get">
   <p>
     <label for="prenom" class="left">Prénom :</label>
-    <input name="prenom" id="prenom" type="text" size="30" maxlength="30" />
+    <input name="prenom" id="prenom" type="text"/>
   </p>
     <p>
     <label for="nom" class="left">Nom : </label>
-    <input name="nom" id="nom" type="text" size="30" maxlength="30" />
+    <input name="nom" id="nom" type="text"/>
   </p>
   <p>
   <label for="age" class="left">Age(JJ/MM/AAAA) : </label>
-  <input name="age" id="age" type="text" size="30" maxlength="30" />
+  <input name="age" id="age" type="text"/>
 </p>
   <p>
   <label for="mail" class="left">E-mail : </label>
-  <input name="mail" id="mail" type="email" size="30" maxlength="30" />
+  <input name="mail" id="mail" type="email"/>
 </p>
 <p>
 <label for="cv" class="left">Piece jointe(CV) : </label>
-<input name="cv" id="cv" type="file" size="30" maxlength="30" />
+<input name="cv" id="cv" type="file"/>
 </p>
 
   <p>
@@ -47,11 +52,16 @@ endif;
     <input name="jeudi" id="jeudi" type="checkbox" /><label for="jeudi">Jeudi</label>
     <input name="vendredi" id="vendredi" type="checkbox" /><label for="vendredi">Vendredi</label>
   </p>
+  <p>
+    <input name="matin" id="jeudi" type="checkbox" /><label for="jeudi">Matin</label>
+    <input name="apres-midi" id="vendredi" type="checkbox" /><label for="vendredi">Apres-midi</label>
+  </p>
 
   <p>
     <label for="commentaires" class="left">Commentaires : </label>
-    <textarea name="commentaires" id="commentaires" cols="50" rows="5" />
+    <textarea name="commentaires" id="commentaires"/></textarea>
   </p>
+  </form>
 
 </div>
 
