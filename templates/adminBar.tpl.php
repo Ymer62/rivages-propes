@@ -12,7 +12,7 @@ if(ADMIN):
       <i class="medium material-icons">supervisor_account</i>
     </span>
   </a>
-  <a title="Aperçu" target="_blank" href="index.php?page=<?= PAGE ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
+  <a title="Aperçu" target="_blank" href="index.php?page=<?= (isset($_GET['page']) ? $_GET['page'] : '') ?>&preview=true<?= (isset($_GET['noData']) ? '&noData=true' : '') ?>">
     <span>
       <i class="medium material-icons">visibility</i>
     </span>

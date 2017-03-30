@@ -145,50 +145,60 @@ h6 i{
 /**************/
 /* Historique */
 /**************/
-#historique ul {
+#historic ul {
     margin-left: 25px;
     margin-bottom: 50px;
 }
-
-#historique ul li {
+#historic ul li {
     list-style: circle;
 }
-
-#historique .row {
-    margin: 0 auto;
+#historicContainer .content,
+#historicContainer .year {
+  position:relative;
 }
-
-#historique .line div {
-    margin: auto;
+#historicContainer .content {
+    padding:40px 0 40px 0;
 }
-
-#historique .line div:nth-of-type(2) {
-    width: 2px;
-    height: 100%;
-    background-color: #018EA0;
+#historicContainer .content div:first-child {
+  position:absolute;
+  top:0;
+  left:-25px;
+  width:15px;
+  height:15px;
+  border-radius:100%;
+  background-color:#FFD900;
+  z-index:1;
 }
-
-#historique .line div:nth-of-type(1) {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #FFD900;
+#historicContainer .content div:nth-child(2){
+  position:absolute;
+  top:15px;
+  left:-18px;
+  position:absolute;
+  width:2px;
+  height:102%;
+  background-color:#018EA0;
 }
-
-#historique .year {
-    position: relative;
-    top: 0;
+#historicContainer .year p {
+  margin-top:-3px;
+  text-align:center;
 }
-
-#historique .year p {
-    position: absolute;
-    right: 0px;
-    top: -17px;
-    font-style: italic;
+#historicContainer p {
+  margin:0;
+  padding:0;
 }
-
-#historique .content {
-    padding: 20px;
+@media all and(max-width: 992px){
+  #historicContainer .s2 {
+    margin:0;
+    padding:0;
+    width:30px;
+  }
+  #historicContainer .year p {
+    position:absolute;
+    top:0;
+    right:-200px;
+    width:200px;
+    text-align:left;
+  }
 }
 
 /**********/
