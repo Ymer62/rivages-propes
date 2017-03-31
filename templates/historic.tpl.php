@@ -1,3 +1,4 @@
+<?php if(ADMIN): ?>
 <div class="row">
   <div class="col s12">
     <a href="#historicAdd" class="waves-effect waves-light btn white-text grey darken-4">
@@ -7,6 +8,8 @@
   </div>
 </div>
 <?php
+  endif;
+  
   $historic = $db->query('SELECT * FROM historic ORDER BY year');
   foreach ($historic as $data):
 ?>

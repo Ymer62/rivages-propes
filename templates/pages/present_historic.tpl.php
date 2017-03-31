@@ -37,8 +37,12 @@
       </div>
 
     </div>
+</div>
 
+<div id="historicContainer">
 <?php include 'templates/historic.tpl.php'; ?>
+</div>
+
 <?php include 'templates/modal/historicAdd.tpl.php'; ?>
 
 <script src="js/adminHistoric.min.js" type="text/javascript"></script>
