@@ -39,13 +39,18 @@
     </div>
 </div>
 
-<div id="historicContainer">
+<div class="container" id="historicContainer">
 <?php include 'templates/historic.tpl.php'; ?>
 </div>
 
-<?php include 'templates/modal/historicAdd.tpl.php'; ?>
-
+<?php
+if(ADMIN):
+include 'templates/modal/historicAdd.tpl.php';
+?>
 <script src="js/adminHistoric.min.js" type="text/javascript"></script>
+<?php
+endif;
+?>
 
 <?php
 

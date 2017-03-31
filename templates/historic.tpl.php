@@ -9,7 +9,7 @@
 </div>
 <?php
   endif;
-  
+
   $historic = $db->query('SELECT * FROM historic ORDER BY year');
   foreach ($historic as $data):
 ?>
@@ -24,11 +24,12 @@
       <div class="editorAir">
          <?= $data['text'] ?>
       </div>
-      <button data-id="<?= $data['id'] ?>" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+      <br />
+      <i data-id="<?= $data['id'] ?>" class="deleteHistoric small material-icons left">delete</i>
+      <button data-id="<?= $data['id'] ?>" class="btnHistoricTextAdmin waves-effect waves-light btn white-text grey darken-4">
         <i class="small material-icons right">mode_edit</i>
         Appliquer
       </button>
-      <i data-id="<?= $data['id'] ?>" class="deleteHistoric small material-icons right">delete</i>
       <?php else: ?>
       <?= $data['text'] ?>
       <?php endif; ?>

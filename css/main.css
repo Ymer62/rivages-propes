@@ -475,7 +475,8 @@ footer.page-footer .sponsor{
 }
 
 /* Editor */
-.btnTextAdmin i{
+.btnTextAdmin i,
+.btnHistoricTextAdmin i{
   display:none;
 }
 
@@ -515,3 +516,6 @@ footer.page-footer .sponsor{
 }
 
 /* Admin historic */
+.deleteHistoric{
+  cursor:pointer;
+}
