@@ -1,29 +1,48 @@
 <div class="container" id="mobilite-douce">
   <div class="row">
     <div class="col s12 ">
-      <div class="  col l6 offset-l3 title">
-        <?php
-        if(ADMIN):
-        ?>
-          <h1 data-page="<?= PAGE ?>">
-            <span contenteditable="true">
-              <?php echo $pageData['title'] ?>
-            </span>
-            <i class="small material-icons editTitle" style="display:none">mode_edit</i>
-          </h1>
-        <?php
-        else:
-        ?>
-          <h1><?= $pageData['title'] ?></h1>
-        <?php
-        endif;
-        ?>
+
+      <?php
+      if(ADMIN):
+      ?>
+        <h1 data-page="<?= PAGE ?>">
+          <span contenteditable="true">
+            <?= $pageData['title'] ?>
+          </span>
+          <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+        </h1>
+        <div class="row">
+            <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+                <div data-btn="btnSubmitText" class="editor" id="first">
+                    <?= $pageData['text'] ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+        <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+          <i class="small material-icons right">mode_edit</i>
+          Appliquer
+        </button>
+      </div>
+      </div>
+        <!-- <div class="editorAir" id="airFirst">
+           <h2 id="title">Air Mode</h2>
+        </div> -->
+      <?php
+      else:
+      ?>
+        <h1><?= $pageData['title'] ?></h1>
+        <p class="flow-text"><?= $pageData['text'] ?></p>
+      <?php
+      endif;
+      ?>
       </div>
     </div>
 
     <div class="row">
         <div class="col s12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p></p>
         </div>
         <div class="col l3 m4 s12">
             <img class="materialboxed" src="img/placeholder.jpg" alt="">
@@ -39,7 +58,6 @@
         </div>
     </div>
   </div>
-</div>
 <?php
 
 $debug->arr(array('$pageData' => $pageData));
