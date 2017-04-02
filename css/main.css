@@ -444,8 +444,6 @@ footer.page-footer .fa {
 
 footer.page-footer .footer-copyright {
     background-color: rgba(0, 0, 0, 0.1);
-    height: auto;
-    padding-top: 30px;
 }
 
 footer.page-footer .footer-copyright,
@@ -453,15 +451,13 @@ footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"])
     color: #000;
 }
 
+footer.page-footer .footer-copyright .row{
+  margin-bottom:0;
+}
+
 footer.page-footer .sponsor{
   position:relative;
   display:inline-block;
-}
-
-@media all and (min-width: 600px) {
-    footer.page-footer .footer-copyright {
-        height: 30px;
-    }
 }
 
 /* Edit carousel */

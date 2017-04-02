@@ -1,7 +1,7 @@
 <footer class="page-footer">
   <div class="container">
     <div class="row">
-      <div id="sponsorsContainer" class="col s12">
+      <div id="sponsorsContent" class="col s12">
         <?php
         $sponsors = $db->query("SELECT * FROM sponsors");
         foreach ($sponsors as $sponsor):
@@ -44,8 +44,6 @@
             </div>
             <?php endif; ?>
         </div>
-
-
     </div>
   </div>
 </footer>

@@ -44,7 +44,7 @@ $(document).ready(function(){
                     <img src="img/sponsors/'+Data[1]+'" alt="'+Data[2]+'">\
                   </div>';
 
-        $('#sponsorsContainer').append(newSponsor);
+        $('#sponsorsContent').append(newSponsor);
 
         $('#progress').modal('close');
         $('#sponsors').modal('close');
