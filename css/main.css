@@ -49,6 +49,9 @@ nav {
 }
 
 /* Mobile menu */
+#mobile_menu{
+  z-index:10000000000000;
+}
 .side-nav .submenu {
     padding-left: 40px;
 }

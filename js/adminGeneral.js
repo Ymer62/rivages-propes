@@ -253,7 +253,7 @@ var toolbar = [
     ['undo', ['undo', 'redo', 'help']],
     ['ckMedia', ['ckImageUploader', 'ckVideoEmbeeder']],
     ['misc', ['link', 'picture', 'table', 'hr', /*'codeview',*/ 'fullscreen']],
-    ['para', ['ul', 'ol', 'paragraph', 'leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton']],
+    ['para', ['ul', 'ol', /*'paragraph',*/ 'leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton']],
     ['height', ['lineheight']],
 ];
 
