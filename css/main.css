@@ -7,8 +7,17 @@
 #FFF
 */
 
-/* Font Face */
+body {
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+}
 
+main {
+  flex:1 0 auto;
+}
+
+/* Font Face */
 @font-face {
     font-family: 'IconicStroke';
     src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot');
