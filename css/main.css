@@ -411,55 +411,7 @@ h1:before {
 /** CANDIDATE **/
 /***************/
 
-.candidate{
-  margin: 40px;
-  margin-left: 50px;
-}
-
-.candidate h2{
-  color:black;
-  font-family: Caflisch Script, Adobe Poetica, Sanvito, Ex Ponto, Snell Roundhand, Zapf-Chancery, cursive;
-}
-.candidate form{
-  margin-left: 18%;
-  width: 65%;
-  border: 1px solid black;
-  border-radius: 5%;
-  padding:20px;
-  background-color:#FFD900;
-}
-
-.candidate *::before, *::after{
-  box-sizing: border-box;
-}
-
-.candidate input{
-  border-color: black;
-  width:200px;
-}
-
-.candidate p{
-  color: black;
-  padding: 10px;
-  width:400px;
-}
-
-.candidate label{
-  padding-right: 30%;
-  color: white;
-  font-size: 120%;
-  text-shadow: 3px 3px 3px black;
-  font-weight: normal;
-}
-
-#cv{
-  cursor: pointer;
-}
-
-#commentaires{
-  height: 150px;
-  width:250px;
-}
+/*#candidate*/
 
 /* Footer */
 footer.page-footer i{
@@ -611,4 +563,51 @@ footer.page-footer .sponsor{
   margin:auto;
   color:white;
   text-shadow:0 0 2px black;
+}
+
+/* THOMAS */
+/*-------------Accompagnement------------------*/
+
+#imgRdv {
+    float: left;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
+}
+
+#accompagnement div p {
+    text-align: justify;
+}
+
+#imgchantier {
+    display: block;
+    float: right;
+    height: auto;
+    width: 40%;
+    margin: 0 10px;
+}
+
+.one p, .one h4 {
+    text-align: right !important;
+}
+
+
+/*-----------------environnement--------------*/
+#environnement div img {
+    height: auto;
+    width: 100%;
+}
+
+/*-------------------Bâtiment-------------------*/
+
+#batiment div img {
+    height: auto;
+    width: 100%;
+}
+
+/*------------------Mobilité-douce---------------------*/
+
+#mobilite-douce div img {
+    height: auto;
+    width: 100%;
 }
