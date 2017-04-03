@@ -331,11 +331,21 @@ h1:before {
 /* Contact */
 /***********/
 
+.pagecontact{
+  display: flex;
+}
+
+.pagecontact iframe{
+  width: 100%;
+}
+
 
 #content {
     position: relative;
-    margin: 80px auto;
-    width: 600px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 5%;
+    width: 40%;
     min-height: 200px;
     z-index: 100;
     padding: 40px;
@@ -366,9 +376,28 @@ h1:before {
     border-radius: 8px;
 }
 
+
 #envoie {
   margin-top:50px;
   text-align: center;
+}
+
+.googlemap{
+  margin-bottom: 80px;
+  margin-left: 130px;
+  width: 40%;
+  margin-right: 60px;
+  margin-top: 80px;
+}
+
+.contactinfo h5{
+  margin-bottom: 5%;
+}
+
+.contactinfo{
+  margin-top: 5%;
+  border: 2px solid black;
+  padding: 3%;
 }
 
 
