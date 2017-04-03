@@ -48,9 +48,9 @@
     <?php endif; ?>
 
     <style>
-      a{ color: <?= $pageData['c_links'] ?>; }
-      a:hover{ color: <?= $pageData['c_links_hover'] ?>; }
-      a:active{ color: <?= $pageData['c_links_active'] ?>; }
+      a, nav a, nav ul a, .side-nav a { color: <?= $pageData['c_links'] ?>; }
+      a:hover, nav a:hover { color: <?= $pageData['c_links_hover'] ?>; }
+      a:active,nav a:active { color: <?= $pageData['c_links_active'] ?>; }
 
       .btn,.side-nav a.btn{ background-color: <?= $pageData['c_buttons'] ?>; color: <?= $pageData['c_buttons_text'] ?>; }
       .btn:hover,.side-nav a.btn:hover{ background-color: <?= $pageData['c_buttons_hover'] ?>; }
