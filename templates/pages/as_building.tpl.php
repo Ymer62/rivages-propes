@@ -26,9 +26,6 @@
         </button>
       </div>
       </div>
-        <!-- <div class="editorAir" id="airFirst">
-           <h2 id="title">Air Mode</h2>
-        </div> -->
       <?php
       else:
       ?>
@@ -40,18 +37,54 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id="gallery">
       <div class="col l3 m4 s12">
+        <div class="dir">
           <img class="materialboxed" src="img/placeholder.jpg" alt="">
+          <div class="placeHolder valign-wrapper center">
+            <div>
+              <i class="medium material-icons">folder_open</i>
+              <br />
+              Name cat
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col l3 m4 s12">
+        <div class="dir">
           <img class="materialboxed" src="img/placeholder.jpg" alt="">
+          <div class="placeHolder valign-wrapper center">
+            <div>
+              <i class="medium material-icons">folder_open</i>
+              <br />
+              Name cat
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col l3 m4 s12">
+        <div class="dir">
           <img class="materialboxed" src="img/placeholder.jpg" alt="">
+          <div class="placeHolder valign-wrapper center">
+            <div>
+              <i class="medium material-icons">folder_open</i>
+              <br />
+              Name cat
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col l3 m4 s12">
+        <div class="dir">
           <img class="materialboxed" src="img/placeholder.jpg" alt="">
+          <div class="placeHolder valign-wrapper center">
+            <div>
+              <i class="medium material-icons">folder_open</i>
+              <br />
+              Name cat
+            </div>
+          </div>
+        </div>
       </div>
   </div>
 </div>
