@@ -11,7 +11,6 @@ body {
   display:flex;
   min-height:100vh;
   flex-direction:column;
-  background-color:#F0FFFF;
 }
 
 main {
@@ -152,6 +151,19 @@ h1 {
     margin: 20px 0 60px 0;
     position: relative;
     top: 0;
+    color: #8C8C8C;
+}
+
+h1:before {
+    position: absolute;
+    top: 60px;
+    content: ' ';
+    text-align: center;
+    display: block;
+    height: 2px;
+    width: 100%; /* FF3.6+ */
+    background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
 }
 
 
@@ -344,6 +356,12 @@ h1 {
     z-index: 100;
     padding: 40px;
     border: 1px solid #383838;
+    /* My stipped background */
+    background: #D1D1D1; /* Old browsers */ /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */ /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(135deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px);
+    background: repeating-linear-gradient(-45deg, #07275C , #07275C 30px, #FFD900 30px, #FFD900 40px, #018EA0 40px, #018EA0 70px, #FFD900 70px, #FFD900 80px); /* FF3.6+ */
+    /*border-radius*/
     border-radius: 8px;
     /*box-shadow*/
     box-shadow: 0px 1px 6px #3F3F3F;
@@ -379,7 +397,6 @@ h1 {
 }
 
 .contactinfo h5{
-  text-align: center;
   margin-bottom: 5%;
 }
 
@@ -394,11 +411,7 @@ h1 {
 /** CANDIDATE **/
 /***************/
 
-<<<<<<< HEAD
 /*#candidate*/
-=======
-
->>>>>>> 7ac1a6e1c83f7dc275fe95f0723c04a168069cad
 
 /* Footer */
 footer.page-footer i{
