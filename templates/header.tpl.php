@@ -19,6 +19,7 @@
     endif;
     ?>
 
+
     <link href="css/main<?= isset($_GET['design']) ? $_GET['design'] : '' ?>.min.css" rel="stylesheet">
     <link href="css/thomas.css" rel="stylesheet">
     <?php if (PAGE === 'as_softmobility'): ?>
