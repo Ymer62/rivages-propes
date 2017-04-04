@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 64px;
+    background-attachment: initial !important;
 }
 
 #mobilite-douce {
