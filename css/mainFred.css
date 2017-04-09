@@ -11,10 +11,40 @@ body {
   display:flex;
   min-height:100vh;
   flex-direction:column;
+  overflow-x:hidden;
 }
 
 main {
   flex:1 0 auto;
+  padding-left:100px;
+}
+
+footer{
+  background-color: transparent!important;
+}
+
+#rivages{
+  position:fixed;
+  top:0;
+  left:0;
+  width:187px;
+  height:100%;
+  background-image:url('../img/bgs/bgLeft.png');
+  background-repeat:repeat-y;
+  background-position:left;
+  background-attachment:fixed;
+  background-size:200px 100%;
+  z-index:100000000000000;
+}
+
+#logo{
+  position:fixed;
+  top:30%;
+  left:10px;
+}
+#logo img{
+  display:block;
+  margin-bottom:40px;
 }
 
 /* Font Face */
@@ -24,6 +54,10 @@ main {
     src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.woff') format('woff'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.ttf') format('truetype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.svg#IconicStrokeRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+@font-face {
+  font-family:Juergen;
+  src:url('../fonts/juergen/Juergen.ttf');
 }
 
 /* Modals */
@@ -38,17 +72,24 @@ main {
 
 /* Center block class */
 .center-block {
-    display: block !important;
-    margin: auto !important;
+    display:block !important;
+    margin:auto !important;
 }
 
 /* Navbar */
 nav {
-    background-color: #FFF;
+    background-color: transparent;
     box-shadow: none;
+}
+nav img {
+    display:none;
 }
 nav a{
     outline:none;
+}
+nav ul{
+  transform: translateX(25%);
+  webkit-transform: translateX(-25%);
 }
 
 /* Mobile menu */
@@ -78,7 +119,7 @@ nav a:hover,
 nav a:active,
 nav ul a,
 .side-nav a {
-    color: #07275C;
+    color: #06275C!important;
 }
 
 /* Dropdowns */
@@ -144,26 +185,23 @@ h6 i{
 
 
 h1 {
-    font-family: 'Questrial', Verdana, sans-serif;
+    font-family:Juergen;
     text-align: center;
-    font-size: 40px;
+    font-size: 4em;
     padding: 0;
     margin: 20px 0 60px 0;
     position: relative;
     top: 0;
-    color: #8C8C8C;
+    color: #018ea0!important;
 }
-
-h1:before {
-    position: absolute;
-    top: 60px;
-    content: ' ';
-    text-align: center;
-    display: block;
-    height: 2px;
-    width: 100%; /* FF3.6+ */
-    background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to left,  rgba(255,255,255,0) 0%,rgba(182,180,180,0.7) 42%,rgba(180,178,178,0) 43%,rgba(168,166,166,0) 50%,rgba(180,178,178,0) 57%,rgba(182,180,180,0.7) 58%,rgba(238,237,237,0.3) 90%,rgba(255,255,255,0) 100%);
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family:Juergen;
+  font-size: 2.5em;
+  color: #018ea0!important;
 }
 
 
@@ -439,12 +477,17 @@ footer.page-footer .fa {
 }
 
 footer.page-footer .footer-copyright {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color:#018EA0;
+    /*background-color: rgba(255, 255, 255, 0.3);*/
 }
 
 footer.page-footer .footer-copyright,
 footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"]) {
-    color: #000;
+    color: #06275C;
+    font-weight:400;
+}
+footer.page-footer .footer-copyright a[href="http://boulogne.simplon.co/"] {
+    color: #FFF;
 }
 
 footer.page-footer .footer-copyright .row{
@@ -564,6 +607,15 @@ footer.page-footer .sponsor{
   color:white;
   text-shadow:0 0 2px black;
 }
+#gallery i{
+  position:absolute;
+  top:5px;
+  right:5px;
+  cursor:pointer;
+}
+#gallery .view{
+  cursor:pointer;
+}
 
 /* THOMAS */
 /*-------------Accompagnement------------------*/
@@ -589,25 +641,4 @@ footer.page-footer .sponsor{
 
 .one p, .one h4 {
     text-align: right !important;
-}
-
-
-/*-----------------environnement--------------*/
-#environnement div img {
-    height: auto;
-    width: 100%;
-}
-
-/*-------------------Bâtiment-------------------*/
-
-#batiment div img {
-    height: auto;
-    width: 100%;
-}
-
-/*------------------Mobilité-douce---------------------*/
-
-#mobilite-douce div img {
-    height: auto;
-    width: 100%;
 }

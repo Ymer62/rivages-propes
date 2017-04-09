@@ -26,6 +26,9 @@ include 'includes/debug.inc.php';
 // Forms
 include 'includes/forms.inc.php';
 
+// Upload
+include 'includes/upload.inc.php';
+
 // Dispatcher
 include 'includes/dispatcher.inc.php';
 

@@ -2,25 +2,6 @@
 
 if(ADMIN){
 
-  // File
-  if(isset($_FILES['formSlide']['tmp_name'])){
-    $fileTmpName = $_FILES['formSlide']['tmp_name'];
-    $fileType = $_FILES['formSlide']['type'];
-    $fileName = $_FILES['formSlide']['name'];
-    $fileSize = $_FILES['formSlide']['size'];
-
-    $path = 'img/homeSliders/';
-
-    switch ($fileType){
-      case 'image/jpeg': $ext = '.jpg'; break;
-      case 'image/jpg': $ext = '.jpg'; break;
-      case 'image/gif': $ext = '.gif'; break;
-      case 'image/png': $ext = '.png'; break;
-      case 'image/bmp': $ext = '.bmp'; break;
-      default: unset($_FILES); break;
-    }
-  }
-
   // Edit
   if(isset($_POST['id']) && is_numeric($_POST['id'])){
     // Content
@@ -28,20 +9,21 @@ if(ADMIN){
 
     // Send new file
     if(isset($_FILES['formSlide']['tmp_name'])){
-      $newName = md5(rand()) . $ext;
-      if(move_uploaded_file($fileTmpName, $path . $newName)){
+      $slideImg = $upload->img($_FILES['formSlide'], 'img/homeSliders/', 1024, 768);
+
+      if($slideImg != 'errorFile' && $slideImg != 'errorExt'){
         $lastSlide = $db->row('SELECT slide FROM home_sliders WHERE id=:id', array('id' => $_POST['id']));
         if(isset($lastSlide['slide']))
-        unlink($path . $lastSlide['slide']);
+        unlink('img/homeSliders/' . $lastSlide['slide']);
 
         $db->query('UPDATE home_sliders set content=:content, slide=:slide WHERE id=:id',
         array(
           'id' => $_POST['id'],
-          'slide' => $newName,
+          'slide' => $slideImg,
           'content' => $content
         ));
 
-        echo $newName;
+        echo $slideImg;
       }
     }
     else{
@@ -61,15 +43,16 @@ if(ADMIN){
 
     // Send file
     if(isset($_FILES['formSlide']['tmp_name'])){
-      $newName = md5(rand()) . $ext;
-      if(move_uploaded_file($fileTmpName, $path . $newName)){
+      $slideImg = $upload->img($_FILES['formSlide'], 'img/homeSliders/', 1024, 768);
+
+      if($slideImg != 'errorFile' && $slideImg != 'errorExt'){
         $db->query('INSERT INTO home_sliders(slide, content) value(:slide, :content)',
         array(
-          'slide' => $newName,
+          'slide' => $slideImg,
           'content' => $content
         ));
 
-        $arr = array($db->lastInsertId(), $newName);
+        $arr = array($db->lastInsertId(), $slideImg);
         echo json_encode($arr);
       }
     }
