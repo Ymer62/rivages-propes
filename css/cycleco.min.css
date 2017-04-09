@@ -1,1 +1,1 @@
-body{background-image:url('../img/cycleco_bg.jpg');background-size:cover;background-repeat:no-repeat;background-position:0 64px}#mobilite-douce{padding-top:50%}h1{color:#FFF!important}@media all and (min-width:602px){#mobilite-douce{padding-top:35%}}
+body{background-image:url('../img/cycleco_bg.jpg');background-size:cover;background-repeat:no-repeat;background-position:0 64px;background-attachment:initial!important}#mobilite-douce{padding-top:50%}h1{color:#FFF!important}@media all and (min-width:602px){#mobilite-douce{padding-top:35%}}
