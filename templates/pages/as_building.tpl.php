@@ -37,57 +37,26 @@
     </div>
   </div>
 
+  <?php
+  // Gallery
+  $id_gallery = 2;
+  ?>
+
   <div class="row" id="gallery">
-      <div class="col l3 m4 s12">
-        <div class="dir">
-          <img class="materialboxed" src="img/placeholder.jpg" alt="">
-          <div class="placeHolder valign-wrapper center">
-            <div>
-              <i class="medium material-icons">folder_open</i>
-              <br />
-              Name cat
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col l3 m4 s12">
-        <div class="dir">
-          <img class="materialboxed" src="img/placeholder.jpg" alt="">
-          <div class="placeHolder valign-wrapper center">
-            <div>
-              <i class="medium material-icons">folder_open</i>
-              <br />
-              Name cat
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col l3 m4 s12">
-        <div class="dir">
-          <img class="materialboxed" src="img/placeholder.jpg" alt="">
-          <div class="placeHolder valign-wrapper center">
-            <div>
-              <i class="medium material-icons">folder_open</i>
-              <br />
-              Name cat
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col l3 m4 s12">
-        <div class="dir">
-          <img class="materialboxed" src="img/placeholder.jpg" alt="">
-          <div class="placeHolder valign-wrapper center">
-            <div>
-              <i class="medium material-icons">folder_open</i>
-              <br />
-              Name cat
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php
+    include 'templates/gallery.tpl.php';
+    ?>
   </div>
 </div>
+
+<?php
+if(ADMIN):
+include 'templates/modal/galleryAdd.tpl.php';
+?>
+<script src="js/adminGallery.min.js" type="text/javascript"></script>
+<?php endif; ?>
+
+<script src="js/gallery.min.js" type="text/javascript"></script>
 <?php
 
 $debug->arr(array('$pageData' => $pageData));

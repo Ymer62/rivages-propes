@@ -32,7 +32,7 @@
           <img src="img/logo_small.png" alt="logo_small">
       </a>
       <a href="#" data-activates="mobile_menu" class="button-collapse"><i class="fa fa-bars"></i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="hide-on-med-and-down right">
           <li><a class="dropdown-button" href="#!" data-activates="drop_presentation" data-beloworigin="true">Présentation <i class="fa fa-caret-down"></i></a></li>
           <li><a href="<?= $path->link('accompagnement') ?>">Accompagnement</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="drop_support" data-beloworigin="true">Supports D'activités <i class="fa fa-caret-down"></i></a></li>
@@ -43,3 +43,11 @@
   </div>
 </nav>
 <main>
+<div id="rivages">
+  <div id="logo">
+    <a href="<?= $path->link(''); ?>">
+      <img src="img/bgs/logoTitle.png" alt="Titre" />
+      <img src="img/bgs/logo.png" alt="Logo" />
+    </a>
+  </div>
+</div>

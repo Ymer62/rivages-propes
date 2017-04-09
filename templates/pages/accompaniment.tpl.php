@@ -3,38 +3,38 @@
 
   <div class="row">
     <div class="col s12">
-      <div class="title">
-        <?php
-        if(ADMIN):
-        ?>
-          <h1 data-page="<?= PAGE ?>">
-            <span contenteditable="true">
-              <?php echo $pageData['title'] ?>
-            </span>
-            <i class="small material-icons editTitle" style="display:none">mode_edit</i>
-          </h1>
-        <?php
-        else:
-        ?>
-          <h1><?= $pageData['title'] ?></h1>
-        <?php
-        endif;
-        ?>
+      <?php
+      if(ADMIN):
+      ?>
+        <h1 data-page="<?= PAGE ?>">
+          <span contenteditable="true">
+            <?= $pageData['title'] ?>
+          </span>
+          <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+        </h1>
+        <div class="row">
+            <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+                <div data-btn="btnSubmitText" class="editor" id="first">
+                    <?= $pageData['text'] ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+        <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+          <i class="small material-icons right">mode_edit</i>
+          Appliquer
+        </button>
       </div>
-        <img class="materialboxed" id="imgRdv" src="img/placeholder.jpg" alt="Rendez-vous avec un conseiller">
-        <h4>Titre</h4>
-        <p>Un accompagnement personnalisé permet à chaque salarié de travailler son projet. <br><br>Ce travail s’appuie sur les attitudes et les compétences acquises sur le chantier et des actions de formation interne et externe (”Sauveteur Secouriste du Travail”, “Prévention des Risques liés à l’Activité Physique”, “Utilisateur d’échafaudage”). Une PMSMP (Période de Mise en Situation en Milieu Professionnel) doit être obligatoirement effectuée par chaque salarié en insertion pour vérifier la cohérence du projet et envisager la suite du parcours.</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 ">
-      <div class="one">
-          <img class="materialboxed" id="imgchantier" src="img/placeholder.jpg" alt="">
-          <h4>Titre</h4>
-          <p>L’objectif est de rendre le salarié acteur de ses démarches et faire en sorte qu’il soit capable de les poursuivre à l’issue du contrat, sur du long terme.<p>
       </div>
-
+      <?php
+      else:
+      ?>
+        <h1><?= $pageData['title'] ?></h1>
+        <p class="flow-text"><?= $pageData['text'] ?></p>
+      <?php
+      endif;
+      ?>
     </div>
   </div>
 

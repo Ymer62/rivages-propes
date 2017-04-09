@@ -17,6 +17,10 @@ main {
   flex:1 0 auto;
 }
 
+#rivages{
+  display:none;
+}
+
 /* Font Face */
 @font-face {
     font-family: 'IconicStroke';
@@ -393,12 +397,6 @@ h1 {
 /** CANDIDATE **/
 /***************/
 
-<<<<<<< HEAD
-/*#candidate*/
-=======
-
->>>>>>> 7ac1a6e1c83f7dc275fe95f0723c04a168069cad
-
 /* Footer */
 footer.page-footer i{
   cursor:pointer;
@@ -550,6 +548,16 @@ footer.page-footer .sponsor{
   color:white;
   text-shadow:0 0 2px black;
 }
+#gallery .delGallery{
+  position:absolute;
+  top:5px;
+  right:5px;
+  cursor:pointer;
+  z-index:10;
+}
+#gallery .view{
+  cursor:pointer;
+}
 
 /* THOMAS */
 /*-------------Accompagnement------------------*/
@@ -575,25 +583,4 @@ footer.page-footer .sponsor{
 
 .one p, .one h4 {
     text-align: right !important;
-}
-
-
-/*-----------------environnement--------------*/
-#environnement div img {
-    height: auto;
-    width: 100%;
-}
-
-/*-------------------Bâtiment-------------------*/
-
-#batiment div img {
-    height: auto;
-    width: 100%;
-}
-
-/*------------------Mobilité-douce---------------------*/
-
-#mobilite-douce div img {
-    height: auto;
-    width: 100%;
 }

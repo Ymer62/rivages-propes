@@ -26,9 +26,6 @@
         </button>
       </div>
       </div>
-        <!-- <div class="editorAir" id="airFirst">
-           <h2 id="title">Air Mode</h2>
-        </div> -->
       <?php
       else:
       ?>
@@ -39,25 +36,26 @@
       ?>
       </div>
     </div>
+    <?php
+    // Gallery
+    $id_gallery = 3;
+    ?>
 
-    <div class="row">
-        <div class="col s12">
-            <p></p>
-        </div>
-        <div class="col l3 m4 s12">
-            <img class="materialboxed" src="img/placeholder.jpg" alt="">
-        </div>
-        <div class="col l3 m4 s12">
-            <img class="materialboxed" src="img/placeholder.jpg" alt="">
-        </div>
-        <div class="col l3 m4 s12">
-            <img class="materialboxed" src="img/placeholder.jpg" alt="">
-        </div>
-        <div class="col l3 m4 s12">
-            <img class="materialboxed" src="img/placeholder.jpg" alt="">
-        </div>
+    <div class="row" id="gallery">
+      <?php
+      include 'templates/gallery.tpl.php';
+      ?>
     </div>
   </div>
+
+  <?php
+  if(ADMIN):
+  include 'templates/modal/galleryAdd.tpl.php';
+  ?>
+  <script src="js/adminGallery.min.js" type="text/javascript"></script>
+  <?php endif; ?>
+
+  <script src="js/gallery.min.js" type="text/javascript"></script>
 <?php
 
 $debug->arr(array('$pageData' => $pageData));
