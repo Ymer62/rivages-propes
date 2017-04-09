@@ -3,13 +3,13 @@
 class upload{
 
   public function img($file, $dest, $maxWidth = false, $maxHeight = false){
-    if(isset($file['formGalleryImg']['tmp_name'])){
+    if(isset($file['tmp_name']) && $file['tmp_name'] != ''){
 
       // File
-      $fileTmpName = $file['formGalleryImg']['tmp_name'];
-      $fileType = $file['formGalleryImg']['type'];
-      $fileName = $file['formGalleryImg']['name'];
-      $fileSize = $file['formGalleryImg']['size'];
+      $fileTmpName = $file['tmp_name'];
+      $fileType = $file['type'];
+      $fileName = $file['name'];
+      $fileSize = $file['size'];
 
       switch ($fileType){
         case
@@ -34,7 +34,7 @@ class upload{
       $newName = md5(rand()) . $ext;
 
       // Upload
-      if(isset($file['formGalleryImg']['tmp_name'])){
+      if(isset($file['tmp_name'])){
         list($width,$height)=@getimagesize($fileTmpName);
 
         if(!$maxWidth && !$maxHeight){

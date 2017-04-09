@@ -2,7 +2,7 @@
 
 if(ADMIN){
   // Upload
-  $uploadImg = $upload->img($_FILES, 'img/gallery/', false, 600);
+  $uploadImg = $upload->img($_FILES['formGalleryImg'], 'img/gallery/', false, 600);
 
   if($uploadImg != 'errorFile' && $uploadImg != 'errorExt'){
 

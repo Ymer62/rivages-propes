@@ -23,7 +23,7 @@ $team[$value['cat']][$key] = $value;
 <div class="row">
   <div class="col s12">
     <h4>
-      <?= ucfirst($cat) ?>
+      <span><?= ucfirst($cat) ?></span>
       <?php if(ADMIN): ?>
         <i data-cat="<?= $cat ?>" class="small material-icons upCatMember">keyboard_arrow_up</i>
         <i data-cat="<?= $cat ?>" class="small material-icons downCatMember">keyboard_arrow_down</i>

@@ -56,7 +56,7 @@ $(document).ready(function(){
 
   // Update member
   $('#members').on('click', '.editMember', function(){
-    var cat = $(this).parent().parent().parent().children('h4').html();
+    var cat = $(this).parent().parent().parent().children('h4').children('span').html();
     var job = $(this).parent().parent().children('h6').html();
     var name = $(this).parent().children('p').html();
     var email = $(this).data('email');
