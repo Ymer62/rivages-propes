@@ -4,16 +4,15 @@ function progressBar(e){
   $('progress').attr({value:e.loaded,max:e.total});
 }
 
-// Sponsors
 $(document).ready(function(){
 
-  // Add
+  // Add Sponsors
   $('#addSponsor').click(function(){
     $('#formSponsors')[0].reset();
     $('#sponsors').modal('open');
   });
 
-  // Submit
+  // Submit Sponsors
   $('#btnSubmitSponsor').click(function(){
     if($('input[name="formSponsor"]').val() == ''){
       alert('Vous n\'avez pas sélectionné d\'image !');
@@ -37,14 +36,8 @@ $(document).ready(function(){
 
       beforeSend:function(){ $('#progress').modal('open'); },
       success:function(data,textStatus,jqXHR){
-        var Data = jQuery.parseJSON(data);
-
-        var newSponsor = '<div class="sponsor">\
-                    <i data-id="'+Data[0]+'" class="small material-icons delSponsor">delete</i>\
-                    <img src="img/sponsors/'+Data[1]+'" alt="'+Data[2]+'">\
-                  </div>';
-
-        $('#sponsorsContent').append(newSponsor);
+        if(data.trim() != 'KO')
+        $('#sponsorsContent').html(data);
 
         $('#progress').modal('close');
         $('#sponsors').modal('close');
@@ -57,7 +50,7 @@ $(document).ready(function(){
     });
   });
 
-  // Delete
+  // Delete Sponsors
   $(document).on('click', '.delSponsor', function(){
     var sponsor = $(this).parent();
     var id = $(this).data('id');
@@ -74,6 +67,34 @@ $(document).ready(function(){
         }
       });
     }
+  });
+
+  // Move Sponsors
+  $(document).on('click', '.sponsorMoveLeft', function(){
+    var id = $(this).data('id');
+
+    $.ajax({
+      type: "POST",
+      url: 'ajax.php?ajax=moveLeftSponsor',
+      data: {id:id},
+      success: function(data,textStatus,jqXHR){
+        if(data.trim() != 'KO')
+        $('#sponsorsContent').html(data);
+      }
+    });
+  });
+  $(document).on('click', '.sponsorMoveRight', function(){
+    var id = $(this).data('id');
+
+    $.ajax({
+      type: "POST",
+      url: 'ajax.php?ajax=moveRightSponsor',
+      data: {id:id},
+      success: function(data,textStatus,jqXHR){
+        if(data.trim() != 'KO')
+        $('#sponsorsContent').html(data);
+      }
+    });
   });
 
   // Modal carousel

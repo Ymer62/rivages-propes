@@ -3,25 +3,7 @@
   <div class="container">
     <div class="row">
       <div id="sponsorsContent" class="col s12">
-        <?php
-        $sponsors = $db->query("SELECT * FROM sponsors");
-        foreach ($sponsors as $sponsor):
-          if(ADMIN):
-        ?>
-          <div class="sponsor">
-            <i data-id="<?= $sponsor['id'] ?>" class="small material-icons delSponsor">delete</i>
-            <img src="img/sponsors/<?= $sponsor['img'] ?>" alt="<?= $sponsor['alt'] ?>">
-          </div>
-          <?php
-          else:
-          ?>
-          <img src="img/sponsors/<?= $sponsor['img'] ?>" alt="<?= $sponsor['alt'] ?>">
-          <?php
-          endif;
-          ?>
-        <?php
-        endforeach;
-        ?>
+        <?php include 'templates/sponsors.tpl.php'; ?>
       </div>
       <?php
       if(ADMIN):

@@ -5,15 +5,17 @@ if(ADMIN){
 
   if($sponsorImg != 'errorFile' && $sponsorImg != 'errorExt'){
     $alt = isset($_POST['formSponsorAlt']) ? $_POST['formSponsorAlt'] : '';
+    $idMax = $db->row('SELECT id FROM sponsors ORDER BY id DESC');
+    $idMax = $idMax['id'];
 
-    $db->query('INSERT INTO sponsors(img, alt) value(:img, :alt)',
+    $db->query('INSERT INTO sponsors(img, alt, pos) value(:img, :alt, :pos)',
     array(
       'img' => $sponsorImg,
-      'alt' => $alt
+      'alt' => $alt,
+      '' => $idMax + 1
     ));
 
-    $arr = array($db->lastInsertId(), $sponsorImg, $alt);
-    echo json_encode($arr);
+    include 'templates/sponsors.tpl.php';
   }
   else
   echo 'KO';
