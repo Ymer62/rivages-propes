@@ -224,8 +224,8 @@ nav a{
     outline:none;
 }
 nav ul{
-  transform: translateX(25%);
-  webkit-transform: translateX(-25%);
+  transform: translateX(-25%);
+  webkit-transform: translateX(25%);
 }
 
 /* Mobile menu */
