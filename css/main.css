@@ -8,13 +8,20 @@
 */
 
 body {
+  display:-webkit-box;
+  display:-ms-flexbox;
   display:flex;
   min-height:100vh;
-  flex-direction:column;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
 }
 
 main {
-  flex:1 0 auto;
+  -webkit-box-flex:1;
+      -ms-flex:1 0 auto;
+          flex:1 0 auto;
 }
 
 p {
@@ -465,6 +472,8 @@ h1 {
 /***********/
 
 .pagecontact{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -575,7 +584,7 @@ footer.page-footer .footer-copyright {
 }
 
 footer.page-footer .footer-copyright,
-footer.page-footer .footer-copyright a:not([href="http://boulogne.simplon.co/"]) {
+footer.page-footer .footer-copyright a {
     color: #000;
 }
 
@@ -654,6 +663,7 @@ footer.page-footer .sponsor{
 #adminBar span{
   color:black;
   display:block;
+  -webkit-transition:opacity 0.3s;
   transition:opacity 0.3s;
   opacity:0.5;
 }
@@ -731,4 +741,18 @@ footer.page-footer .sponsor{
 
 .one p, .one h4 {
     text-align: right !important;
+}
+
+
+/* Mentions légales */
+#legal h1 {
+    margin-top: 50px;
+}
+
+#legal h3 {
+    font-size: 30px;
+}
+
+#legal p span {
+    font-weight: bold;
 }
