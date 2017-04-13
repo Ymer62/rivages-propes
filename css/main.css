@@ -468,12 +468,15 @@ h1 {
 /**********/
 /* Events */
 /**********/
-#events > .row:nth-child(2) > .col:nth-child(1) {
-    border-right: 0.5px solid rgba(0, 0, 0, 0.2);
-}
 
-#events > .row:nth-child(2) > .col:nth-child(2) {
-    border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+@media (min-width: 600px) {
+    #events > .row:nth-child(2) > .col:nth-child(1) {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    #events > .row:nth-child(2) > .col:nth-child(2) {
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
 }
 
 #events .row:nth-child(2) h4 {
