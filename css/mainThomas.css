@@ -42,6 +42,9 @@ main {
     /*z-index:100000000000000;*/
 }
 
+#logo{
+  display: none;
+}
 
 /* Font Face */
 
