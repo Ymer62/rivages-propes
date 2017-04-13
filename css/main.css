@@ -465,7 +465,60 @@ h1 {
   right:5px;
 }
 
+/**********/
+/* Events */
+/**********/
 
+@media (min-width: 600px) {
+    #events > .row:nth-child(2) > .col:nth-child(1) {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    #events > .row:nth-child(2) > .col:nth-child(2) {
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+#events .row:nth-child(2) h4 {
+    text-align: center;
+}
+
+#events .row:nth-child(2) img {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+#events .row:nth-child(2) .row .col {
+    -webkit-transition:all 0.5s;
+    transition: all 0.5s;
+}
+
+#events .row:nth-child(2) .row .col:hover {
+    -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+    -webkit-transition:all 0.5s;
+    transition: all 0.5s;
+}
+
+#events .row:nth-child(2) p {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: relative;
+    bottom: 43px;
+}
+
+#events .row:nth-child(3) h2 {
+    text-align: center;
+}
+
+#events .row:nth-child(3) p {
+    text-align: justify;
+}
 
 /***********/
 /* Contact */
