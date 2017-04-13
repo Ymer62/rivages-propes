@@ -13,7 +13,7 @@
                 Adresse : 2 boulevard Beaucerf, 62200, Boulogne-sur-Mer<br />
                 Téléphone : 03 21 33 87 59<br />
                 Fax : 03 21 10 89 63<br />
-                Email : asso-rivagespropres@nordnet.fr<br />
+                Email : contact@rivagespropres.fr<br />
                 Site Web : <a href="http://http://www.rivagespropres.fr">http://www.rivagespropres.fr</a><br />
                 Responsable editorial : Bruno Gauduin
             </p>
