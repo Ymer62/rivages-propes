@@ -2,6 +2,7 @@
 
 // Dispatcher
 $dispatcher = array(
+  'mentions-legales' => 'legal',
   'accompagnement' => 'accompaniment',
   'support-activites-batiment' => 'as_building',
   'support-activites-mobilite-douce' => 'as_softmobility',

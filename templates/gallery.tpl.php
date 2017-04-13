@@ -20,7 +20,9 @@
   ?>
   <div class="col l3 m4 s12">
     <div data-view="<?= ($data['directory'] ? $path->link('galerie', true, $data['id']) : '') ?>" class="dir<?= ($data['directory'] ? ' view' : '') ?>">
+      <?php if(ADMIN): ?>
       <i data-id="<?= $data['id'] ?>" data-idgallery="<?= $data['id_gallery'] ?>" class="delGallery small material-icons">delete</i>
+      <?php endif; ?>
       <img class="materialboxed center-block responsive-img" src="img/gallery/<?= $data['img'] ?>" alt="">
       <?php if($data['directory']): ?>
       <div class="placeHolder valign-wrapper center">
