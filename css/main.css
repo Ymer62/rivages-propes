@@ -498,6 +498,14 @@ h1 {
     transition: all 0.5s;
 }
 
+#events .row:nth-child(3) h2 {
+    text-align: center;
+}
+
+#events .row:nth-child(3) p {
+    text-align: justify;
+}
+
 /***********/
 /* Contact */
 /***********/

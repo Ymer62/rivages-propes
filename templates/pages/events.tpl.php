@@ -64,10 +64,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s12" id="result">
+    <div class="row" id="result">
 
-        </div>
     </div>
 </div>
 
@@ -83,15 +81,21 @@
         result.slideUp();
         // On récupère l'id de l'image sur laquelle on a cliqué
         var id = this.getAttribute('data-id');
+        // Et sa source
+        var src = this.getAttribute('src');
         $.ajax({
           type: "POST",
           url: 'ajax.php?ajax=showEvent',
-          data: {id:id},
+          data: {
+              id:id,
+              src:src,
+          },
           success: function(data){
               result.html(data);
           },
           complete : function(){
               result.slideDown();
+              $('.materialboxed').materialbox();
           }
         });
     }
