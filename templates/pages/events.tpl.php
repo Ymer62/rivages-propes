@@ -24,44 +24,56 @@
         <div class="col s12 m6">
             <h4>A venir</h4>
             <div class="row">
-                <div class="col s12 m4">
+                <div class="col s4">
                     <!-- data-id a remplacer par l'id de l'event attaché à l'image récupérée en BDD -->
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
-                <div class="col s12 m4">
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                <div class="col s4">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
-                <div class="col s12 m4">
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                <div class="col s4">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col s12 m6">
             <h4>Passés</h4>
             <div class="row">
-                <div class="col s12 m4">
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                <div class="col s4">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
-                <div class="col s12 m4">
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                <div class="col s4">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
-                <div class="col s12 m4">
-                    <img src="img/placeholderV.png" alt="" data-id="1">
+                <div class="col s4">
+                    <a href="#result">
+                        <img src="img/placeholderV.png" alt="" data-id="1">
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col s12">
-            
+        <div class="col s12" id="result">
+
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
     var images = $('#events .row:nth-child(2) img')
-    var result = $('#events .row:nth-child(3) .col');
+    var result = $('#result');
     // Lorsqu'on clique sur une image on appelle la fonction getEvent
     images.each(function() {
         $(this).on('click touchstart', getEvent);
