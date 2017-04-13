@@ -487,15 +487,29 @@ h1 {
     cursor: pointer;
     width: 100%;
     height: auto;
+}
+
+#events .row:nth-child(2) .row .col {
     -webkit-transition:all 0.5s;
     transition: all 0.5s;
 }
 
-#events .row:nth-child(2) img:hover {
+#events .row:nth-child(2) .row .col:hover {
     -webkit-transform: scale(1.025);
             transform: scale(1.025);
     -webkit-transition:all 0.5s;
     transition: all 0.5s;
+}
+
+#events .row:nth-child(2) p {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: relative;
+    bottom: 43px;
 }
 
 #events .row:nth-child(3) h2 {

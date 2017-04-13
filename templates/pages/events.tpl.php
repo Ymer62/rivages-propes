@@ -29,16 +29,19 @@
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
                 <div class="col s4">
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
                 <div class="col s4">
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
             </div>
         </div>
@@ -49,16 +52,19 @@
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
                 <div class="col s4">
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
                 <div class="col s4">
                     <a href="#result">
                         <img src="img/placeholderV.png" alt="" data-id="1">
                     </a>
+                    <p>13/06/2017</p>
                 </div>
             </div>
         </div>
