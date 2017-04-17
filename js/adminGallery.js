@@ -14,8 +14,8 @@ $(document).ready(function(){
       return;
     }
 
-    var id = $('#formAddGallery input[type="hidden"]').val();
-    var formGalleryName = $('#formGalleryName').val();
+    // var id = $('#formAddGallery input[type="hidden"]').val();
+    // var formGalleryName = $('#formGalleryName').val();
     var formData = new FormData($('#formAddGallery')[0]);
 
     $.ajax({
