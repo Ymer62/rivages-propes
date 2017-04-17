@@ -2,21 +2,49 @@
     <div class="row">
         <div class="col s12 ">
 
-            <h1>Mentions légales</h1>
+            <?php if(ADMIN): ?>
+            <h1 data-page="<?= PAGE ?>">
+              <span contenteditable="true">
+                <?= $pageData['title'] ?>
+              </span>
+              <i class="small material-icons editTitle" style="display:none">mode_edit</i>
+            </h1>
+            <?php else: ?>
+            <h1><?= $pageData['title'] ?></h1>
+            <?php endif; ?>
             <p>Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l’article n°6 de la Loi n°2004-575
             du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet <a href="http://http://www.rivagespropres.fr">http://www.rivagespropres.fr</a> sont :</p>
 
             <h3>Editeur du Site</h3>
-            <p>
-                Association Rivages Propres<br />
-                Numéro de SIRET : 38322126400054<br />
-                Adresse : 2 boulevard Beaucerf, 62200, Boulogne-sur-Mer<br />
-                Téléphone : 03 21 33 87 59<br />
-                Fax : 03 21 10 89 63<br />
-                Email : contact@rivagespropres.fr<br />
-                Site Web : <a href="http://http://www.rivagespropres.fr">http://www.rivagespropres.fr</a><br />
-                Responsable editorial : Bruno Gauduin
-            </p>
+            <div class="row">
+              <div class="col s12">
+                <?php
+                if(ADMIN):
+                ?>
+                  <div class="row">
+                      <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+                          <div data-btn="btnSubmitText" class="editor" id="first">
+                              <?= $pageData['text'] ?>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+                        <i class="small material-icons right">mode_edit</i>
+                        Appliquer
+                      </button>
+                    </div>
+                  </div>
+                <?php
+                else:
+                ?>
+                  <p class="flow-text"><?= $pageData['text'] ?></p>
+                <?php
+                endif;
+                ?>
+              </div>
+            </div>
 
             <h3>Hébergement</h3>
             <p>

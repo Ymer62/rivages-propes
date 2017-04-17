@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col s12 <?= (ADMIN ? 'm6' : 'm4') ?>">© 1991-<?php echo date("Y") ?> Rivages Propres</div>
             <div class="col s12 <?= (ADMIN ? 'm6' : 'm4') ?>">
-                <a href="<?= $path->link('mentions-legales', false) ?>">Mentions légales</a>
+                <a href="<?= $path->link('mentions-legales') ?>">Mentions légales</a>
             </div>
             <?php if (!ADMIN): ?>
             <div class="col s12 m4">

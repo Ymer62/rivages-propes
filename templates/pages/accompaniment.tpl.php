@@ -21,12 +21,12 @@
         </div>
         <div class="row">
           <div class="col s12">
-        <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
-          <i class="small material-icons right">mode_edit</i>
-          Appliquer
-        </button>
-      </div>
-      </div>
+            <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+              <i class="small material-icons right">mode_edit</i>
+              Appliquer
+            </button>
+          </div>
+        </div>
       <?php
       else:
       ?>
