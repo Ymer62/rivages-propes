@@ -43,6 +43,8 @@ class form{
 
   // Contact
   public function contact(){
+    global $db;
+
     if (isset($_POST['submit'])){
       // POST
       $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : '';
@@ -62,17 +64,20 @@ class form{
 
       // Prepar and send mail
       else{
+        // To
+        $to = $db->row('SELECT name, job, email FROM team WHERE id=:id', array('id' => $to));
+
         // Headers
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'To: Fred <boillot.frederic.62@gmail.com>' . "\r\n";
-        $headers .= 'From: Fredo <boillot.frederic.62@gmail.com>' . "\r\n";
+        $headers .= 'From: '. $first_name . ' ' . $last_name .' <'. $email .'>' . "\r\n";
+        $headers .= 'Reply-To: ' . $email . "\r\n";
 
         // Message
         ob_start();
         ?>
-          <a href="google.fr">Test de lien</a>
-          <br />
+          Nouveau message de la part de <?= $first_name . ' ' . $last_name ?> :
+          <br /><br />
           <?= $msg ?>
         <?php
 
@@ -80,7 +85,7 @@ class form{
         ob_clean();
 
         // Send
-        $response = mail($to, $subject, $msg, $headers);
+        $response = mail($to['email'], 'Rivages Propres : ' . $subject, $msg, $headers);
 
         // Stat
         if($response)

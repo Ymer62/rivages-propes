@@ -49,14 +49,15 @@ $post = unserialize($_SESSION['post']);
      </div>
 
 <div class="row">
-     <div class="input-field col s6 offset-s3">
-  <select name="to" multiple>
+     <div class="input-field col s12">
+  <select name="to">
     <option disabled=""></option>
-    <option value="1">boilot.frederique.62@gmail.com</option>
-    <option value="2">Olivier Deroire (Chargé de mission environnement)</option>
-    <option value="3">Anne Leman (Chargée de communication)</option>
-    <option value="4">Salima Nssis (Agent administratif)</option>
-    <option value="5">Pascale Piquet (Secrétaire)</option>
+    <?php
+      $dest = $db->query('SELECT id, name, job FROM team');
+      foreach ($dest as $member):
+    ?>
+    <option value="<?= $member['id'] ?>"><?= $member['name'] ?> (<?= $member['job'] ?>)</option>
+    <?php endforeach; ?>
   </select>
   <label>Choix de la personne a contacter :</label>
 </div>
@@ -71,7 +72,7 @@ $post = unserialize($_SESSION['post']);
     <div class="row">
         <div class="input-field col s12">
           <textarea name="msg" id="msg" class="materialize-textarea"><?= (isset($post['msg']) ? $post['msg'] : '') ?></textarea>
-          <label for="msg"><i class="fa fa-pencil" aria-hidden="true">Message :</i></label>
+          <label for="msg">Message :</i></label>
         </div>
       </div>
 
@@ -94,22 +95,31 @@ $post = unserialize($_SESSION['post']);
 
 <div class="contactinfo">
 
-<h5>
-  Association Rivages Propres Côte d'Opale
-</h5>
-
-<p>2, boulevard Beaucerf - bâtiment D (cour de la Sernam) 62200 Boulogne-sur-Mer</p>
-<p>Tél : 03 21 33 87 59</p>
-<p>Fax : 03 21 10 89 63</p>
-<p>Contact e-mail : contact@rivagespropres.fr</p>
-
-<p>Ouvert de 8h à 12h et de 14h à 17h</p>
-
-<p>Accueil ouvert uniquement le matin (dépôt de candidature).</p>
-
-</div>
-
-</div>
+  <?php
+  if(ADMIN):
+  ?>
+    <div class="row">
+        <div data-page="<?= PAGE ?>" class="input-field col s12" id="boxEditText">
+            <div data-btn="btnSubmitText" class="editor" id="first">
+                <?= $pageData['text'] ?>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+    <button data-box="boxEditText" id="btnSubmitText" class="btnTextAdmin waves-effect waves-light btn white-text grey darken-4 right">
+      <i class="small material-icons right">mode_edit</i>
+      Appliquer
+    </button>
+  </div>
+  </div>
+  <?php
+  else:
+  ?>
+    <p class="flow-text"><?= $pageData['text'] ?></p>
+  <?php
+  endif;
+  ?>
 
 </div>
 
