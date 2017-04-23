@@ -91,7 +91,72 @@ class form{
         if($response)
         $this->msgFlash('Le message a bien été transmis', './');
         else
-        $this->msgFlash('Envoi mail PAS OK');
+        $this->msgFlash('L\'envoi du mail a échoué');
+      }
+    }
+  }
+
+  // Candidate
+  public function candidate(){
+    global $upload;
+
+    if (isset($_POST['submit'])){
+      // POST
+      $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : '';
+      $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
+      $email = isset($_POST['email']) ? $_POST['email'] : "";
+      $age = isset($_POST['age']) ? $_POST['age'] : "";
+
+      // File
+      if(isset($_FILES['cv']))
+      $file1 = $upload->doc($_FILES['cv']);
+
+      // Check post
+      if (!$first_name || !$last_name || !$email || !$age)
+      $this->msgFlash('Tous les champs sont obligatoires');
+
+      else if(!is_array($file1))
+      $this->msgFlash('Le chargement du fichier a échoué');
+
+      // Check email
+      else if (!preg_match('#^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$#', $email))
+      $this->msgFlash('Le format de l\'email est incorrect');
+
+      // Prepar and send mail
+      else{
+        // Headers
+        $boundary = md5(uniqid(rand(), true));
+        $headers = 'Content-Type: multipart/mixed;'."\r\n".' boundary="'.$boundary.'"';
+
+        // Message
+        ob_start();
+        ?>
+          Demande de recrutement de la part de <?= $first_name . ' ' . $last_name ?>
+        <?php
+
+        $msg = ob_get_contents();
+        ob_clean();
+
+        $message = 'This is a multi-part message in MIME format.'."\r\n";
+        $message .= '--'.$boundary."\r\n";
+        $message .= 'Content-Type: text/html; charset="UTF-8"'."\r\n";
+        $message .= trim($msg) . "\r\n";
+
+        $message .= '--'.$boundary."\r\n";
+        $message .= 'Content-Type: '.$file1[1].'; name="'.$file1[0].'"'."\r\n";
+        $message .= 'Content-Transfer-Encoding: base64'."\r\n";
+        $message .= 'Content-Disposition: attachment; filename="'.$file1[0].'"'."\r\n";
+        $message .= $file1[2] . "\r\n";
+        $message .= '--'.$boundary.'--';
+
+        // Send
+        $response = mail('boillot.frederic.62@gmail.com', 'Rivages Propres : Recrutement', $message, $headers);
+
+        // Stat
+        if($response)
+        $this->msgFlash('La demande a bien été transmise', './');
+        else
+        $this->msgFlash('L\'envoi du mail a échoué');
       }
     }
   }

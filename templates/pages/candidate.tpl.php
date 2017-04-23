@@ -19,32 +19,32 @@ endif;
 
 <div class="container">
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="<?= $path->link('postuler') ?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="input-field col s12 m6 l6">
-          <input id="name" type="text" class="validate">
-          <label for="name">Nom</label>
+          <input name="first_name" id="first_name" type="text" class="validate">
+          <label for="first_name">Nom</label>
         </div>
         <div class="input-field col s12 m6 l6">
-          <input id="lastName" type="text" class="validate">
-          <label for="lastName">Prénom</label>
+          <input name="last_name" id="last_name" type="text" class="validate">
+          <label for="last_name">Prénom</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6 l6">
-          <input id="email" type="email" class="validate">
+          <input name="email" id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
         <div class="input-field col s12 m6 l6">
-          <input id="date" type="text" class="validate" placeholder="JJ/MM/YYYY">
-          <label for="date">Âge</label>
+          <input name="age" id="age" type="text" class="validate" placeholder="JJ/MM/YYYY">
+          <label for="age">Date de naissance</label>
         </div>
       </div>
       <div class="row">
         <div class="file-field input-field">
            <div class="btn">
              <span>Votre CV</span>
-             <input type="file">
+             <input name="cv" type="file">
            </div>
            <div class="file-path-wrapper">
              <input class="file-path validate" type="text">
@@ -55,7 +55,7 @@ endif;
         <div class="file-field input-field">
            <div class="btn">
              <span>Attestation CAF</span>
-             <input type="file">
+             <input name="caf" type="file">
            </div>
            <div class="file-path-wrapper">
              <input class="file-path validate" type="text">
@@ -91,10 +91,17 @@ endif;
            ?>
          </div>
        </div>
+       <div class="row">
+         <div id="submitForm" class="col s12">
+           <button name="submit" value="send" type="submit" class="waves-effect waves-light btn right">Envoyer</button>
+         </div>
+       </div>
      </div>
     </form>
   </div>
 </div>
+
+<script src="js/candidate.min.js" type="text/javascript"></script>
 
 <?php
 

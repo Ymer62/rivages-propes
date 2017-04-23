@@ -89,6 +89,26 @@ class upload{
     return 'errorFile';
   }
 
+  public function doc($file){
+    if(isset($file['tmp_name']) && $file['tmp_name'] != ''){
+      // File
+      $fileTmpName = $file['tmp_name'];
+      $fileName = $file['name'];
+      $fileType = $file['type'];
+      $file_size = filesize($fileTmpName);
+      $handle = fopen($fileTmpName, "r");
+      $content = fread($handle, $file_size);
+      fclose($handle);
+      $content = chunk_split(base64_encode($content));
+
+      if(preg_match('#\.(?:pdf|doc|docx|odt)$#', $fileName))
+      return array($fileName, $fileType, $content);
+      else
+      return 'errorExt';
+    }
+    return 'errorFile';
+  }
+
 }
 
 $upload = new upload();
