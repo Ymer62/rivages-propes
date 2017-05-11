@@ -58,4 +58,4 @@
       h1,h2,h3{ color: <?= $pageData['c_titles'] ?>; }
     </style>
 </head>
-<body>
+<body style="background-image:url('img/bgs/<?= PAGE ?>.png')">
