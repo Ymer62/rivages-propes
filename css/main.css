@@ -16,7 +16,10 @@ body {
   -webkit-box-direction:normal;
       -ms-flex-direction:column;
           flex-direction:column;
-}
+          background-position: 0% 10%;
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+        }
 
 main {
   -webkit-box-flex:1;
@@ -173,6 +176,11 @@ p {
     font-style: normal;
 }
 
+@font-face {
+  font-family: "mulder";
+  src: url("../fonts/Mulder/mulder_hw.ttf");
+}
+
 /* Modals */
 .modal{
   z-index:10000!important;
@@ -290,14 +298,17 @@ h6 i{
 }
 
 
+
 h1 {
-    font-family: 'Questrial', Verdana, sans-serif;
+    font-family: 'mulder', Verdana, sans-serif;
     text-align: center;
     font-size: 40px;
     padding: 0;
     margin: 20px 0 60px 0;
     position: relative;
     top: 0;
+    color: #00004B!important;
+    margin-top: 5%;
 }
 
 
