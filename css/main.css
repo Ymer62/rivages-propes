@@ -19,6 +19,7 @@ body {
           background-position: 0% 10%;
           background-attachment: fixed;
           background-repeat: no-repeat;
+          background-position: 0% 10%;
         }
 
 main {
@@ -174,6 +175,7 @@ p {
     src: url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.woff') format('woff'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.ttf') format('truetype'), url('http://www.onextrapixel.com/examples/html5-css3-contact-form/font/iconic_stroke-webfont.svg#IconicStrokeRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }
 
 @font-face {
@@ -302,13 +304,13 @@ h6 i{
 h1 {
     font-family: 'mulder', Verdana, sans-serif;
     text-align: center;
-    font-size: 40px;
+    font-size: 55px;
     padding: 0;
     margin: 20px 0 60px 0;
     position: relative;
     top: 0;
     color: #00004B!important;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 
@@ -781,8 +783,9 @@ footer.page-footer .sponsor{
   cursor:pointer;
 }
 
-/* THOMAS */
-/*-------------Accompagnement------------------*/
+/***************/
+/** Accompagnement **/
+/***************/
 
 #imgRdv {
     float: left;
@@ -807,8 +810,10 @@ footer.page-footer .sponsor{
     text-align: right !important;
 }
 
+/***************/
+/** Mention legales **/
+/***************/
 
-/* Mentions légales */
 #legal h1 {
     margin-top: 50px;
 }

@@ -58,4 +58,6 @@
       h1,h2,h3{ color: <?= $pageData['c_titles'] ?>; }
     </style>
 </head>
-<body style="background-image:url('img/bgs/<?= PAGE ?>.png')">
+<body style="background-image:url('img/bgs/<?= PAGE ?>.png'), -webkit-linear-gradient(top, #FFF 50%, #A8E4FB 100%), linear-gradient(to bottom, #FFF 50%, #A8E4FB 100%)  ">
+<div id="social">
+</div>
