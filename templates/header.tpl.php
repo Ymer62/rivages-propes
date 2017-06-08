@@ -70,7 +70,7 @@
                               <a style="display: block;" target='_blank' href="https://twitter.com/rivagespropres"> <i class="fa fa-twitter">   </i> </a>
                           </li>
                           <li>
-                              <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCBFlLnQiMhZMvOJDhwfwl2A"> <i class="fa fa-youtube">   </i> </a>
+                              <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCm8956ELMygJXrYR0iT3trg"> <i class="fa fa-youtube">   </i> </a>
                           </li>
                           <li>
                               <a style="display: block;" target='_blank'  href="infoLetter/jpg2pdf.pdf"> <i class="fa fa-info">   </i> </a>
