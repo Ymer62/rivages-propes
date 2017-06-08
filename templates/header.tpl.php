@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/materialize.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/277f8dc5c4.js"></script>
+
 
     <?php
     if(ADMIN):
@@ -59,5 +61,18 @@
     </style>
 </head>
 <body style="background-image:url('img/bgs/<?= PAGE ?>.png'), -webkit-linear-gradient(top, #FFF 50%, #A8E4FB 100%), linear-gradient(to bottom, #FFF 50%, #A8E4FB 100%)  ">
-<div id="social">
-</div>
+
+  <ul id="social">
+                          <li>
+                              <a style="display: block;" target='_blank' href="https://fr-fr.facebook.com/RivagesPropres/"> <i class=" fa fa-facebook">   </i> </a>
+                          </li>
+                          <li>
+                              <a style="display: block;" target='_blank' href="https://twitter.com/rivagespropres"> <i class="fa fa-twitter">   </i> </a>
+                          </li>
+                          <li>
+                              <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCBFlLnQiMhZMvOJDhwfwl2A"> <i class="fa fa-youtube">   </i> </a>
+                          </li>
+                          <li>
+                              <a style="display: block;" target='_blank'  href="infoLetter/jpg2pdf.pdf"> <i class="fa fa-info">   </i> </a>
+                          </li>
+                      </ul>

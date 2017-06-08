@@ -825,3 +825,50 @@ footer.page-footer .sponsor{
 #legal p span {
     font-weight: bold;
 }
+
+
+
+#social {
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  z-index: 9999999999999999999;
+}
+
+
+#social li {
+background: none repeat scroll 0 0 #07275C;
+border: 2px solid #07275C;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-o-border-radius: 50%;
+-ms-border-radius: 50%;
+border-radius: 50%;
+height: 50px;
+line-height: 36px;
+margin: 20px 12px 0 0;
+padding: 0;
+text-align: center;
+width: 50px;
+transition: all 0.5s ease 0s;
+-moz-transition: all 0.5s ease 0s;
+-webkit-transition: all 0.5s ease 0s;
+-ms-transition: all 0.5s ease 0s;
+-o-transition: all 0.5s ease 0s;
+}
+
+#social li:hover {
+transform: scale(1.15) rotate(360deg);
+-webkit-transform: scale(1.1) rotate(360deg);
+-moz-transform: scale(1.1) rotate(360deg);
+-ms-transform: scale(1.1) rotate(360deg);
+-o-transform: scale(1.1) rotate(360deg);
+border: 2px solid #07275C;
+background: #07275C
+}
+
+#social li a i {
+font-size: 16px;
+margin: 15px 0 0 0px;
+color: #EDEFF1 !important;
+}

@@ -71,7 +71,7 @@ class form{
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: '. $first_name . ' ' . $last_name .' <'. $email .'>' . "\r\n";
-        $headers .= 'Reply-To: ' . $email . "\r\n";
+        $headers .= 'Reply-To: contact@rivagespropres.fr'. "\r\n";
 
         // Message
         ob_start();
@@ -85,7 +85,7 @@ class form{
         ob_clean();
 
         // Send
-        $response = mail($to['email'], 'Rivages Propres : ' . $subject, $msg, $headers);
+        $response = mail('contact@rivagespropres.fr', 'Rivages Propres : ' . $subject, $msg, $headers);
 
         // Stat
         if($response)

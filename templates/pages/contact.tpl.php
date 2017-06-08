@@ -48,20 +48,6 @@ $post = unserialize($_SESSION['post']);
        </div>
      </div>
 
-<div class="row">
-     <div class="input-field col s12">
-  <select name="to">
-    <option disabled=""></option>
-    <?php
-      $dest = $db->query('SELECT id, name, job FROM team');
-      foreach ($dest as $member):
-    ?>
-    <option value="<?= $member['id'] ?>"><?= $member['name'] ?> (<?= $member['job'] ?>)</option>
-    <?php endforeach; ?>
-  </select>
-  <label>Choix de la personne a contacter :</label>
-</div>
-</div>
 
     <div class="row">
       <div class="input-field col s12">

@@ -114,7 +114,7 @@
             <h3>Déclaration à la CNIL</h3>
             <p>
                 Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel) relative à l'informatique, aux fichiers et aux libertés,
-                demande de déclaration en cours auprès de la Commission nationale de l'informatique et des libertés (<a href="http://www.cnil.fr/">www.cnil.fr</a>).
+                demande de déclaration obtenu (2058657) auprès de la Commission nationale de l'informatique et des libertés (<a href="http://www.cnil.fr/">www.cnil.fr</a>).
             </p>
 
             <h3>Litiges</h3>
