@@ -64,10 +64,10 @@
 
   <ul id="social">
                           <li>
-                              <a style="display: block;" target='_blank' href="https://fr-fr.facebook.com/RivagesPropres/"> <i class=" fa fa-facebook">   </i> </a>
+                              <a style="display: block;" target='_blank' href="https://www.facebook.com/RivagesPropres/"> <i class=" fa fa-facebook">   </i> </a>
                           </li>
                           <li>
-                              <a style="display: block;" target='_blank' href="https://twitter.com/rivagespropres"> <i class="fa fa-twitter">   </i> </a>
+                              <a style="display: block;" target='_blank' href="https://twitter.com/RivagesPropres"> <i class="fa fa-twitter">   </i> </a>
                           </li>
                           <li>
                               <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCm8956ELMygJXrYR0iT3trg"> <i class="fa fa-youtube">   </i> </a>
