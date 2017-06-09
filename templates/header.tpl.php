@@ -62,17 +62,23 @@
 </head>
 <body style="background-image:url('img/bgs/<?= PAGE ?>.png'), -webkit-linear-gradient(top, #FFF 50%, #A8E4FB 100%), linear-gradient(to bottom, #FFF 50%, #A8E4FB 100%)  ">
 
+  <?php
+  if(!ADMIN):
+  ?>
   <ul id="social">
-                          <li>
-                              <a style="display: block;" target='_blank' href="https://www.facebook.com/RivagesPropres/"> <i class=" fa fa-facebook">   </i> </a>
-                          </li>
-                          <li>
-                              <a style="display: block;" target='_blank' href="https://twitter.com/RivagesPropres"> <i class="fa fa-twitter">   </i> </a>
-                          </li>
-                          <li>
-                              <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCm8956ELMygJXrYR0iT3trg"> <i class="fa fa-youtube">   </i> </a>
-                          </li>
-                          <li>
-                              <a style="display: block;" target='_blank'  href="infoLetter/jpg2pdf.pdf"> <i class="fa fa-info">   </i> </a>
-                          </li>
-                      </ul>
+    <li>
+      <a style="display: block;" target='_blank' href="https://www.facebook.com/RivagesPropres/"> <i class=" fa fa-facebook">   </i> </a>
+    </li>
+    <li>
+      <a style="display: block;" target='_blank' href="https://twitter.com/RivagesPropres"> <i class="fa fa-twitter">   </i> </a>
+    </li>
+    <li>
+      <a style="display: block;" target='_blank' href="https://www.youtube.com/channel/UCm8956ELMygJXrYR0iT3trg"> <i class="fa fa-youtube">   </i> </a>
+    </li>
+    <li>
+      <a style="display: block;" target='_blank'  href="infoLetter/jpg2pdf.pdf"> <i class="fa fa-info">   </i> </a>
+    </li>
+  </ul>
+  <?php
+  endif;
+  ?>

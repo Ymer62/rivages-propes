@@ -13,7 +13,6 @@ function carouselPlay(){
 }
 
 $(document).ready(function(){
-
   function carouselSize(){
     $('.carousel').height($(window).height() - $('.nav-wrapper').height());
   }
@@ -21,7 +20,8 @@ $(document).ready(function(){
   $(window).resize(function(){
     carouselSize();
   });
-  carouselSize();
+  setTimeout(carouselSize, 500);
+  // carouselSize();
 
   carouselInit();
 });
